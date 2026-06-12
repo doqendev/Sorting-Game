@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "currencies": {
+    "coins": {
+      "startingAmount": 500,
+      "maxSoftCap": 999999
+    },
+    "stars": {
+      "startingAmount": 0
+    },
+    "gems": {
+      "startingAmount": 0
+    }
+  },
+  "boosterCosts": {
+    "hint": {
+      "coins": 100
+    },
+    "shuffle": {
+      "coins": 250
+    },
+    "hammer": {
+      "coins": 200
+    },
+    "freeze_time": {
+      "coins": 300
+    },
+    "extra_slot": {
+      "coins": 400
+    }
+  },
+  "reviveOffers": [
+    {
+      "id": "rv_plus_60_sec",
+      "type": "rewarded_ad",
+      "addSeconds": 60
+    },
+    {
+      "id": "coins_plus_45_sec",
+      "type": "coins",
+      "cost": 300,
+      "addSeconds": 45
+    }
+  ],
+  "iapProducts": [
+    {
+      "id": "starter_pack",
+      "kind": "bundle",
+      "price": "$1.99",
+      "contents": {
+        "coins": 750,
+        "hint": 1,
+        "shuffle": 1,
+        "hammer": 1,
+        "freeze_time": 1
+      }
+    },
+    {
+      "id": "remove_ads",
+      "kind": "non_consumable",
+      "price": "$5.99",
+      "contents": {
+        "removeAds": true
+      }
+    },
+    {
+      "id": "small_booster_pack",
+      "kind": "bundle",
+      "price": "$2.99",
+      "contents": {
+        "hint": 3,
+        "hammer": 2,
+        "freeze_time": 1
+      }
+    },
+    {
+      "id": "value_bundle",
+      "kind": "bundle",
+      "price": "$8.99",
+      "contents": {
+        "coins": 2500,
+        "hint": 5,
+        "shuffle": 3,
+        "hammer": 3,
+        "extra_slot": 2
+      }
+    },
+    {
+      "id": "deluxe_bundle",
+      "kind": "bundle",
+      "price": "$14.99",
+      "contents": {
+        "coins": 6000,
+        "gems": 80,
+        "hint": 8,
+        "shuffle": 6,
+        "hammer": 6,
+        "freeze_time": 5,
+        "extra_slot": 4
+      }
+    },
+    {
+      "id": "piggy_bank",
+      "kind": "bank",
+      "price": "$3.99",
+      "contents": {
+        "coins": 3200
+      }
+    },
+    {
+      "id": "match_pass",
+      "kind": "pass",
+      "price": "$7.99",
+      "contents": {
+        "activePassId": "season_launch",
+        "coins": 1000,
+        "passXp": 500
+      }
+    }
+  ]
+}

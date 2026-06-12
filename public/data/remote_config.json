@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "ads": {
+    "interstitialEnabled": true,
+    "firstInterstitialAfterLevel": 8,
+    "interstitialCooldownSec": 120,
+    "suppressInterstitialAfterRewardedSec": 180,
+    "bannerInGameplayEnabled": false
+  },
+  "difficulty": {
+    "timerMultiplierNormal": 1,
+    "timerMultiplierHard": 0.88,
+    "timerMultiplierSuperHard": 0.78,
+    "comboWindowSec": 2.5
+  },
+  "economy": {
+    "winCoinsMultiplier": 1,
+    "rewardedDoubleEnabled": true,
+    "starterPackVariant": "A"
+  },
+  "features": {
+    "relaxModeEnabled": true,
+    "collectionAlbumEnabled": true,
+    "battlePassEnabled": true,
+    "dailyOrdersEnabled": true
+  }
+}

@@ -1,0 +1,4605 @@
+{
+  "schemaVersion": 1,
+  "products": [
+    {
+      "skuId": "chips_blue_01",
+      "displayNameKey": "sku.chips_blue_01",
+      "category": "snack",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/chips_blue_01.prefab",
+      "iconAddress": "icons/chips_blue_01.png",
+      "unlockLevel": 1,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "box",
+        "label": "CH01"
+      }
+    },
+    {
+      "skuId": "soda_red_01",
+      "displayNameKey": "sku.soda_red_01",
+      "category": "drink",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/soda_red_01.prefab",
+      "iconAddress": "icons/soda_red_01.png",
+      "unlockLevel": 1,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "bottle",
+        "label": "SO01"
+      }
+    },
+    {
+      "skuId": "pear_green_01",
+      "displayNameKey": "sku.pear_green_01",
+      "category": "fruit",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/pear_green_01.prefab",
+      "iconAddress": "icons/pear_green_01.png",
+      "unlockLevel": 1,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "pouch",
+        "label": "PE01"
+      }
+    },
+    {
+      "skuId": "robot_yellow_01",
+      "displayNameKey": "sku.robot_yellow_01",
+      "category": "toy",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/robot_yellow_01.prefab",
+      "iconAddress": "icons/robot_yellow_01.png",
+      "unlockLevel": 1,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "sphere",
+        "label": "RO01"
+      }
+    },
+    {
+      "skuId": "ball_violet_01",
+      "displayNameKey": "sku.ball_violet_01",
+      "category": "sport",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/ball_violet_01.prefab",
+      "iconAddress": "icons/ball_violet_01.png",
+      "unlockLevel": 2,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "can",
+        "label": "BA01"
+      }
+    },
+    {
+      "skuId": "soap_teal_01",
+      "displayNameKey": "sku.soap_teal_01",
+      "category": "home",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/soap_teal_01.prefab",
+      "iconAddress": "icons/soap_teal_01.png",
+      "unlockLevel": 2,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "toy",
+        "label": "SO01"
+      }
+    },
+    {
+      "skuId": "pencil_orange_01",
+      "displayNameKey": "sku.pencil_orange_01",
+      "category": "stationery",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/pencil_orange_01.prefab",
+      "iconAddress": "icons/pencil_orange_01.png",
+      "unlockLevel": 2,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "tube",
+        "label": "PE01"
+      }
+    },
+    {
+      "skuId": "bread_pink_01",
+      "displayNameKey": "sku.bread_pink_01",
+      "category": "bakery",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/bread_pink_01.prefab",
+      "iconAddress": "icons/bread_pink_01.png",
+      "unlockLevel": 2,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "box",
+        "label": "BR01"
+      }
+    },
+    {
+      "skuId": "cream_navy_01",
+      "displayNameKey": "sku.cream_navy_01",
+      "category": "cosmetic",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/cream_navy_01.prefab",
+      "iconAddress": "icons/cream_navy_01.png",
+      "unlockLevel": 3,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "bottle",
+        "label": "CR01"
+      }
+    },
+    {
+      "skuId": "star_cocoa_01",
+      "displayNameKey": "sku.star_cocoa_01",
+      "category": "seasonal",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/star_cocoa_01.prefab",
+      "iconAddress": "icons/star_cocoa_01.png",
+      "unlockLevel": 3,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "pouch",
+        "label": "ST01"
+      }
+    },
+    {
+      "skuId": "pretzel_blue_02",
+      "displayNameKey": "sku.pretzel_blue_02",
+      "category": "snack",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/pretzel_blue_02.prefab",
+      "iconAddress": "icons/pretzel_blue_02.png",
+      "unlockLevel": 3,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "sphere",
+        "label": "PR02"
+      }
+    },
+    {
+      "skuId": "juice_red_02",
+      "displayNameKey": "sku.juice_red_02",
+      "category": "drink",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/juice_red_02.prefab",
+      "iconAddress": "icons/juice_red_02.png",
+      "unlockLevel": 3,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "can",
+        "label": "JU02"
+      }
+    },
+    {
+      "skuId": "apple_green_02",
+      "displayNameKey": "sku.apple_green_02",
+      "category": "fruit",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/apple_green_02.prefab",
+      "iconAddress": "icons/apple_green_02.png",
+      "unlockLevel": 4,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "toy",
+        "label": "AP02"
+      }
+    },
+    {
+      "skuId": "bear_yellow_02",
+      "displayNameKey": "sku.bear_yellow_02",
+      "category": "toy",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/bear_yellow_02.prefab",
+      "iconAddress": "icons/bear_yellow_02.png",
+      "unlockLevel": 4,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "tube",
+        "label": "BE02"
+      }
+    },
+    {
+      "skuId": "glove_violet_02",
+      "displayNameKey": "sku.glove_violet_02",
+      "category": "sport",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/glove_violet_02.prefab",
+      "iconAddress": "icons/glove_violet_02.png",
+      "unlockLevel": 4,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "box",
+        "label": "GL02"
+      }
+    },
+    {
+      "skuId": "towel_teal_02",
+      "displayNameKey": "sku.towel_teal_02",
+      "category": "home",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/towel_teal_02.prefab",
+      "iconAddress": "icons/towel_teal_02.png",
+      "unlockLevel": 4,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "bottle",
+        "label": "TO02"
+      }
+    },
+    {
+      "skuId": "marker_orange_02",
+      "displayNameKey": "sku.marker_orange_02",
+      "category": "stationery",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/marker_orange_02.prefab",
+      "iconAddress": "icons/marker_orange_02.png",
+      "unlockLevel": 5,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "pouch",
+        "label": "MA02"
+      }
+    },
+    {
+      "skuId": "bagel_pink_02",
+      "displayNameKey": "sku.bagel_pink_02",
+      "category": "bakery",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/bagel_pink_02.prefab",
+      "iconAddress": "icons/bagel_pink_02.png",
+      "unlockLevel": 5,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "sphere",
+        "label": "BA02"
+      }
+    },
+    {
+      "skuId": "lotion_navy_02",
+      "displayNameKey": "sku.lotion_navy_02",
+      "category": "cosmetic",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/lotion_navy_02.prefab",
+      "iconAddress": "icons/lotion_navy_02.png",
+      "unlockLevel": 5,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "can",
+        "label": "LO02"
+      }
+    },
+    {
+      "skuId": "snowbox_cocoa_02",
+      "displayNameKey": "sku.snowbox_cocoa_02",
+      "category": "seasonal",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/snowbox_cocoa_02.prefab",
+      "iconAddress": "icons/snowbox_cocoa_02.png",
+      "unlockLevel": 5,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "toy",
+        "label": "SN02"
+      }
+    },
+    {
+      "skuId": "cracker_blue_03",
+      "displayNameKey": "sku.cracker_blue_03",
+      "category": "snack",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/cracker_blue_03.prefab",
+      "iconAddress": "icons/cracker_blue_03.png",
+      "unlockLevel": 6,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "tube",
+        "label": "CR03"
+      }
+    },
+    {
+      "skuId": "water_red_03",
+      "displayNameKey": "sku.water_red_03",
+      "category": "drink",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/water_red_03.prefab",
+      "iconAddress": "icons/water_red_03.png",
+      "unlockLevel": 6,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "box",
+        "label": "WA03"
+      }
+    },
+    {
+      "skuId": "berry_green_03",
+      "displayNameKey": "sku.berry_green_03",
+      "category": "fruit",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/berry_green_03.prefab",
+      "iconAddress": "icons/berry_green_03.png",
+      "unlockLevel": 6,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "bottle",
+        "label": "BE03"
+      }
+    },
+    {
+      "skuId": "cube_yellow_03",
+      "displayNameKey": "sku.cube_yellow_03",
+      "category": "toy",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/cube_yellow_03.prefab",
+      "iconAddress": "icons/cube_yellow_03.png",
+      "unlockLevel": 6,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "pouch",
+        "label": "CU03"
+      }
+    },
+    {
+      "skuId": "cap_violet_03",
+      "displayNameKey": "sku.cap_violet_03",
+      "category": "sport",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/cap_violet_03.prefab",
+      "iconAddress": "icons/cap_violet_03.png",
+      "unlockLevel": 7,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "sphere",
+        "label": "CA03"
+      }
+    },
+    {
+      "skuId": "brush_teal_03",
+      "displayNameKey": "sku.brush_teal_03",
+      "category": "home",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/brush_teal_03.prefab",
+      "iconAddress": "icons/brush_teal_03.png",
+      "unlockLevel": 7,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "can",
+        "label": "BR03"
+      }
+    },
+    {
+      "skuId": "notebook_orange_03",
+      "displayNameKey": "sku.notebook_orange_03",
+      "category": "stationery",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/notebook_orange_03.prefab",
+      "iconAddress": "icons/notebook_orange_03.png",
+      "unlockLevel": 7,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "toy",
+        "label": "NO03"
+      }
+    },
+    {
+      "skuId": "muffin_pink_03",
+      "displayNameKey": "sku.muffin_pink_03",
+      "category": "bakery",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/muffin_pink_03.prefab",
+      "iconAddress": "icons/muffin_pink_03.png",
+      "unlockLevel": 7,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "tube",
+        "label": "MU03"
+      }
+    },
+    {
+      "skuId": "comb_navy_03",
+      "displayNameKey": "sku.comb_navy_03",
+      "category": "cosmetic",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/comb_navy_03.prefab",
+      "iconAddress": "icons/comb_navy_03.png",
+      "unlockLevel": 8,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "box",
+        "label": "CO03"
+      }
+    },
+    {
+      "skuId": "sunpack_cocoa_03",
+      "displayNameKey": "sku.sunpack_cocoa_03",
+      "category": "seasonal",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/sunpack_cocoa_03.prefab",
+      "iconAddress": "icons/sunpack_cocoa_03.png",
+      "unlockLevel": 8,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "bottle",
+        "label": "SU03"
+      }
+    },
+    {
+      "skuId": "popcorn_blue_04",
+      "displayNameKey": "sku.popcorn_blue_04",
+      "category": "snack",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/popcorn_blue_04.prefab",
+      "iconAddress": "icons/popcorn_blue_04.png",
+      "unlockLevel": 8,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "pouch",
+        "label": "PO04"
+      }
+    },
+    {
+      "skuId": "tea_red_04",
+      "displayNameKey": "sku.tea_red_04",
+      "category": "drink",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/tea_red_04.prefab",
+      "iconAddress": "icons/tea_red_04.png",
+      "unlockLevel": 8,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "sphere",
+        "label": "TE04"
+      }
+    },
+    {
+      "skuId": "melon_green_04",
+      "displayNameKey": "sku.melon_green_04",
+      "category": "fruit",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/melon_green_04.prefab",
+      "iconAddress": "icons/melon_green_04.png",
+      "unlockLevel": 9,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "can",
+        "label": "ME04"
+      }
+    },
+    {
+      "skuId": "rocket_yellow_04",
+      "displayNameKey": "sku.rocket_yellow_04",
+      "category": "toy",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/rocket_yellow_04.prefab",
+      "iconAddress": "icons/rocket_yellow_04.png",
+      "unlockLevel": 9,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "toy",
+        "label": "RO04"
+      }
+    },
+    {
+      "skuId": "racket_violet_04",
+      "displayNameKey": "sku.racket_violet_04",
+      "category": "sport",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/racket_violet_04.prefab",
+      "iconAddress": "icons/racket_violet_04.png",
+      "unlockLevel": 9,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "tube",
+        "label": "RA04"
+      }
+    },
+    {
+      "skuId": "lamp_teal_04",
+      "displayNameKey": "sku.lamp_teal_04",
+      "category": "home",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/lamp_teal_04.prefab",
+      "iconAddress": "icons/lamp_teal_04.png",
+      "unlockLevel": 9,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "box",
+        "label": "LA04"
+      }
+    },
+    {
+      "skuId": "eraser_orange_04",
+      "displayNameKey": "sku.eraser_orange_04",
+      "category": "stationery",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/eraser_orange_04.prefab",
+      "iconAddress": "icons/eraser_orange_04.png",
+      "unlockLevel": 10,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "bottle",
+        "label": "ER04"
+      }
+    },
+    {
+      "skuId": "croissant_pink_04",
+      "displayNameKey": "sku.croissant_pink_04",
+      "category": "bakery",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/croissant_pink_04.prefab",
+      "iconAddress": "icons/croissant_pink_04.png",
+      "unlockLevel": 10,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "pouch",
+        "label": "CR04"
+      }
+    },
+    {
+      "skuId": "mirror_navy_04",
+      "displayNameKey": "sku.mirror_navy_04",
+      "category": "cosmetic",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/mirror_navy_04.prefab",
+      "iconAddress": "icons/mirror_navy_04.png",
+      "unlockLevel": 10,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "sphere",
+        "label": "MI04"
+      }
+    },
+    {
+      "skuId": "leaf_cocoa_04",
+      "displayNameKey": "sku.leaf_cocoa_04",
+      "category": "seasonal",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/leaf_cocoa_04.prefab",
+      "iconAddress": "icons/leaf_cocoa_04.png",
+      "unlockLevel": 10,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "can",
+        "label": "LE04"
+      }
+    },
+    {
+      "skuId": "cookie_blue_05",
+      "displayNameKey": "sku.cookie_blue_05",
+      "category": "snack",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/cookie_blue_05.prefab",
+      "iconAddress": "icons/cookie_blue_05.png",
+      "unlockLevel": 11,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "toy",
+        "label": "CO05"
+      }
+    },
+    {
+      "skuId": "milk_red_05",
+      "displayNameKey": "sku.milk_red_05",
+      "category": "drink",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/milk_red_05.prefab",
+      "iconAddress": "icons/milk_red_05.png",
+      "unlockLevel": 11,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "tube",
+        "label": "MI05"
+      }
+    },
+    {
+      "skuId": "banana_green_05",
+      "displayNameKey": "sku.banana_green_05",
+      "category": "fruit",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/banana_green_05.prefab",
+      "iconAddress": "icons/banana_green_05.png",
+      "unlockLevel": 11,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "box",
+        "label": "BA05"
+      }
+    },
+    {
+      "skuId": "puzzle_yellow_05",
+      "displayNameKey": "sku.puzzle_yellow_05",
+      "category": "toy",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/puzzle_yellow_05.prefab",
+      "iconAddress": "icons/puzzle_yellow_05.png",
+      "unlockLevel": 11,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "bottle",
+        "label": "PU05"
+      }
+    },
+    {
+      "skuId": "shoe_violet_05",
+      "displayNameKey": "sku.shoe_violet_05",
+      "category": "sport",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/shoe_violet_05.prefab",
+      "iconAddress": "icons/shoe_violet_05.png",
+      "unlockLevel": 12,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "pouch",
+        "label": "SH05"
+      }
+    },
+    {
+      "skuId": "mug_teal_05",
+      "displayNameKey": "sku.mug_teal_05",
+      "category": "home",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/mug_teal_05.prefab",
+      "iconAddress": "icons/mug_teal_05.png",
+      "unlockLevel": 12,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "sphere",
+        "label": "MU05"
+      }
+    },
+    {
+      "skuId": "clip_orange_05",
+      "displayNameKey": "sku.clip_orange_05",
+      "category": "stationery",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/clip_orange_05.prefab",
+      "iconAddress": "icons/clip_orange_05.png",
+      "unlockLevel": 12,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "can",
+        "label": "CL05"
+      }
+    },
+    {
+      "skuId": "donut_pink_05",
+      "displayNameKey": "sku.donut_pink_05",
+      "category": "bakery",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/donut_pink_05.prefab",
+      "iconAddress": "icons/donut_pink_05.png",
+      "unlockLevel": 12,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "toy",
+        "label": "DO05"
+      }
+    },
+    {
+      "skuId": "powder_navy_05",
+      "displayNameKey": "sku.powder_navy_05",
+      "category": "cosmetic",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/powder_navy_05.prefab",
+      "iconAddress": "icons/powder_navy_05.png",
+      "unlockLevel": 13,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "tube",
+        "label": "PO05"
+      }
+    },
+    {
+      "skuId": "gift_cocoa_05",
+      "displayNameKey": "sku.gift_cocoa_05",
+      "category": "seasonal",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/gift_cocoa_05.prefab",
+      "iconAddress": "icons/gift_cocoa_05.png",
+      "unlockLevel": 13,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "box",
+        "label": "GI05"
+      }
+    },
+    {
+      "skuId": "wafer_blue_06",
+      "displayNameKey": "sku.wafer_blue_06",
+      "category": "snack",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/wafer_blue_06.prefab",
+      "iconAddress": "icons/wafer_blue_06.png",
+      "unlockLevel": 13,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "bottle",
+        "label": "WA06"
+      }
+    },
+    {
+      "skuId": "smoothie_red_06",
+      "displayNameKey": "sku.smoothie_red_06",
+      "category": "drink",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/smoothie_red_06.prefab",
+      "iconAddress": "icons/smoothie_red_06.png",
+      "unlockLevel": 13,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "pouch",
+        "label": "SM06"
+      }
+    },
+    {
+      "skuId": "kiwi_green_06",
+      "displayNameKey": "sku.kiwi_green_06",
+      "category": "fruit",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/kiwi_green_06.prefab",
+      "iconAddress": "icons/kiwi_green_06.png",
+      "unlockLevel": 14,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "sphere",
+        "label": "KI06"
+      }
+    },
+    {
+      "skuId": "car_yellow_06",
+      "displayNameKey": "sku.car_yellow_06",
+      "category": "toy",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/car_yellow_06.prefab",
+      "iconAddress": "icons/car_yellow_06.png",
+      "unlockLevel": 14,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "can",
+        "label": "CA06"
+      }
+    },
+    {
+      "skuId": "whistle_violet_06",
+      "displayNameKey": "sku.whistle_violet_06",
+      "category": "sport",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/whistle_violet_06.prefab",
+      "iconAddress": "icons/whistle_violet_06.png",
+      "unlockLevel": 14,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "toy",
+        "label": "WH06"
+      }
+    },
+    {
+      "skuId": "plant_teal_06",
+      "displayNameKey": "sku.plant_teal_06",
+      "category": "home",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/plant_teal_06.prefab",
+      "iconAddress": "icons/plant_teal_06.png",
+      "unlockLevel": 14,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "tube",
+        "label": "PL06"
+      }
+    },
+    {
+      "skuId": "tape_orange_06",
+      "displayNameKey": "sku.tape_orange_06",
+      "category": "stationery",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/tape_orange_06.prefab",
+      "iconAddress": "icons/tape_orange_06.png",
+      "unlockLevel": 15,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "box",
+        "label": "TA06"
+      }
+    },
+    {
+      "skuId": "pie_pink_06",
+      "displayNameKey": "sku.pie_pink_06",
+      "category": "bakery",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/pie_pink_06.prefab",
+      "iconAddress": "icons/pie_pink_06.png",
+      "unlockLevel": 15,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "bottle",
+        "label": "PI06"
+      }
+    },
+    {
+      "skuId": "balm_navy_06",
+      "displayNameKey": "sku.balm_navy_06",
+      "category": "cosmetic",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/balm_navy_06.prefab",
+      "iconAddress": "icons/balm_navy_06.png",
+      "unlockLevel": 15,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "pouch",
+        "label": "BA06"
+      }
+    },
+    {
+      "skuId": "lantern_cocoa_06",
+      "displayNameKey": "sku.lantern_cocoa_06",
+      "category": "seasonal",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/lantern_cocoa_06.prefab",
+      "iconAddress": "icons/lantern_cocoa_06.png",
+      "unlockLevel": 15,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "sphere",
+        "label": "LA06"
+      }
+    },
+    {
+      "skuId": "nacho_blue_07",
+      "displayNameKey": "sku.nacho_blue_07",
+      "category": "snack",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/nacho_blue_07.prefab",
+      "iconAddress": "icons/nacho_blue_07.png",
+      "unlockLevel": 16,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "can",
+        "label": "NA07"
+      }
+    },
+    {
+      "skuId": "tonic_red_07",
+      "displayNameKey": "sku.tonic_red_07",
+      "category": "drink",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/tonic_red_07.prefab",
+      "iconAddress": "icons/tonic_red_07.png",
+      "unlockLevel": 16,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "toy",
+        "label": "TO07"
+      }
+    },
+    {
+      "skuId": "peach_green_07",
+      "displayNameKey": "sku.peach_green_07",
+      "category": "fruit",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/peach_green_07.prefab",
+      "iconAddress": "icons/peach_green_07.png",
+      "unlockLevel": 16,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "tube",
+        "label": "PE07"
+      }
+    },
+    {
+      "skuId": "duck_yellow_07",
+      "displayNameKey": "sku.duck_yellow_07",
+      "category": "toy",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/duck_yellow_07.prefab",
+      "iconAddress": "icons/duck_yellow_07.png",
+      "unlockLevel": 16,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "box",
+        "label": "DU07"
+      }
+    },
+    {
+      "skuId": "medal_violet_07",
+      "displayNameKey": "sku.medal_violet_07",
+      "category": "sport",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/medal_violet_07.prefab",
+      "iconAddress": "icons/medal_violet_07.png",
+      "unlockLevel": 17,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "bottle",
+        "label": "ME07"
+      }
+    },
+    {
+      "skuId": "sponge_teal_07",
+      "displayNameKey": "sku.sponge_teal_07",
+      "category": "home",
+      "silhouetteClass": "pouch",
+      "rarity": "common",
+      "prefabAddress": "products/sponge_teal_07.prefab",
+      "iconAddress": "icons/sponge_teal_07.png",
+      "unlockLevel": 17,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "pouch",
+        "label": "SP07"
+      }
+    },
+    {
+      "skuId": "folder_orange_07",
+      "displayNameKey": "sku.folder_orange_07",
+      "category": "stationery",
+      "silhouetteClass": "round",
+      "rarity": "common",
+      "prefabAddress": "products/folder_orange_07.prefab",
+      "iconAddress": "icons/folder_orange_07.png",
+      "unlockLevel": 17,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "sphere",
+        "label": "FO07"
+      }
+    },
+    {
+      "skuId": "roll_pink_07",
+      "displayNameKey": "sku.roll_pink_07",
+      "category": "bakery",
+      "silhouetteClass": "can",
+      "rarity": "common",
+      "prefabAddress": "products/roll_pink_07.prefab",
+      "iconAddress": "icons/roll_pink_07.png",
+      "unlockLevel": 17,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "can",
+        "label": "RO07"
+      }
+    },
+    {
+      "skuId": "brush_navy_07",
+      "displayNameKey": "sku.brush_navy_07",
+      "category": "cosmetic",
+      "silhouetteClass": "toy",
+      "rarity": "common",
+      "prefabAddress": "products/brush_navy_07.prefab",
+      "iconAddress": "icons/brush_navy_07.png",
+      "unlockLevel": 18,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "toy",
+        "label": "BR07"
+      }
+    },
+    {
+      "skuId": "shell_cocoa_07",
+      "displayNameKey": "sku.shell_cocoa_07",
+      "category": "seasonal",
+      "silhouetteClass": "tall",
+      "rarity": "common",
+      "prefabAddress": "products/shell_cocoa_07.prefab",
+      "iconAddress": "icons/shell_cocoa_07.png",
+      "unlockLevel": 18,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "tube",
+        "label": "SH07"
+      }
+    },
+    {
+      "skuId": "granola_blue_08",
+      "displayNameKey": "sku.granola_blue_08",
+      "category": "snack",
+      "silhouetteClass": "box",
+      "rarity": "common",
+      "prefabAddress": "products/granola_blue_08.prefab",
+      "iconAddress": "icons/granola_blue_08.png",
+      "unlockLevel": 18,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "box",
+        "label": "GR08"
+      }
+    },
+    {
+      "skuId": "cola_red_08",
+      "displayNameKey": "sku.cola_red_08",
+      "category": "drink",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/cola_red_08.prefab",
+      "iconAddress": "icons/cola_red_08.png",
+      "unlockLevel": 18,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "bottle",
+        "label": "CO08"
+      }
+    },
+    {
+      "skuId": "plum_green_08",
+      "displayNameKey": "sku.plum_green_08",
+      "category": "fruit",
+      "silhouetteClass": "pouch",
+      "rarity": "uncommon",
+      "prefabAddress": "products/plum_green_08.prefab",
+      "iconAddress": "icons/plum_green_08.png",
+      "unlockLevel": 19,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "pouch",
+        "label": "PL08"
+      }
+    },
+    {
+      "skuId": "top_yellow_08",
+      "displayNameKey": "sku.top_yellow_08",
+      "category": "toy",
+      "silhouetteClass": "round",
+      "rarity": "uncommon",
+      "prefabAddress": "products/top_yellow_08.prefab",
+      "iconAddress": "icons/top_yellow_08.png",
+      "unlockLevel": 19,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "sphere",
+        "label": "TO08"
+      }
+    },
+    {
+      "skuId": "cone_violet_08",
+      "displayNameKey": "sku.cone_violet_08",
+      "category": "sport",
+      "silhouetteClass": "can",
+      "rarity": "uncommon",
+      "prefabAddress": "products/cone_violet_08.prefab",
+      "iconAddress": "icons/cone_violet_08.png",
+      "unlockLevel": 19,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "can",
+        "label": "CO08"
+      }
+    },
+    {
+      "skuId": "candle_teal_08",
+      "displayNameKey": "sku.candle_teal_08",
+      "category": "home",
+      "silhouetteClass": "toy",
+      "rarity": "uncommon",
+      "prefabAddress": "products/candle_teal_08.prefab",
+      "iconAddress": "icons/candle_teal_08.png",
+      "unlockLevel": 19,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "toy",
+        "label": "CA08"
+      }
+    },
+    {
+      "skuId": "stamp_orange_08",
+      "displayNameKey": "sku.stamp_orange_08",
+      "category": "stationery",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/stamp_orange_08.prefab",
+      "iconAddress": "icons/stamp_orange_08.png",
+      "unlockLevel": 20,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "tube",
+        "label": "ST08"
+      }
+    },
+    {
+      "skuId": "cake_pink_08",
+      "displayNameKey": "sku.cake_pink_08",
+      "category": "bakery",
+      "silhouetteClass": "box",
+      "rarity": "uncommon",
+      "prefabAddress": "products/cake_pink_08.prefab",
+      "iconAddress": "icons/cake_pink_08.png",
+      "unlockLevel": 20,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "box",
+        "label": "CA08"
+      }
+    },
+    {
+      "skuId": "spray_navy_08",
+      "displayNameKey": "sku.spray_navy_08",
+      "category": "cosmetic",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/spray_navy_08.prefab",
+      "iconAddress": "icons/spray_navy_08.png",
+      "unlockLevel": 20,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "bottle",
+        "label": "SP08"
+      }
+    },
+    {
+      "skuId": "flower_cocoa_08",
+      "displayNameKey": "sku.flower_cocoa_08",
+      "category": "seasonal",
+      "silhouetteClass": "pouch",
+      "rarity": "uncommon",
+      "prefabAddress": "products/flower_cocoa_08.prefab",
+      "iconAddress": "icons/flower_cocoa_08.png",
+      "unlockLevel": 20,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "pouch",
+        "label": "FL08"
+      }
+    },
+    {
+      "skuId": "nuts_blue_09",
+      "displayNameKey": "sku.nuts_blue_09",
+      "category": "snack",
+      "silhouetteClass": "round",
+      "rarity": "uncommon",
+      "prefabAddress": "products/nuts_blue_09.prefab",
+      "iconAddress": "icons/nuts_blue_09.png",
+      "unlockLevel": 21,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "sphere",
+        "label": "NU09"
+      }
+    },
+    {
+      "skuId": "lemonade_red_09",
+      "displayNameKey": "sku.lemonade_red_09",
+      "category": "drink",
+      "silhouetteClass": "can",
+      "rarity": "uncommon",
+      "prefabAddress": "products/lemonade_red_09.prefab",
+      "iconAddress": "icons/lemonade_red_09.png",
+      "unlockLevel": 21,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "can",
+        "label": "LE09"
+      }
+    },
+    {
+      "skuId": "mango_green_09",
+      "displayNameKey": "sku.mango_green_09",
+      "category": "fruit",
+      "silhouetteClass": "toy",
+      "rarity": "uncommon",
+      "prefabAddress": "products/mango_green_09.prefab",
+      "iconAddress": "icons/mango_green_09.png",
+      "unlockLevel": 21,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "toy",
+        "label": "MA09"
+      }
+    },
+    {
+      "skuId": "yo_yo_yellow_09",
+      "displayNameKey": "sku.yo_yo_yellow_09",
+      "category": "toy",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/yo_yo_yellow_09.prefab",
+      "iconAddress": "icons/yo_yo_yellow_09.png",
+      "unlockLevel": 21,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "tube",
+        "label": "YO09"
+      }
+    },
+    {
+      "skuId": "skate_violet_09",
+      "displayNameKey": "sku.skate_violet_09",
+      "category": "sport",
+      "silhouetteClass": "box",
+      "rarity": "uncommon",
+      "prefabAddress": "products/skate_violet_09.prefab",
+      "iconAddress": "icons/skate_violet_09.png",
+      "unlockLevel": 22,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "box",
+        "label": "SK09"
+      }
+    },
+    {
+      "skuId": "basket_teal_09",
+      "displayNameKey": "sku.basket_teal_09",
+      "category": "home",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/basket_teal_09.prefab",
+      "iconAddress": "icons/basket_teal_09.png",
+      "unlockLevel": 22,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "bottle",
+        "label": "BA09"
+      }
+    },
+    {
+      "skuId": "card_orange_09",
+      "displayNameKey": "sku.card_orange_09",
+      "category": "stationery",
+      "silhouetteClass": "pouch",
+      "rarity": "uncommon",
+      "prefabAddress": "products/card_orange_09.prefab",
+      "iconAddress": "icons/card_orange_09.png",
+      "unlockLevel": 22,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "pouch",
+        "label": "CA09"
+      }
+    },
+    {
+      "skuId": "bun_pink_09",
+      "displayNameKey": "sku.bun_pink_09",
+      "category": "bakery",
+      "silhouetteClass": "round",
+      "rarity": "uncommon",
+      "prefabAddress": "products/bun_pink_09.prefab",
+      "iconAddress": "icons/bun_pink_09.png",
+      "unlockLevel": 22,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "sphere",
+        "label": "BU09"
+      }
+    },
+    {
+      "skuId": "tube_navy_09",
+      "displayNameKey": "sku.tube_navy_09",
+      "category": "cosmetic",
+      "silhouetteClass": "can",
+      "rarity": "uncommon",
+      "prefabAddress": "products/tube_navy_09.prefab",
+      "iconAddress": "icons/tube_navy_09.png",
+      "unlockLevel": 23,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "can",
+        "label": "TU09"
+      }
+    },
+    {
+      "skuId": "ribbon_cocoa_09",
+      "displayNameKey": "sku.ribbon_cocoa_09",
+      "category": "seasonal",
+      "silhouetteClass": "toy",
+      "rarity": "uncommon",
+      "prefabAddress": "products/ribbon_cocoa_09.prefab",
+      "iconAddress": "icons/ribbon_cocoa_09.png",
+      "unlockLevel": 23,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "toy",
+        "label": "RI09"
+      }
+    },
+    {
+      "skuId": "candy_blue_10",
+      "displayNameKey": "sku.candy_blue_10",
+      "category": "snack",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/candy_blue_10.prefab",
+      "iconAddress": "icons/candy_blue_10.png",
+      "unlockLevel": 23,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "tube",
+        "label": "CA10"
+      }
+    },
+    {
+      "skuId": "coffee_red_10",
+      "displayNameKey": "sku.coffee_red_10",
+      "category": "drink",
+      "silhouetteClass": "box",
+      "rarity": "uncommon",
+      "prefabAddress": "products/coffee_red_10.prefab",
+      "iconAddress": "icons/coffee_red_10.png",
+      "unlockLevel": 23,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "box",
+        "label": "CO10"
+      }
+    },
+    {
+      "skuId": "grape_green_10",
+      "displayNameKey": "sku.grape_green_10",
+      "category": "fruit",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/grape_green_10.prefab",
+      "iconAddress": "icons/grape_green_10.png",
+      "unlockLevel": 24,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "bottle",
+        "label": "GR10"
+      }
+    },
+    {
+      "skuId": "dino_yellow_10",
+      "displayNameKey": "sku.dino_yellow_10",
+      "category": "toy",
+      "silhouetteClass": "pouch",
+      "rarity": "uncommon",
+      "prefabAddress": "products/dino_yellow_10.prefab",
+      "iconAddress": "icons/dino_yellow_10.png",
+      "unlockLevel": 24,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "pouch",
+        "label": "DI10"
+      }
+    },
+    {
+      "skuId": "puck_violet_10",
+      "displayNameKey": "sku.puck_violet_10",
+      "category": "sport",
+      "silhouetteClass": "round",
+      "rarity": "uncommon",
+      "prefabAddress": "products/puck_violet_10.prefab",
+      "iconAddress": "icons/puck_violet_10.png",
+      "unlockLevel": 24,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "sphere",
+        "label": "PU10"
+      }
+    },
+    {
+      "skuId": "clock_teal_10",
+      "displayNameKey": "sku.clock_teal_10",
+      "category": "home",
+      "silhouetteClass": "can",
+      "rarity": "uncommon",
+      "prefabAddress": "products/clock_teal_10.prefab",
+      "iconAddress": "icons/clock_teal_10.png",
+      "unlockLevel": 24,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "can",
+        "label": "CL10"
+      }
+    },
+    {
+      "skuId": "ruler_orange_10",
+      "displayNameKey": "sku.ruler_orange_10",
+      "category": "stationery",
+      "silhouetteClass": "toy",
+      "rarity": "uncommon",
+      "prefabAddress": "products/ruler_orange_10.prefab",
+      "iconAddress": "icons/ruler_orange_10.png",
+      "unlockLevel": 25,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "toy",
+        "label": "RU10"
+      }
+    },
+    {
+      "skuId": "tart_pink_10",
+      "displayNameKey": "sku.tart_pink_10",
+      "category": "bakery",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/tart_pink_10.prefab",
+      "iconAddress": "icons/tart_pink_10.png",
+      "unlockLevel": 25,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "tube",
+        "label": "TA10"
+      }
+    },
+    {
+      "skuId": "jar_navy_10",
+      "displayNameKey": "sku.jar_navy_10",
+      "category": "cosmetic",
+      "silhouetteClass": "box",
+      "rarity": "uncommon",
+      "prefabAddress": "products/jar_navy_10.prefab",
+      "iconAddress": "icons/jar_navy_10.png",
+      "unlockLevel": 25,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "box",
+        "label": "JA10"
+      }
+    },
+    {
+      "skuId": "bell_cocoa_10",
+      "displayNameKey": "sku.bell_cocoa_10",
+      "category": "seasonal",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/bell_cocoa_10.prefab",
+      "iconAddress": "icons/bell_cocoa_10.png",
+      "unlockLevel": 25,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "bottle",
+        "label": "BE10"
+      }
+    },
+    {
+      "skuId": "chips_blue_11",
+      "displayNameKey": "sku.chips_blue_11",
+      "category": "snack",
+      "silhouetteClass": "pouch",
+      "rarity": "uncommon",
+      "prefabAddress": "products/chips_blue_11.prefab",
+      "iconAddress": "icons/chips_blue_11.png",
+      "unlockLevel": 26,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "pouch",
+        "label": "CH11"
+      }
+    },
+    {
+      "skuId": "soda_red_11",
+      "displayNameKey": "sku.soda_red_11",
+      "category": "drink",
+      "silhouetteClass": "round",
+      "rarity": "uncommon",
+      "prefabAddress": "products/soda_red_11.prefab",
+      "iconAddress": "icons/soda_red_11.png",
+      "unlockLevel": 26,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "sphere",
+        "label": "SO11"
+      }
+    },
+    {
+      "skuId": "pear_green_11",
+      "displayNameKey": "sku.pear_green_11",
+      "category": "fruit",
+      "silhouetteClass": "can",
+      "rarity": "uncommon",
+      "prefabAddress": "products/pear_green_11.prefab",
+      "iconAddress": "icons/pear_green_11.png",
+      "unlockLevel": 26,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "can",
+        "label": "PE11"
+      }
+    },
+    {
+      "skuId": "robot_yellow_11",
+      "displayNameKey": "sku.robot_yellow_11",
+      "category": "toy",
+      "silhouetteClass": "toy",
+      "rarity": "uncommon",
+      "prefabAddress": "products/robot_yellow_11.prefab",
+      "iconAddress": "icons/robot_yellow_11.png",
+      "unlockLevel": 26,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "toy",
+        "label": "RO11"
+      }
+    },
+    {
+      "skuId": "ball_violet_11",
+      "displayNameKey": "sku.ball_violet_11",
+      "category": "sport",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/ball_violet_11.prefab",
+      "iconAddress": "icons/ball_violet_11.png",
+      "unlockLevel": 27,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "tube",
+        "label": "BA11"
+      }
+    },
+    {
+      "skuId": "soap_teal_11",
+      "displayNameKey": "sku.soap_teal_11",
+      "category": "home",
+      "silhouetteClass": "box",
+      "rarity": "uncommon",
+      "prefabAddress": "products/soap_teal_11.prefab",
+      "iconAddress": "icons/soap_teal_11.png",
+      "unlockLevel": 27,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "box",
+        "label": "SO11"
+      }
+    },
+    {
+      "skuId": "pencil_orange_11",
+      "displayNameKey": "sku.pencil_orange_11",
+      "category": "stationery",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/pencil_orange_11.prefab",
+      "iconAddress": "icons/pencil_orange_11.png",
+      "unlockLevel": 27,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "bottle",
+        "label": "PE11"
+      }
+    },
+    {
+      "skuId": "bread_pink_11",
+      "displayNameKey": "sku.bread_pink_11",
+      "category": "bakery",
+      "silhouetteClass": "pouch",
+      "rarity": "uncommon",
+      "prefabAddress": "products/bread_pink_11.prefab",
+      "iconAddress": "icons/bread_pink_11.png",
+      "unlockLevel": 27,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "pouch",
+        "label": "BR11"
+      }
+    },
+    {
+      "skuId": "cream_navy_11",
+      "displayNameKey": "sku.cream_navy_11",
+      "category": "cosmetic",
+      "silhouetteClass": "round",
+      "rarity": "uncommon",
+      "prefabAddress": "products/cream_navy_11.prefab",
+      "iconAddress": "icons/cream_navy_11.png",
+      "unlockLevel": 28,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "sphere",
+        "label": "CR11"
+      }
+    },
+    {
+      "skuId": "star_cocoa_11",
+      "displayNameKey": "sku.star_cocoa_11",
+      "category": "seasonal",
+      "silhouetteClass": "can",
+      "rarity": "uncommon",
+      "prefabAddress": "products/star_cocoa_11.prefab",
+      "iconAddress": "icons/star_cocoa_11.png",
+      "unlockLevel": 28,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "can",
+        "label": "ST11"
+      }
+    },
+    {
+      "skuId": "pretzel_blue_12",
+      "displayNameKey": "sku.pretzel_blue_12",
+      "category": "snack",
+      "silhouetteClass": "toy",
+      "rarity": "uncommon",
+      "prefabAddress": "products/pretzel_blue_12.prefab",
+      "iconAddress": "icons/pretzel_blue_12.png",
+      "unlockLevel": 28,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "toy",
+        "label": "PR12"
+      }
+    },
+    {
+      "skuId": "juice_red_12",
+      "displayNameKey": "sku.juice_red_12",
+      "category": "drink",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/juice_red_12.prefab",
+      "iconAddress": "icons/juice_red_12.png",
+      "unlockLevel": 28,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "tube",
+        "label": "JU12"
+      }
+    },
+    {
+      "skuId": "apple_green_12",
+      "displayNameKey": "sku.apple_green_12",
+      "category": "fruit",
+      "silhouetteClass": "box",
+      "rarity": "uncommon",
+      "prefabAddress": "products/apple_green_12.prefab",
+      "iconAddress": "icons/apple_green_12.png",
+      "unlockLevel": 29,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "box",
+        "label": "AP12"
+      }
+    },
+    {
+      "skuId": "bear_yellow_12",
+      "displayNameKey": "sku.bear_yellow_12",
+      "category": "toy",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/bear_yellow_12.prefab",
+      "iconAddress": "icons/bear_yellow_12.png",
+      "unlockLevel": 29,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "bottle",
+        "label": "BE12"
+      }
+    },
+    {
+      "skuId": "glove_violet_12",
+      "displayNameKey": "sku.glove_violet_12",
+      "category": "sport",
+      "silhouetteClass": "pouch",
+      "rarity": "uncommon",
+      "prefabAddress": "products/glove_violet_12.prefab",
+      "iconAddress": "icons/glove_violet_12.png",
+      "unlockLevel": 29,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "pouch",
+        "label": "GL12"
+      }
+    },
+    {
+      "skuId": "towel_teal_12",
+      "displayNameKey": "sku.towel_teal_12",
+      "category": "home",
+      "silhouetteClass": "round",
+      "rarity": "uncommon",
+      "prefabAddress": "products/towel_teal_12.prefab",
+      "iconAddress": "icons/towel_teal_12.png",
+      "unlockLevel": 29,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "sphere",
+        "label": "TO12"
+      }
+    },
+    {
+      "skuId": "marker_orange_12",
+      "displayNameKey": "sku.marker_orange_12",
+      "category": "stationery",
+      "silhouetteClass": "can",
+      "rarity": "uncommon",
+      "prefabAddress": "products/marker_orange_12.prefab",
+      "iconAddress": "icons/marker_orange_12.png",
+      "unlockLevel": 30,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "can",
+        "label": "MA12"
+      }
+    },
+    {
+      "skuId": "bagel_pink_12",
+      "displayNameKey": "sku.bagel_pink_12",
+      "category": "bakery",
+      "silhouetteClass": "toy",
+      "rarity": "uncommon",
+      "prefabAddress": "products/bagel_pink_12.prefab",
+      "iconAddress": "icons/bagel_pink_12.png",
+      "unlockLevel": 30,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "toy",
+        "label": "BA12"
+      }
+    },
+    {
+      "skuId": "lotion_navy_12",
+      "displayNameKey": "sku.lotion_navy_12",
+      "category": "cosmetic",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/lotion_navy_12.prefab",
+      "iconAddress": "icons/lotion_navy_12.png",
+      "unlockLevel": 30,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "tube",
+        "label": "LO12"
+      }
+    },
+    {
+      "skuId": "snowbox_cocoa_12",
+      "displayNameKey": "sku.snowbox_cocoa_12",
+      "category": "seasonal",
+      "silhouetteClass": "box",
+      "rarity": "uncommon",
+      "prefabAddress": "products/snowbox_cocoa_12.prefab",
+      "iconAddress": "icons/snowbox_cocoa_12.png",
+      "unlockLevel": 30,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "box",
+        "label": "SN12"
+      }
+    },
+    {
+      "skuId": "cracker_blue_13",
+      "displayNameKey": "sku.cracker_blue_13",
+      "category": "snack",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/cracker_blue_13.prefab",
+      "iconAddress": "icons/cracker_blue_13.png",
+      "unlockLevel": 31,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "bottle",
+        "label": "CR13"
+      }
+    },
+    {
+      "skuId": "water_red_13",
+      "displayNameKey": "sku.water_red_13",
+      "category": "drink",
+      "silhouetteClass": "pouch",
+      "rarity": "uncommon",
+      "prefabAddress": "products/water_red_13.prefab",
+      "iconAddress": "icons/water_red_13.png",
+      "unlockLevel": 31,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "pouch",
+        "label": "WA13"
+      }
+    },
+    {
+      "skuId": "berry_green_13",
+      "displayNameKey": "sku.berry_green_13",
+      "category": "fruit",
+      "silhouetteClass": "round",
+      "rarity": "uncommon",
+      "prefabAddress": "products/berry_green_13.prefab",
+      "iconAddress": "icons/berry_green_13.png",
+      "unlockLevel": 31,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "sphere",
+        "label": "BE13"
+      }
+    },
+    {
+      "skuId": "cube_yellow_13",
+      "displayNameKey": "sku.cube_yellow_13",
+      "category": "toy",
+      "silhouetteClass": "can",
+      "rarity": "uncommon",
+      "prefabAddress": "products/cube_yellow_13.prefab",
+      "iconAddress": "icons/cube_yellow_13.png",
+      "unlockLevel": 31,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "can",
+        "label": "CU13"
+      }
+    },
+    {
+      "skuId": "cap_violet_13",
+      "displayNameKey": "sku.cap_violet_13",
+      "category": "sport",
+      "silhouetteClass": "toy",
+      "rarity": "uncommon",
+      "prefabAddress": "products/cap_violet_13.prefab",
+      "iconAddress": "icons/cap_violet_13.png",
+      "unlockLevel": 32,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "toy",
+        "label": "CA13"
+      }
+    },
+    {
+      "skuId": "brush_teal_13",
+      "displayNameKey": "sku.brush_teal_13",
+      "category": "home",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/brush_teal_13.prefab",
+      "iconAddress": "icons/brush_teal_13.png",
+      "unlockLevel": 32,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "tube",
+        "label": "BR13"
+      }
+    },
+    {
+      "skuId": "notebook_orange_13",
+      "displayNameKey": "sku.notebook_orange_13",
+      "category": "stationery",
+      "silhouetteClass": "box",
+      "rarity": "uncommon",
+      "prefabAddress": "products/notebook_orange_13.prefab",
+      "iconAddress": "icons/notebook_orange_13.png",
+      "unlockLevel": 32,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "box",
+        "label": "NO13"
+      }
+    },
+    {
+      "skuId": "muffin_pink_13",
+      "displayNameKey": "sku.muffin_pink_13",
+      "category": "bakery",
+      "silhouetteClass": "tall",
+      "rarity": "uncommon",
+      "prefabAddress": "products/muffin_pink_13.prefab",
+      "iconAddress": "icons/muffin_pink_13.png",
+      "unlockLevel": 32,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "bottle",
+        "label": "MU13"
+      }
+    },
+    {
+      "skuId": "comb_navy_13",
+      "displayNameKey": "sku.comb_navy_13",
+      "category": "cosmetic",
+      "silhouetteClass": "pouch",
+      "rarity": "uncommon",
+      "prefabAddress": "products/comb_navy_13.prefab",
+      "iconAddress": "icons/comb_navy_13.png",
+      "unlockLevel": 33,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "pouch",
+        "label": "CO13"
+      }
+    },
+    {
+      "skuId": "sunpack_cocoa_13",
+      "displayNameKey": "sku.sunpack_cocoa_13",
+      "category": "seasonal",
+      "silhouetteClass": "round",
+      "rarity": "uncommon",
+      "prefabAddress": "products/sunpack_cocoa_13.prefab",
+      "iconAddress": "icons/sunpack_cocoa_13.png",
+      "unlockLevel": 33,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "sphere",
+        "label": "SU13"
+      }
+    },
+    {
+      "skuId": "popcorn_blue_14",
+      "displayNameKey": "sku.popcorn_blue_14",
+      "category": "snack",
+      "silhouetteClass": "can",
+      "rarity": "uncommon",
+      "prefabAddress": "products/popcorn_blue_14.prefab",
+      "iconAddress": "icons/popcorn_blue_14.png",
+      "unlockLevel": 33,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "can",
+        "label": "PO14"
+      }
+    },
+    {
+      "skuId": "tea_red_14",
+      "displayNameKey": "sku.tea_red_14",
+      "category": "drink",
+      "silhouetteClass": "toy",
+      "rarity": "rare",
+      "prefabAddress": "products/tea_red_14.prefab",
+      "iconAddress": "icons/tea_red_14.png",
+      "unlockLevel": 33,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "toy",
+        "label": "TE14"
+      }
+    },
+    {
+      "skuId": "melon_green_14",
+      "displayNameKey": "sku.melon_green_14",
+      "category": "fruit",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/melon_green_14.prefab",
+      "iconAddress": "icons/melon_green_14.png",
+      "unlockLevel": 34,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "tube",
+        "label": "ME14"
+      }
+    },
+    {
+      "skuId": "rocket_yellow_14",
+      "displayNameKey": "sku.rocket_yellow_14",
+      "category": "toy",
+      "silhouetteClass": "box",
+      "rarity": "rare",
+      "prefabAddress": "products/rocket_yellow_14.prefab",
+      "iconAddress": "icons/rocket_yellow_14.png",
+      "unlockLevel": 34,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "box",
+        "label": "RO14"
+      }
+    },
+    {
+      "skuId": "racket_violet_14",
+      "displayNameKey": "sku.racket_violet_14",
+      "category": "sport",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/racket_violet_14.prefab",
+      "iconAddress": "icons/racket_violet_14.png",
+      "unlockLevel": 34,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "bottle",
+        "label": "RA14"
+      }
+    },
+    {
+      "skuId": "lamp_teal_14",
+      "displayNameKey": "sku.lamp_teal_14",
+      "category": "home",
+      "silhouetteClass": "pouch",
+      "rarity": "rare",
+      "prefabAddress": "products/lamp_teal_14.prefab",
+      "iconAddress": "icons/lamp_teal_14.png",
+      "unlockLevel": 34,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "pouch",
+        "label": "LA14"
+      }
+    },
+    {
+      "skuId": "eraser_orange_14",
+      "displayNameKey": "sku.eraser_orange_14",
+      "category": "stationery",
+      "silhouetteClass": "round",
+      "rarity": "rare",
+      "prefabAddress": "products/eraser_orange_14.prefab",
+      "iconAddress": "icons/eraser_orange_14.png",
+      "unlockLevel": 35,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "sphere",
+        "label": "ER14"
+      }
+    },
+    {
+      "skuId": "croissant_pink_14",
+      "displayNameKey": "sku.croissant_pink_14",
+      "category": "bakery",
+      "silhouetteClass": "can",
+      "rarity": "rare",
+      "prefabAddress": "products/croissant_pink_14.prefab",
+      "iconAddress": "icons/croissant_pink_14.png",
+      "unlockLevel": 35,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "can",
+        "label": "CR14"
+      }
+    },
+    {
+      "skuId": "mirror_navy_14",
+      "displayNameKey": "sku.mirror_navy_14",
+      "category": "cosmetic",
+      "silhouetteClass": "toy",
+      "rarity": "rare",
+      "prefabAddress": "products/mirror_navy_14.prefab",
+      "iconAddress": "icons/mirror_navy_14.png",
+      "unlockLevel": 35,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "toy",
+        "label": "MI14"
+      }
+    },
+    {
+      "skuId": "leaf_cocoa_14",
+      "displayNameKey": "sku.leaf_cocoa_14",
+      "category": "seasonal",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/leaf_cocoa_14.prefab",
+      "iconAddress": "icons/leaf_cocoa_14.png",
+      "unlockLevel": 35,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "tube",
+        "label": "LE14"
+      }
+    },
+    {
+      "skuId": "cookie_blue_15",
+      "displayNameKey": "sku.cookie_blue_15",
+      "category": "snack",
+      "silhouetteClass": "box",
+      "rarity": "rare",
+      "prefabAddress": "products/cookie_blue_15.prefab",
+      "iconAddress": "icons/cookie_blue_15.png",
+      "unlockLevel": 36,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "box",
+        "label": "CO15"
+      }
+    },
+    {
+      "skuId": "milk_red_15",
+      "displayNameKey": "sku.milk_red_15",
+      "category": "drink",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/milk_red_15.prefab",
+      "iconAddress": "icons/milk_red_15.png",
+      "unlockLevel": 36,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "bottle",
+        "label": "MI15"
+      }
+    },
+    {
+      "skuId": "banana_green_15",
+      "displayNameKey": "sku.banana_green_15",
+      "category": "fruit",
+      "silhouetteClass": "pouch",
+      "rarity": "rare",
+      "prefabAddress": "products/banana_green_15.prefab",
+      "iconAddress": "icons/banana_green_15.png",
+      "unlockLevel": 36,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "pouch",
+        "label": "BA15"
+      }
+    },
+    {
+      "skuId": "puzzle_yellow_15",
+      "displayNameKey": "sku.puzzle_yellow_15",
+      "category": "toy",
+      "silhouetteClass": "round",
+      "rarity": "rare",
+      "prefabAddress": "products/puzzle_yellow_15.prefab",
+      "iconAddress": "icons/puzzle_yellow_15.png",
+      "unlockLevel": 36,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "sphere",
+        "label": "PU15"
+      }
+    },
+    {
+      "skuId": "shoe_violet_15",
+      "displayNameKey": "sku.shoe_violet_15",
+      "category": "sport",
+      "silhouetteClass": "can",
+      "rarity": "rare",
+      "prefabAddress": "products/shoe_violet_15.prefab",
+      "iconAddress": "icons/shoe_violet_15.png",
+      "unlockLevel": 37,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "can",
+        "label": "SH15"
+      }
+    },
+    {
+      "skuId": "mug_teal_15",
+      "displayNameKey": "sku.mug_teal_15",
+      "category": "home",
+      "silhouetteClass": "toy",
+      "rarity": "rare",
+      "prefabAddress": "products/mug_teal_15.prefab",
+      "iconAddress": "icons/mug_teal_15.png",
+      "unlockLevel": 37,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "toy",
+        "label": "MU15"
+      }
+    },
+    {
+      "skuId": "clip_orange_15",
+      "displayNameKey": "sku.clip_orange_15",
+      "category": "stationery",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/clip_orange_15.prefab",
+      "iconAddress": "icons/clip_orange_15.png",
+      "unlockLevel": 37,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "tube",
+        "label": "CL15"
+      }
+    },
+    {
+      "skuId": "donut_pink_15",
+      "displayNameKey": "sku.donut_pink_15",
+      "category": "bakery",
+      "silhouetteClass": "box",
+      "rarity": "rare",
+      "prefabAddress": "products/donut_pink_15.prefab",
+      "iconAddress": "icons/donut_pink_15.png",
+      "unlockLevel": 37,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "box",
+        "label": "DO15"
+      }
+    },
+    {
+      "skuId": "powder_navy_15",
+      "displayNameKey": "sku.powder_navy_15",
+      "category": "cosmetic",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/powder_navy_15.prefab",
+      "iconAddress": "icons/powder_navy_15.png",
+      "unlockLevel": 38,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "bottle",
+        "label": "PO15"
+      }
+    },
+    {
+      "skuId": "gift_cocoa_15",
+      "displayNameKey": "sku.gift_cocoa_15",
+      "category": "seasonal",
+      "silhouetteClass": "pouch",
+      "rarity": "rare",
+      "prefabAddress": "products/gift_cocoa_15.prefab",
+      "iconAddress": "icons/gift_cocoa_15.png",
+      "unlockLevel": 38,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "pouch",
+        "label": "GI15"
+      }
+    },
+    {
+      "skuId": "wafer_blue_16",
+      "displayNameKey": "sku.wafer_blue_16",
+      "category": "snack",
+      "silhouetteClass": "round",
+      "rarity": "rare",
+      "prefabAddress": "products/wafer_blue_16.prefab",
+      "iconAddress": "icons/wafer_blue_16.png",
+      "unlockLevel": 38,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "sphere",
+        "label": "WA16"
+      }
+    },
+    {
+      "skuId": "smoothie_red_16",
+      "displayNameKey": "sku.smoothie_red_16",
+      "category": "drink",
+      "silhouetteClass": "can",
+      "rarity": "rare",
+      "prefabAddress": "products/smoothie_red_16.prefab",
+      "iconAddress": "icons/smoothie_red_16.png",
+      "unlockLevel": 38,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "can",
+        "label": "SM16"
+      }
+    },
+    {
+      "skuId": "kiwi_green_16",
+      "displayNameKey": "sku.kiwi_green_16",
+      "category": "fruit",
+      "silhouetteClass": "toy",
+      "rarity": "rare",
+      "prefabAddress": "products/kiwi_green_16.prefab",
+      "iconAddress": "icons/kiwi_green_16.png",
+      "unlockLevel": 39,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "toy",
+        "label": "KI16"
+      }
+    },
+    {
+      "skuId": "car_yellow_16",
+      "displayNameKey": "sku.car_yellow_16",
+      "category": "toy",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/car_yellow_16.prefab",
+      "iconAddress": "icons/car_yellow_16.png",
+      "unlockLevel": 39,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "tube",
+        "label": "CA16"
+      }
+    },
+    {
+      "skuId": "whistle_violet_16",
+      "displayNameKey": "sku.whistle_violet_16",
+      "category": "sport",
+      "silhouetteClass": "box",
+      "rarity": "rare",
+      "prefabAddress": "products/whistle_violet_16.prefab",
+      "iconAddress": "icons/whistle_violet_16.png",
+      "unlockLevel": 39,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "box",
+        "label": "WH16"
+      }
+    },
+    {
+      "skuId": "plant_teal_16",
+      "displayNameKey": "sku.plant_teal_16",
+      "category": "home",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/plant_teal_16.prefab",
+      "iconAddress": "icons/plant_teal_16.png",
+      "unlockLevel": 39,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "bottle",
+        "label": "PL16"
+      }
+    },
+    {
+      "skuId": "tape_orange_16",
+      "displayNameKey": "sku.tape_orange_16",
+      "category": "stationery",
+      "silhouetteClass": "pouch",
+      "rarity": "rare",
+      "prefabAddress": "products/tape_orange_16.prefab",
+      "iconAddress": "icons/tape_orange_16.png",
+      "unlockLevel": 40,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "pouch",
+        "label": "TA16"
+      }
+    },
+    {
+      "skuId": "pie_pink_16",
+      "displayNameKey": "sku.pie_pink_16",
+      "category": "bakery",
+      "silhouetteClass": "round",
+      "rarity": "rare",
+      "prefabAddress": "products/pie_pink_16.prefab",
+      "iconAddress": "icons/pie_pink_16.png",
+      "unlockLevel": 40,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "sphere",
+        "label": "PI16"
+      }
+    },
+    {
+      "skuId": "balm_navy_16",
+      "displayNameKey": "sku.balm_navy_16",
+      "category": "cosmetic",
+      "silhouetteClass": "can",
+      "rarity": "rare",
+      "prefabAddress": "products/balm_navy_16.prefab",
+      "iconAddress": "icons/balm_navy_16.png",
+      "unlockLevel": 40,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "can",
+        "label": "BA16"
+      }
+    },
+    {
+      "skuId": "lantern_cocoa_16",
+      "displayNameKey": "sku.lantern_cocoa_16",
+      "category": "seasonal",
+      "silhouetteClass": "toy",
+      "rarity": "rare",
+      "prefabAddress": "products/lantern_cocoa_16.prefab",
+      "iconAddress": "icons/lantern_cocoa_16.png",
+      "unlockLevel": 40,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "toy",
+        "label": "LA16"
+      }
+    },
+    {
+      "skuId": "nacho_blue_17",
+      "displayNameKey": "sku.nacho_blue_17",
+      "category": "snack",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/nacho_blue_17.prefab",
+      "iconAddress": "icons/nacho_blue_17.png",
+      "unlockLevel": 41,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "tube",
+        "label": "NA17"
+      }
+    },
+    {
+      "skuId": "tonic_red_17",
+      "displayNameKey": "sku.tonic_red_17",
+      "category": "drink",
+      "silhouetteClass": "box",
+      "rarity": "rare",
+      "prefabAddress": "products/tonic_red_17.prefab",
+      "iconAddress": "icons/tonic_red_17.png",
+      "unlockLevel": 41,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "box",
+        "label": "TO17"
+      }
+    },
+    {
+      "skuId": "peach_green_17",
+      "displayNameKey": "sku.peach_green_17",
+      "category": "fruit",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/peach_green_17.prefab",
+      "iconAddress": "icons/peach_green_17.png",
+      "unlockLevel": 41,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "bottle",
+        "label": "PE17"
+      }
+    },
+    {
+      "skuId": "duck_yellow_17",
+      "displayNameKey": "sku.duck_yellow_17",
+      "category": "toy",
+      "silhouetteClass": "pouch",
+      "rarity": "rare",
+      "prefabAddress": "products/duck_yellow_17.prefab",
+      "iconAddress": "icons/duck_yellow_17.png",
+      "unlockLevel": 41,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "pouch",
+        "label": "DU17"
+      }
+    },
+    {
+      "skuId": "medal_violet_17",
+      "displayNameKey": "sku.medal_violet_17",
+      "category": "sport",
+      "silhouetteClass": "round",
+      "rarity": "rare",
+      "prefabAddress": "products/medal_violet_17.prefab",
+      "iconAddress": "icons/medal_violet_17.png",
+      "unlockLevel": 42,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "sphere",
+        "label": "ME17"
+      }
+    },
+    {
+      "skuId": "sponge_teal_17",
+      "displayNameKey": "sku.sponge_teal_17",
+      "category": "home",
+      "silhouetteClass": "can",
+      "rarity": "rare",
+      "prefabAddress": "products/sponge_teal_17.prefab",
+      "iconAddress": "icons/sponge_teal_17.png",
+      "unlockLevel": 42,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "can",
+        "label": "SP17"
+      }
+    },
+    {
+      "skuId": "folder_orange_17",
+      "displayNameKey": "sku.folder_orange_17",
+      "category": "stationery",
+      "silhouetteClass": "toy",
+      "rarity": "rare",
+      "prefabAddress": "products/folder_orange_17.prefab",
+      "iconAddress": "icons/folder_orange_17.png",
+      "unlockLevel": 42,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "toy",
+        "label": "FO17"
+      }
+    },
+    {
+      "skuId": "roll_pink_17",
+      "displayNameKey": "sku.roll_pink_17",
+      "category": "bakery",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/roll_pink_17.prefab",
+      "iconAddress": "icons/roll_pink_17.png",
+      "unlockLevel": 42,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": false,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "tube",
+        "label": "RO17"
+      }
+    },
+    {
+      "skuId": "brush_navy_17",
+      "displayNameKey": "sku.brush_navy_17",
+      "category": "cosmetic",
+      "silhouetteClass": "box",
+      "rarity": "rare",
+      "prefabAddress": "products/brush_navy_17.prefab",
+      "iconAddress": "icons/brush_navy_17.png",
+      "unlockLevel": 43,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "box",
+        "label": "BR17"
+      }
+    },
+    {
+      "skuId": "shell_cocoa_17",
+      "displayNameKey": "sku.shell_cocoa_17",
+      "category": "seasonal",
+      "silhouetteClass": "tall",
+      "rarity": "rare",
+      "prefabAddress": "products/shell_cocoa_17.prefab",
+      "iconAddress": "icons/shell_cocoa_17.png",
+      "unlockLevel": 43,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "bottle",
+        "label": "SH17"
+      }
+    },
+    {
+      "skuId": "granola_blue_18",
+      "displayNameKey": "sku.granola_blue_18",
+      "category": "snack",
+      "silhouetteClass": "pouch",
+      "rarity": "rare",
+      "prefabAddress": "products/granola_blue_18.prefab",
+      "iconAddress": "icons/granola_blue_18.png",
+      "unlockLevel": 43,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": false,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "pouch",
+        "label": "GR18"
+      }
+    },
+    {
+      "skuId": "cola_red_18",
+      "displayNameKey": "sku.cola_red_18",
+      "category": "drink",
+      "silhouetteClass": "round",
+      "rarity": "seasonal",
+      "prefabAddress": "products/cola_red_18.prefab",
+      "iconAddress": "icons/cola_red_18.png",
+      "unlockLevel": 43,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "sphere",
+        "label": "CO18"
+      }
+    },
+    {
+      "skuId": "plum_green_18",
+      "displayNameKey": "sku.plum_green_18",
+      "category": "fruit",
+      "silhouetteClass": "can",
+      "rarity": "seasonal",
+      "prefabAddress": "products/plum_green_18.prefab",
+      "iconAddress": "icons/plum_green_18.png",
+      "unlockLevel": 44,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "can",
+        "label": "PL18"
+      }
+    },
+    {
+      "skuId": "top_yellow_18",
+      "displayNameKey": "sku.top_yellow_18",
+      "category": "toy",
+      "silhouetteClass": "toy",
+      "rarity": "seasonal",
+      "prefabAddress": "products/top_yellow_18.prefab",
+      "iconAddress": "icons/top_yellow_18.png",
+      "unlockLevel": 44,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "toy",
+        "label": "TO18"
+      }
+    },
+    {
+      "skuId": "cone_violet_18",
+      "displayNameKey": "sku.cone_violet_18",
+      "category": "sport",
+      "silhouetteClass": "tall",
+      "rarity": "seasonal",
+      "prefabAddress": "products/cone_violet_18.prefab",
+      "iconAddress": "icons/cone_violet_18.png",
+      "unlockLevel": 44,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "tube",
+        "label": "CO18"
+      }
+    },
+    {
+      "skuId": "candle_teal_18",
+      "displayNameKey": "sku.candle_teal_18",
+      "category": "home",
+      "silhouetteClass": "box",
+      "rarity": "seasonal",
+      "prefabAddress": "products/candle_teal_18.prefab",
+      "iconAddress": "icons/candle_teal_18.png",
+      "unlockLevel": 44,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "box",
+        "label": "CA18"
+      }
+    },
+    {
+      "skuId": "stamp_orange_18",
+      "displayNameKey": "sku.stamp_orange_18",
+      "category": "stationery",
+      "silhouetteClass": "tall",
+      "rarity": "seasonal",
+      "prefabAddress": "products/stamp_orange_18.prefab",
+      "iconAddress": "icons/stamp_orange_18.png",
+      "unlockLevel": 45,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "bottle",
+        "label": "ST18"
+      }
+    },
+    {
+      "skuId": "cake_pink_18",
+      "displayNameKey": "sku.cake_pink_18",
+      "category": "bakery",
+      "silhouetteClass": "pouch",
+      "rarity": "seasonal",
+      "prefabAddress": "products/cake_pink_18.prefab",
+      "iconAddress": "icons/cake_pink_18.png",
+      "unlockLevel": 45,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "pouch",
+        "label": "CA18"
+      }
+    },
+    {
+      "skuId": "spray_navy_18",
+      "displayNameKey": "sku.spray_navy_18",
+      "category": "cosmetic",
+      "silhouetteClass": "round",
+      "rarity": "seasonal",
+      "prefabAddress": "products/spray_navy_18.prefab",
+      "iconAddress": "icons/spray_navy_18.png",
+      "unlockLevel": 45,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "sphere",
+        "label": "SP18"
+      }
+    },
+    {
+      "skuId": "flower_cocoa_18",
+      "displayNameKey": "sku.flower_cocoa_18",
+      "category": "seasonal",
+      "silhouetteClass": "can",
+      "rarity": "seasonal",
+      "prefabAddress": "products/flower_cocoa_18.prefab",
+      "iconAddress": "icons/flower_cocoa_18.png",
+      "unlockLevel": 45,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "can",
+        "label": "FL18"
+      }
+    },
+    {
+      "skuId": "nuts_blue_19",
+      "displayNameKey": "sku.nuts_blue_19",
+      "category": "snack",
+      "silhouetteClass": "toy",
+      "rarity": "seasonal",
+      "prefabAddress": "products/nuts_blue_19.prefab",
+      "iconAddress": "icons/nuts_blue_19.png",
+      "unlockLevel": 46,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "toy",
+        "label": "NU19"
+      }
+    },
+    {
+      "skuId": "lemonade_red_19",
+      "displayNameKey": "sku.lemonade_red_19",
+      "category": "drink",
+      "silhouetteClass": "tall",
+      "rarity": "seasonal",
+      "prefabAddress": "products/lemonade_red_19.prefab",
+      "iconAddress": "icons/lemonade_red_19.png",
+      "unlockLevel": 46,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "tube",
+        "label": "LE19"
+      }
+    },
+    {
+      "skuId": "mango_green_19",
+      "displayNameKey": "sku.mango_green_19",
+      "category": "fruit",
+      "silhouetteClass": "box",
+      "rarity": "seasonal",
+      "prefabAddress": "products/mango_green_19.prefab",
+      "iconAddress": "icons/mango_green_19.png",
+      "unlockLevel": 46,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "box",
+        "label": "MA19"
+      }
+    },
+    {
+      "skuId": "yo_yo_yellow_19",
+      "displayNameKey": "sku.yo_yo_yellow_19",
+      "category": "toy",
+      "silhouetteClass": "tall",
+      "rarity": "seasonal",
+      "prefabAddress": "products/yo_yo_yellow_19.prefab",
+      "iconAddress": "icons/yo_yo_yellow_19.png",
+      "unlockLevel": 46,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "bottle",
+        "label": "YO19"
+      }
+    },
+    {
+      "skuId": "skate_violet_19",
+      "displayNameKey": "sku.skate_violet_19",
+      "category": "sport",
+      "silhouetteClass": "pouch",
+      "rarity": "seasonal",
+      "prefabAddress": "products/skate_violet_19.prefab",
+      "iconAddress": "icons/skate_violet_19.png",
+      "unlockLevel": 47,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "pouch",
+        "label": "SK19"
+      }
+    },
+    {
+      "skuId": "basket_teal_19",
+      "displayNameKey": "sku.basket_teal_19",
+      "category": "home",
+      "silhouetteClass": "round",
+      "rarity": "seasonal",
+      "prefabAddress": "products/basket_teal_19.prefab",
+      "iconAddress": "icons/basket_teal_19.png",
+      "unlockLevel": 47,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "sphere",
+        "label": "BA19"
+      }
+    },
+    {
+      "skuId": "card_orange_19",
+      "displayNameKey": "sku.card_orange_19",
+      "category": "stationery",
+      "silhouetteClass": "can",
+      "rarity": "seasonal",
+      "prefabAddress": "products/card_orange_19.prefab",
+      "iconAddress": "icons/card_orange_19.png",
+      "unlockLevel": 47,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "can",
+        "label": "CA19"
+      }
+    },
+    {
+      "skuId": "bun_pink_19",
+      "displayNameKey": "sku.bun_pink_19",
+      "category": "bakery",
+      "silhouetteClass": "toy",
+      "rarity": "seasonal",
+      "prefabAddress": "products/bun_pink_19.prefab",
+      "iconAddress": "icons/bun_pink_19.png",
+      "unlockLevel": 47,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "toy",
+        "label": "BU19"
+      }
+    },
+    {
+      "skuId": "tube_navy_19",
+      "displayNameKey": "sku.tube_navy_19",
+      "category": "cosmetic",
+      "silhouetteClass": "tall",
+      "rarity": "seasonal",
+      "prefabAddress": "products/tube_navy_19.prefab",
+      "iconAddress": "icons/tube_navy_19.png",
+      "unlockLevel": 48,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "tube",
+        "label": "TU19"
+      }
+    },
+    {
+      "skuId": "ribbon_cocoa_19",
+      "displayNameKey": "sku.ribbon_cocoa_19",
+      "category": "seasonal",
+      "silhouetteClass": "box",
+      "rarity": "seasonal",
+      "prefabAddress": "products/ribbon_cocoa_19.prefab",
+      "iconAddress": "icons/ribbon_cocoa_19.png",
+      "unlockLevel": 48,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "box",
+        "label": "RI19"
+      }
+    },
+    {
+      "skuId": "candy_blue_20",
+      "displayNameKey": "sku.candy_blue_20",
+      "category": "snack",
+      "silhouetteClass": "tall",
+      "rarity": "seasonal",
+      "prefabAddress": "products/candy_blue_20.prefab",
+      "iconAddress": "icons/candy_blue_20.png",
+      "unlockLevel": 48,
+      "colorTags": [
+        "blue",
+        "light"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#3d8bfd",
+        "accent": "#fff3b0",
+        "shape": "bottle",
+        "label": "CA20"
+      }
+    },
+    {
+      "skuId": "coffee_red_20",
+      "displayNameKey": "sku.coffee_red_20",
+      "category": "drink",
+      "silhouetteClass": "pouch",
+      "rarity": "seasonal",
+      "prefabAddress": "products/coffee_red_20.prefab",
+      "iconAddress": "icons/coffee_red_20.png",
+      "unlockLevel": 48,
+      "colorTags": [
+        "red",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#f25f5c",
+        "accent": "#fffef8",
+        "shape": "pouch",
+        "label": "CO20"
+      }
+    },
+    {
+      "skuId": "grape_green_20",
+      "displayNameKey": "sku.grape_green_20",
+      "category": "fruit",
+      "silhouetteClass": "round",
+      "rarity": "seasonal",
+      "prefabAddress": "products/grape_green_20.prefab",
+      "iconAddress": "icons/grape_green_20.png",
+      "unlockLevel": 49,
+      "colorTags": [
+        "green",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#2fbf71",
+        "accent": "#e8f8d0",
+        "shape": "sphere",
+        "label": "GR20"
+      }
+    },
+    {
+      "skuId": "dino_yellow_20",
+      "displayNameKey": "sku.dino_yellow_20",
+      "category": "toy",
+      "silhouetteClass": "can",
+      "rarity": "seasonal",
+      "prefabAddress": "products/dino_yellow_20.prefab",
+      "iconAddress": "icons/dino_yellow_20.png",
+      "unlockLevel": 49,
+      "colorTags": [
+        "yellow",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#f6b93b",
+        "accent": "#2d2111",
+        "shape": "can",
+        "label": "DI20"
+      }
+    },
+    {
+      "skuId": "puck_violet_20",
+      "displayNameKey": "sku.puck_violet_20",
+      "category": "sport",
+      "silhouetteClass": "toy",
+      "rarity": "seasonal",
+      "prefabAddress": "products/puck_violet_20.prefab",
+      "iconAddress": "icons/puck_violet_20.png",
+      "unlockLevel": 49,
+      "colorTags": [
+        "violet",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#8e6ddf",
+        "accent": "#fffef8",
+        "shape": "toy",
+        "label": "PU20"
+      }
+    },
+    {
+      "skuId": "clock_teal_20",
+      "displayNameKey": "sku.clock_teal_20",
+      "category": "home",
+      "silhouetteClass": "tall",
+      "rarity": "seasonal",
+      "prefabAddress": "products/clock_teal_20.prefab",
+      "iconAddress": "icons/clock_teal_20.png",
+      "unlockLevel": 49,
+      "colorTags": [
+        "teal",
+        "bold"
+      ],
+      "sizeClass": "small",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#1f8a70",
+        "accent": "#ffcf5a",
+        "shape": "tube",
+        "label": "CL20"
+      }
+    },
+    {
+      "skuId": "ruler_orange_20",
+      "displayNameKey": "sku.ruler_orange_20",
+      "category": "stationery",
+      "silhouetteClass": "box",
+      "rarity": "seasonal",
+      "prefabAddress": "products/ruler_orange_20.prefab",
+      "iconAddress": "icons/ruler_orange_20.png",
+      "unlockLevel": 50,
+      "colorTags": [
+        "orange",
+        "light"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#ef7b45",
+        "accent": "#fff4df",
+        "shape": "box",
+        "label": "RU20"
+      }
+    },
+    {
+      "skuId": "tart_pink_20",
+      "displayNameKey": "sku.tart_pink_20",
+      "category": "bakery",
+      "silhouetteClass": "tall",
+      "rarity": "seasonal",
+      "prefabAddress": "products/tart_pink_20.prefab",
+      "iconAddress": "icons/tart_pink_20.png",
+      "unlockLevel": 50,
+      "colorTags": [
+        "pink",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#d94f8c",
+        "accent": "#ffffff",
+        "shape": "bottle",
+        "label": "TA20"
+      }
+    },
+    {
+      "skuId": "jar_navy_20",
+      "displayNameKey": "sku.jar_navy_20",
+      "category": "cosmetic",
+      "silhouetteClass": "pouch",
+      "rarity": "seasonal",
+      "prefabAddress": "products/jar_navy_20.prefab",
+      "iconAddress": "icons/jar_navy_20.png",
+      "unlockLevel": 50,
+      "colorTags": [
+        "navy",
+        "light"
+      ],
+      "sizeClass": "large",
+      "readabilityScore": 4,
+      "seasonal": true,
+      "visual": {
+        "color": "#507dbc",
+        "accent": "#f4f7fb",
+        "shape": "pouch",
+        "label": "JA20"
+      }
+    },
+    {
+      "skuId": "bell_cocoa_20",
+      "displayNameKey": "sku.bell_cocoa_20",
+      "category": "seasonal",
+      "silhouetteClass": "round",
+      "rarity": "seasonal",
+      "prefabAddress": "products/bell_cocoa_20.prefab",
+      "iconAddress": "icons/bell_cocoa_20.png",
+      "unlockLevel": 50,
+      "colorTags": [
+        "cocoa",
+        "bold"
+      ],
+      "sizeClass": "medium",
+      "readabilityScore": 5,
+      "seasonal": true,
+      "visual": {
+        "color": "#8a5a44",
+        "accent": "#f7e0c4",
+        "shape": "sphere",
+        "label": "BE20"
+      }
+    }
+  ]
+}

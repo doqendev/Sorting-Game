@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "themes": [
+    {
+      "id": "snack_aisle",
+      "name": "Snack Aisle",
+      "shelfColor": "#a97745",
+      "wallColor": "#dbece6",
+      "accentColor": "#ffcf5a",
+      "unlockLevel": 1
+    },
+    {
+      "id": "fridge_lane",
+      "name": "Fridge Lane",
+      "shelfColor": "#7ca7b7",
+      "wallColor": "#e6f3f7",
+      "accentColor": "#3d8bfd",
+      "unlockLevel": 35
+    },
+    {
+      "id": "toy_corner",
+      "name": "Toy Corner",
+      "shelfColor": "#df8fb2",
+      "wallColor": "#f7eaf1",
+      "accentColor": "#f6b93b",
+      "unlockLevel": 80
+    },
+    {
+      "id": "sports_wall",
+      "name": "Sports Wall",
+      "shelfColor": "#6c8a5f",
+      "wallColor": "#e8f1e3",
+      "accentColor": "#ef7b45",
+      "unlockLevel": 125
+    },
+    {
+      "id": "bakery_case",
+      "name": "Bakery Case",
+      "shelfColor": "#c88c5a",
+      "wallColor": "#f4e6d7",
+      "accentColor": "#8a5a44",
+      "unlockLevel": 175
+    },
+    {
+      "id": "holiday_shelf",
+      "name": "Holiday Shelf",
+      "shelfColor": "#6a72b8",
+      "wallColor": "#edf0ff",
+      "accentColor": "#2fbf71",
+      "unlockLevel": 250
+    }
+  ]
+}
