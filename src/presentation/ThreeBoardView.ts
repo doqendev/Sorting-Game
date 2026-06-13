@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import type { BoardState, LegalMove, ProductSKU } from "../domain/types";
+import type { BoardState, InputMode, LegalMove, ProductSKU } from "../domain/types";
 import { getCompartment, isLegalMove } from "../domain/board";
 
 interface BoardViewCallbacks {
@@ -39,8 +39,12 @@ export class ThreeBoardView {
   private hint: LegalMove | null = null;
   private state: BoardState | null = null;
   private productMap: Map<string, ProductSKU>;
+  private textureLoader = new THREE.TextureLoader();
+  private assetTextures = new Map<string, THREE.Texture>();
   private animationHandle = 0;
   private dragStart: { x: number; y: number } | null = null;
+  private inputMode: InputMode = "tap_and_drag";
+  private reduceMotion = false;
 
   constructor(
     private host: HTMLElement,
@@ -77,6 +81,7 @@ export class ThreeBoardView {
     this.renderer.domElement.removeEventListener("pointermove", this.onPointerMove);
     this.renderer.domElement.removeEventListener("pointerup", this.onPointerUp);
     cancelAnimationFrame(this.animationHandle);
+    for (const texture of this.assetTextures.values()) texture.dispose();
     this.renderer.dispose();
     this.host.innerHTML = "";
   }
@@ -160,6 +165,18 @@ export class ThreeBoardView {
     if (this.state) this.renderBoard(this.state, hint);
   }
 
+  setInputMode(inputMode: InputMode): void {
+    this.inputMode = inputMode;
+    this.renderer.domElement.dataset.inputMode = inputMode;
+  }
+
+  setReduceMotion(reduceMotion: boolean): void {
+    this.reduceMotion = reduceMotion;
+    if (reduceMotion) {
+      for (const product of this.products) product.rotation.y = 0;
+    }
+  }
+
   private addShelf(compartmentId: string, x: number, y: number, reserve: boolean): void {
     const shelf = new THREE.Group();
     shelf.userData.dynamic = true;
@@ -217,15 +234,40 @@ export class ThreeBoardView {
     body.receiveShadow = true;
     group.add(body);
 
-    const label = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.22, 0.035), accentMaterial);
-    label.position.set(0, -0.06, 0.43);
-    group.add(label);
+    const texture = product ? this.getAssetTexture(product.assetAddress) : null;
+    if (texture) {
+      const icon = new THREE.Mesh(
+        new THREE.PlaneGeometry(0.56, 0.56),
+        new THREE.MeshBasicMaterial({
+          map: texture,
+          transparent: true,
+          opacity: hidden ? 0.42 : 0.96
+        })
+      );
+      icon.position.set(0, -0.02, 0.48);
+      group.add(icon);
+    } else {
+      const label = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.22, 0.035), accentMaterial);
+      label.position.set(0, -0.06, 0.43);
+      group.add(label);
+    }
 
     const cap = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.08, 0.04), accentMaterial);
     cap.position.set(0, 0.38, 0.45);
     if (shape === "bottle" || shape === "can" || shape === "tube") group.add(cap);
 
     return group;
+  }
+
+  private getAssetTexture(assetAddress: string): THREE.Texture | null {
+    if (!assetAddress) return null;
+    const cached = this.assetTextures.get(assetAddress);
+    if (cached) return cached;
+    const texture = this.textureLoader.load(assetAddress);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    texture.anisotropy = 2;
+    this.assetTextures.set(assetAddress, texture);
+    return texture;
   }
 
   private createShape(shape: ProductSKU["visual"]["shape"], material: THREE.Material): THREE.Mesh {
@@ -262,6 +304,12 @@ export class ThreeBoardView {
     }
 
     if (this.hint) {
+      for (const product of this.products) {
+        const data = product.userData as ProductMeshUserData;
+        const isHintSource =
+          data.compartmentId === this.hint.sourceCompartmentId && data.cellIndex === this.hint.sourceCellIndex;
+        if (isHintSource) product.scale.multiplyScalar(1.12);
+      }
       for (const target of this.targets) {
         const data = target.userData as TargetMeshUserData;
         const isHintTarget =
@@ -300,7 +348,9 @@ export class ThreeBoardView {
       ? Math.hypot(event.clientX - this.dragStart.x, event.clientY - this.dragStart.y) > 8
       : false;
 
-    if (this.selected && target) {
+    const canTapMove = this.inputMode !== "drag";
+    const canDragMove = this.inputMode !== "tap" && draggedEnough;
+    if (this.selected && target && (canTapMove || canDragMove)) {
       const move = {
         sourceCompartmentId: this.selected.compartmentId,
         sourceCellIndex: this.selected.cellIndex,
@@ -321,7 +371,7 @@ export class ThreeBoardView {
       return;
     }
 
-    if (product && !product.data.hidden) {
+    if (product && !product.data.hidden && this.inputMode !== "drag") {
       this.setSelected({ compartmentId: product.data.compartmentId, cellIndex: product.data.cellIndex });
       return;
     }
@@ -359,8 +409,10 @@ export class ThreeBoardView {
 
   private animate = (): void => {
     const elapsed = performance.now() / 1000;
-    for (const product of this.products) {
-      product.rotation.y = Math.sin(elapsed * 0.9 + product.position.x) * 0.05;
+    if (!this.reduceMotion) {
+      for (const product of this.products) {
+        product.rotation.y = Math.sin(elapsed * 0.9 + product.position.x) * 0.05;
+      }
     }
     this.renderer.render(this.scene, this.camera);
     this.animationHandle = requestAnimationFrame(this.animate);

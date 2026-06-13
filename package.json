@@ -9,7 +9,7 @@
     "test": "vitest run",
     "browser:test": "playwright test",
     "generate:content": "node scripts/generate-content.mjs",
-    "validate:levels": "node scripts/validate-levels.mjs",
+    "validate:levels": "tsx scripts/validate-levels.ts",
     "check": "npm run generate:content && npm run validate:levels && npm test && npm run build && npm run browser:test"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "@types/three": "^0.166.0",
     "jsdom": "^29.1.1",
     "pngjs": "^7.0.0",
+    "tsx": "^4.22.4",
     "typescript": "^5.5.3",
     "vite": "^5.3.4",
     "vitest": "^1.6.0"

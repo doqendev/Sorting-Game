@@ -1,3505 +1,625 @@
 {
-  "generatedAt": "2026-06-12T20:48:49.047Z",
+  "generatedAt": "2026-06-13T04:08:50.742Z",
+  "warnings": [],
   "report": [
     {
       "levelId": "level_0001",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 3,
+      "minSolutionMoves": 8,
+      "averageBotMoves": 8,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 0,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 52.5,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:21:29.045Z"
     },
     {
       "levelId": "level_0002",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 3,
+      "minSolutionMoves": 8,
+      "averageBotMoves": 8,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 0,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 52.5,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:21:29.191Z"
     },
     {
       "levelId": "level_0003",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 3,
+      "minSolutionMoves": 8,
+      "averageBotMoves": 8,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 0,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 52.5,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:21:29.331Z"
     },
     {
       "levelId": "level_0004",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 3,
+      "minSolutionMoves": 8,
+      "averageBotMoves": 8,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 0,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 52.5,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:21:29.480Z"
     },
     {
       "levelId": "level_0005",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 6,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 15.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.67,
+      "revealCount": 0,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 26.25,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:21:33.151Z"
     },
     {
       "levelId": "level_0006",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 7,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 14,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.7,
+      "revealCount": 0,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 26.25,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:21:34.025Z"
     },
     {
       "levelId": "level_0007",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 6,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 17.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 26.25,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:21:36.644Z"
     },
     {
       "levelId": "level_0008",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 6,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 17.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 26.25,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:21:38.818Z"
     },
     {
       "levelId": "level_0009",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "timeout_unknown",
+      "solverNodes": 12,
+      "minSolutionMoves": 32,
+      "averageBotMoves": 37,
+      "botWinRate": 0.67,
+      "deadEndProbability": 0.33,
+      "averageReservePressure": 0.67,
+      "revealCount": 6,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 13.125,
+      "boosterFreeWinProbability": 0.67,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:26:15.757Z"
     },
     {
       "levelId": "level_0010",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "timeout_unknown",
+      "solverNodes": 12,
+      "minSolutionMoves": 32,
+      "averageBotMoves": 37,
+      "botWinRate": 0.67,
+      "deadEndProbability": 0.33,
+      "averageReservePressure": 0.67,
+      "revealCount": 6,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 13.125,
+      "boosterFreeWinProbability": 0.67,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:31:53.760Z"
     },
     {
       "levelId": "level_0011",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 6,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 17.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 13.75,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:31:57.593Z"
     },
     {
       "levelId": "level_0012",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 6,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 17.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 13.75,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [
+        "hidden_info_high"
+      ],
+      "lastValidatedAt": "2026-06-13T03:32:01.861Z"
     },
     {
       "levelId": "level_0013",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "timeout_unknown",
+      "solverNodes": 12,
+      "minSolutionMoves": 32,
+      "averageBotMoves": 37,
+      "botWinRate": 0.67,
+      "deadEndProbability": 0.33,
+      "averageReservePressure": 0.67,
+      "revealCount": 6,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 6.875,
+      "boosterFreeWinProbability": 0.67,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [
+        "hidden_info_high"
+      ],
+      "lastValidatedAt": "2026-06-13T03:37:27.051Z"
     },
     {
       "levelId": "level_0014",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 6,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 17.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 13.75,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [
+        "hidden_info_high"
+      ],
+      "lastValidatedAt": "2026-06-13T03:37:30.451Z"
     },
     {
       "levelId": "level_0015",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "timeout_unknown",
+      "solverNodes": 12,
+      "minSolutionMoves": 32,
+      "averageBotMoves": 37,
+      "botWinRate": 0.67,
+      "deadEndProbability": 0.33,
+      "averageReservePressure": 0.67,
+      "revealCount": 6,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 4.6875,
+      "boosterFreeWinProbability": 0.67,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "B",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:42:58.132Z"
     },
     {
       "levelId": "level_0016",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 4,
+      "minSolutionMoves": 8,
+      "averageBotMoves": 7.3,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.56,
+      "revealCount": 0,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 27.5,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:42:58.255Z"
     },
     {
       "levelId": "level_0017",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 4,
+      "minSolutionMoves": 8,
+      "averageBotMoves": 7.3,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.56,
+      "revealCount": 0,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 27.5,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:42:58.376Z"
     },
     {
       "levelId": "level_0018",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 5,
+      "minSolutionMoves": 8,
+      "averageBotMoves": 7.3,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.61,
+      "revealCount": 0,
+      "hiddenInformationRatio": 0,
+      "timePressureRatio": 27.5,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:42:58.472Z"
     },
     {
       "levelId": "level_0019",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 7,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 16.3,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.56,
+      "revealCount": 3,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 13.75,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [
+        "hidden_info_high"
+      ],
+      "lastValidatedAt": "2026-06-13T03:43:00.461Z"
     },
     {
       "levelId": "level_0020",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 14,
+      "minSolutionMoves": 32,
+      "averageBotMoves": 32,
+      "botWinRate": 0.33,
+      "deadEndProbability": 0.67,
+      "averageReservePressure": 0.74,
+      "revealCount": 6,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 4.6875,
+      "boosterFreeWinProbability": 0.33,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "B",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:43:44.245Z"
     },
     {
       "levelId": "level_0021",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 4,
+      "minSolutionMoves": 11,
+      "averageBotMoves": 12.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 20,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [
+        "hidden_info_high"
+      ],
+      "lastValidatedAt": "2026-06-13T03:43:46.714Z"
     },
     {
       "levelId": "level_0022",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 5,
+      "minSolutionMoves": 14,
+      "averageBotMoves": 15.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 15.714285714285714,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [
+        "hidden_info_high"
+      ],
+      "lastValidatedAt": "2026-06-13T03:43:50.108Z"
     },
     {
       "levelId": "level_0023",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 4,
+      "minSolutionMoves": 11,
+      "averageBotMoves": 12.3,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 20,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [
+        "hidden_info_high"
+      ],
+      "lastValidatedAt": "2026-06-13T03:43:50.357Z"
     },
     {
       "levelId": "level_0024",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 1,
+      "minSolutionMoves": 3,
+      "averageBotMoves": 3,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 73.33333333333333,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [
+        "hidden_info_high"
+      ],
+      "lastValidatedAt": "2026-06-13T03:43:50.371Z"
     },
     {
       "levelId": "level_0025",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 6,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 17.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 7.5,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "B",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:43:53.749Z"
     },
     {
       "levelId": "level_0026",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "timeout_unknown",
+      "solverNodes": 18,
+      "minSolutionMoves": 48,
+      "averageBotMoves": 48,
+      "botWinRate": 0.33,
+      "deadEndProbability": 0.67,
+      "averageReservePressure": 0.67,
+      "revealCount": 12,
+      "hiddenInformationRatio": 0.5,
+      "timePressureRatio": 3.125,
+      "boosterFreeWinProbability": 0.33,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "B",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:49:24.408Z"
     },
     {
       "levelId": "level_0027",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "timeout_unknown",
+      "solverNodes": 7,
+      "minSolutionMoves": 19,
+      "averageBotMoves": 19,
+      "botWinRate": 0.33,
+      "deadEndProbability": 0.67,
+      "averageReservePressure": 0.5,
+      "revealCount": 6,
+      "hiddenInformationRatio": 0.5,
+      "timePressureRatio": 7.894736842105263,
+      "boosterFreeWinProbability": 0.33,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "B",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:53:56.974Z"
     },
     {
       "levelId": "level_0028",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "solved",
+      "solverNodes": 4,
+      "minSolutionMoves": 11,
+      "averageBotMoves": 13.7,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 6,
+      "hiddenInformationRatio": 0.5,
+      "timePressureRatio": 13.636363636363637,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "B",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T03:54:00.037Z"
     },
     {
       "levelId": "level_0029",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "solverStatus": "timeout_unknown",
+      "secondarySolverStatus": "timeout_unknown",
+      "solverNodes": 16000,
+      "minSolutionMoves": 0,
+      "averageBotMoves": 0,
+      "botWinRate": 0,
+      "deadEndProbability": 1,
+      "averageReservePressure": 0.5,
+      "revealCount": 6,
+      "hiddenInformationRatio": 0.5,
+      "timePressureRatio": 150,
+      "boosterFreeWinProbability": 0,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "B",
+      "riskFlags": [
+        "solver_timeout_unknown",
+        "secondary_solver_failed"
+      ],
+      "lastValidatedAt": "2026-06-13T04:03:09.228Z"
     },
     {
       "levelId": "level_0030",
       "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0031",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0032",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0033",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0034",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0035",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0036",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0037",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0038",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0039",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0040",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0041",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0042",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0043",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0044",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0045",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0046",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0047",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0048",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0049",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0050",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0051",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0052",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0053",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0054",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0055",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0056",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0057",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0058",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0059",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0060",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0061",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0062",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0063",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0064",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0065",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0066",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0067",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0068",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0069",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0070",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0071",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0072",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0073",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0074",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0075",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0076",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0077",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0078",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0079",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0080",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0081",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0082",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0083",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0084",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0085",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0086",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0087",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0088",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0089",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0090",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0091",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0092",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0093",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0094",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0095",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0096",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0097",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0098",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0099",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0100",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0101",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0102",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0103",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0104",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0105",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0106",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0107",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0108",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0109",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0110",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0111",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0112",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0113",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0114",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0115",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0116",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0117",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0118",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0119",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0120",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0121",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0122",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0123",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0124",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0125",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0126",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0127",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0128",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0129",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0130",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0131",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0132",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0133",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0134",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0135",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0136",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0137",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0138",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0139",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0140",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0141",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0142",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0143",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0144",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0145",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0146",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0147",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0148",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0149",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0150",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0151",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0152",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0153",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0154",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0155",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0156",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0157",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0158",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0159",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0160",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0161",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0162",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0163",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0164",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0165",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0166",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0167",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0168",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0169",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0170",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0171",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0172",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0173",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0174",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0175",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0176",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0177",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0178",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0179",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0180",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0181",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0182",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0183",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0184",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0185",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0186",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0187",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0188",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0189",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0190",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0191",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0192",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0193",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0194",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0195",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0196",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0197",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0198",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0199",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0200",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0201",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0202",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0203",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0204",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0205",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0206",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0207",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0208",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0209",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0210",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0211",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0212",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0213",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0214",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0215",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0216",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0217",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0218",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0219",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0220",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0221",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0222",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0223",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0224",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0225",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0226",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0227",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0228",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0229",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0230",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0231",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0232",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0233",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0234",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0235",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0236",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0237",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0238",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0239",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0240",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0241",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0242",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0243",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0244",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0245",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0246",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0247",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0248",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0249",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0250",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0251",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0252",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0253",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0254",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0255",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0256",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0257",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0258",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0259",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0260",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0261",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0262",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0263",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0264",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0265",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0266",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0267",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0268",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0269",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0270",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0271",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0272",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0273",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0274",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0275",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0276",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0277",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0278",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0279",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0280",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0281",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0282",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0283",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0284",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0285",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0286",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0287",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0288",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0289",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0290",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0291",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0292",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0293",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0294",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0295",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0296",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0297",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0298",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0299",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0300",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0301",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0302",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0303",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0304",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0305",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0306",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0307",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0308",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0309",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0310",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0311",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0312",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0313",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0314",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0315",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0316",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0317",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0318",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0319",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0320",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0321",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0322",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0323",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0324",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0325",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0326",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0327",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0328",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0329",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0330",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0331",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0332",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0333",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0334",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0335",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0336",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0337",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0338",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0339",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0340",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0341",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0342",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0343",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0344",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0345",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0346",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0347",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0348",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0349",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0350",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0351",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0352",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0353",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0354",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0355",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0356",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0357",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0358",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0359",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0360",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0361",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0362",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0363",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0364",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0365",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0366",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0367",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0368",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0369",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0370",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0371",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0372",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0373",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0374",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0375",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0376",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0377",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0378",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0379",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0380",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0381",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0382",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0383",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0384",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0385",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0386",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0387",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0388",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0389",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0390",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0391",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0392",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0393",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0394",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0395",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0396",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0397",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0398",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0399",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0400",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0401",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0402",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0403",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0404",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0405",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0406",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0407",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0408",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0409",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0410",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0411",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0412",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0413",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0414",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0415",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0416",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0417",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0418",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0419",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0420",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0421",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0422",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0423",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0424",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0425",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0426",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0427",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0428",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0429",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0430",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0431",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0432",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0433",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0434",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0435",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0436",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0437",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0438",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0439",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0440",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0441",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0442",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0443",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0444",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0445",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0446",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0447",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0448",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0449",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0450",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0451",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0452",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0453",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0454",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0455",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0456",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0457",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0458",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0459",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0460",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0461",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0462",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0463",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0464",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0465",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0466",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0467",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0468",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0469",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0470",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0471",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0472",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0473",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0474",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0475",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0476",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0477",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0478",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0479",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0480",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0481",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0482",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0483",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0484",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0485",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0486",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0487",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0488",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0489",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0490",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0491",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0492",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0493",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0494",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0495",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0496",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0497",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0498",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0499",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
-    },
-    {
-      "levelId": "level_0500",
-      "solverStatus": "solved",
-      "productCountValid": true,
-      "schemaValid": true,
-      "riskFlags": ""
+      "secondarySolverStatus": "timeout_unknown",
+      "solverNodes": 19,
+      "minSolutionMoves": 48,
+      "averageBotMoves": 48,
+      "botWinRate": 0.33,
+      "deadEndProbability": 0.67,
+      "averageReservePressure": 0.7,
+      "revealCount": 12,
+      "hiddenInformationRatio": 0.5,
+      "timePressureRatio": 3.125,
+      "boosterFreeWinProbability": 0.33,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "B",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T04:08:50.740Z"
     }
   ]
 }

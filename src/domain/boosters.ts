@@ -7,6 +7,7 @@ import {
   generateLegalMoves,
   getCell,
   getCompartment,
+  recordClearedProduct,
   resolveAffected,
   scoreMoveHeuristic
 } from "./board";
@@ -83,9 +84,21 @@ const shuffleBooster: BoosterCommand = {
         }
       }
     }
-    const shuffled = seededShuffle(products, context.seed ?? state.seed + state.moves);
+    let bestShuffle = products;
+    let bestScore = -Infinity;
+    for (let attempt = 0; attempt < 8; attempt += 1) {
+      const candidate = seededShuffle(products, (context.seed ?? state.seed + state.moves) + attempt * 97);
+      cells.forEach((cell, index) => {
+        cell.product = candidate[index] ?? null;
+      });
+      const score = generateLegalMoves(state).reduce((sum, move) => sum + Math.max(0, scoreMoveHeuristic(state, move)), 0);
+      if (score > bestScore && evaluateLevelEnd(state) !== "loss_stalemate") {
+        bestScore = score;
+        bestShuffle = candidate;
+      }
+    }
     cells.forEach((cell, index) => {
-      cell.product = shuffled[index] ?? null;
+      cell.product = bestShuffle[index] ?? null;
     });
     state.combo.value = 0;
     state.boostersUsed.push("shuffle");
@@ -107,12 +120,14 @@ const hammerBooster: BoosterCommand = {
     if (!context.selected) return { ok: false, reason: "no_selection", board: state };
     const cell = getCell(state, context.selected.compartmentId, context.selected.cellIndex);
     if (!cell?.product) return { ok: false, reason: "empty_cell", board: state };
-    const skuId = cell.product.skuId;
+    const product = cell.product;
     cell.product = null;
     state.objective.clearedProducts += 1;
+    recordClearedProduct(state, product, 1);
     state.boostersUsed.push("hammer");
     const resolution = resolveAffected(state, new Set([context.selected.compartmentId]));
-    resolution.objectiveUpdates.push(`hammer:${skuId}`);
+    resolution.clearedProducts.push(product);
+    resolution.objectiveUpdates.push(`hammer:${product.skuId}`);
     state.levelEnd = evaluateLevelEnd(state);
     return { ok: true, board: state, resolution };
   },
@@ -138,10 +153,11 @@ const extraSlotBooster: BoosterCommand = {
   preview: () => "Add a temporary empty reserve shelf.",
   execute: (state) => {
     const maxRow = Math.max(...state.compartments.map((compartment) => compartment.row));
+    const maxColumn = Math.max(...state.compartments.map((compartment) => compartment.column));
     state.compartments.push({
       id: `extra_${state.moves}_${state.compartments.length}`,
       row: maxRow + 1,
-      column: 0,
+      column: Math.floor(maxColumn / 2),
       type: "reserve",
       front: [0, 1, 2].map((cellIndex) => ({ cellIndex, product: null, blocker: null })),
       hiddenLayers: [],
@@ -150,7 +166,9 @@ const extraSlotBooster: BoosterCommand = {
       isInteractable: true
     });
     state.boostersUsed.push("extra_slot");
-    return { ok: true, board: state };
+    const resolution = resolveAffected(state);
+    state.levelEnd = evaluateLevelEnd(state);
+    return { ok: true, board: state, resolution };
   },
   analyticsPayload: () => ({ boosterId: "extra_slot" })
 };

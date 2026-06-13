@@ -3,6 +3,11 @@ import type { EconomyConfig, PlayerSave } from "../domain/types";
 const ACTIVE_KEY = "shelf-sort-save-active-v1";
 const BACKUP_KEY = "shelf-sort-save-backup-v1";
 const CLOUD_KEY = "shelf-sort-cloud-save-v1";
+const DEFAULT_RENOVATION = {
+  marketStandLevel: 1,
+  shelfLightingLevel: 1,
+  signageLevel: 1
+};
 
 export class SaveService {
   constructor(private economy: EconomyConfig) {}
@@ -53,6 +58,7 @@ export class SaveService {
       },
       events: {},
       collections: {},
+      renovation: { ...DEFAULT_RENOVATION },
       ledger: {}
     };
   }
@@ -84,8 +90,7 @@ export class SaveService {
       const envelope = JSON.parse(raw) as { checksum: string; save: PlayerSave };
       const encoded = JSON.stringify(envelope.save);
       if (checksum(encoded) !== envelope.checksum) return null;
-      if (envelope.save.schemaVersion !== 1) return migrateSave(envelope.save);
-      return envelope.save;
+      return migrateSave(envelope.save);
     } catch {
       return null;
     }
@@ -93,10 +98,38 @@ export class SaveService {
 }
 
 export function migrateSave(save: PlayerSave): PlayerSave {
-  return { ...save, schemaVersion: 1 };
+  return {
+    ...save,
+    schemaVersion: 1,
+    boosters: Object.assign({
+      hint: 0,
+      shuffle: 0,
+      hammer: 0,
+      freeze_time: 0,
+      extra_slot: 0
+    }, save.boosters),
+    settings: Object.assign({
+      inputMode: "tap_and_drag",
+      music: true,
+      sfx: true,
+      haptics: true,
+      reduceMotion: false,
+      relaxModePreferred: false,
+      consentGranted: false
+    }, save.settings),
+    collections: save.collections ?? {},
+    events: save.events ?? {},
+    renovation: {
+      ...DEFAULT_RENOVATION,
+      ...(save.renovation ?? {})
+    },
+    ledger: save.ledger ?? {}
+  };
 }
 
 export function mergeSaves(local: PlayerSave, cloud: PlayerSave): PlayerSave {
+  const localRenovation = local.renovation ?? DEFAULT_RENOVATION;
+  const cloudRenovation = cloud.renovation ?? DEFAULT_RENOVATION;
   return {
     ...local,
     progress: {
@@ -116,8 +149,23 @@ export function mergeSaves(local: PlayerSave, cloud: PlayerSave): PlayerSave {
       activePassId: local.purchases.activePassId ?? cloud.purchases.activePassId,
       starterPackPurchased: local.purchases.starterPackPurchased || cloud.purchases.starterPackPurchased
     },
+    collections: mergeCollections(local.collections, cloud.collections),
+    events: { ...cloud.events, ...local.events },
+    renovation: {
+      marketStandLevel: Math.max(localRenovation.marketStandLevel, cloudRenovation.marketStandLevel),
+      shelfLightingLevel: Math.max(localRenovation.shelfLightingLevel, cloudRenovation.shelfLightingLevel),
+      signageLevel: Math.max(localRenovation.signageLevel, cloudRenovation.signageLevel)
+    },
     ledger: { ...cloud.ledger, ...local.ledger }
   };
+}
+
+function mergeCollections(local: Record<string, string[]>, cloud: Record<string, string[]>): Record<string, string[]> {
+  const merged: Record<string, string[]> = {};
+  for (const category of new Set([...Object.keys(cloud ?? {}), ...Object.keys(local ?? {})])) {
+    merged[category] = [...new Set([...(cloud?.[category] ?? []), ...(local?.[category] ?? [])])];
+  }
+  return merged;
 }
 
 export function checksum(value: string): string {

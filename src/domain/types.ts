@@ -6,6 +6,15 @@ export type InputMode = "tap" | "drag" | "tap_and_drag";
 export type CompartmentType = "normal" | "reserve" | "locked" | "objective" | "event";
 export type BlockerType = "tape" | "frost" | "mystery_bag" | "locked_shelf" | "crate";
 export type LevelEnd = "win" | "loss_timeout" | "loss_stalemate" | "quit" | null;
+export type FailReason =
+  | "timeout"
+  | "board_jammed"
+  | "reserve_mismanagement"
+  | "objective_incomplete"
+  | "blocker_remaining"
+  | "unclear_target_remaining"
+  | null;
+export type MoveQuality = "match_ready" | "reveal_enabling" | "good" | "risky" | "neutral";
 
 export interface ProductSKU {
   skuId: string;
@@ -15,10 +24,19 @@ export interface ProductSKU {
   rarity: "common" | "uncommon" | "rare" | "seasonal";
   prefabAddress: string;
   iconAddress: string;
+  assetAddress: string;
   unlockLevel: number;
   colorTags: string[];
+  similarityTags: string[];
   sizeClass: "small" | "medium" | "large";
   readabilityScore: number;
+  readability: {
+    smallScreenPass: boolean;
+    colorblindSafe: boolean;
+    hiddenPreviewPass: boolean;
+    tapTargetPass: boolean;
+    reviewNote: string;
+  };
   seasonal: boolean;
   visual: {
     color: string;
@@ -35,6 +53,7 @@ export interface ProductCatalog {
 
 export interface CellConfig {
   skuId?: string | null;
+  category?: string | null;
   flags?: string[];
   blocker?: BlockerType | null;
 }
@@ -65,7 +84,13 @@ export interface LevelConfig {
   };
   objective: {
     type: ObjectiveType;
-    targets: Array<{ skuId?: string; category?: string; count: number }>;
+    targets: Array<{ skuId?: string; category?: string; flag?: string; count: number; label?: string }>;
+    targetCombo?: number;
+    timeLimitSec?: number;
+  };
+  tuning: {
+    comboWindowSec: number;
+    maxNonClearingMoves: number;
   };
   timerSec: number;
   starThresholds: {
@@ -80,10 +105,27 @@ export interface LevelConfig {
   };
   validation: {
     solverStatus: "solved" | "unsolved" | "timeout_unknown";
+    secondarySolverStatus: "solved" | "unsolved" | "timeout_unknown";
     solverNodes: number;
     minSolutionMoves: number;
+    averageBotMoves: number;
     botWinRate: number;
+    deadEndProbability: number;
+    averageReservePressure: number;
+    revealCount: number;
+    hiddenInformationRatio: number;
+    timePressureRatio: number;
+    boosterFreeWinProbability: number;
+    autoClearRisk: number;
+    readabilityRisk: number;
+    humanReviewGrade: "A" | "B" | "C" | "D" | "F";
+    riskFlags: string[];
     lastValidatedAt: string;
+  };
+  humanReview: {
+    reviewer: string;
+    grade: "A" | "B" | "C" | "D" | "F";
+    notes: string;
   };
 }
 
@@ -96,6 +138,7 @@ export interface CellState {
 export interface ProductInstance {
   instanceId: string;
   skuId: string;
+  category: string | null;
   flags: string[];
 }
 
@@ -123,11 +166,15 @@ export interface ComboState {
   max: number;
   lastClearAtMs: number;
   nonClearingMoves: number;
+  windowSec: number;
+  maxNonClearingMoves: number;
 }
 
 export interface ObjectiveState {
   type: ObjectiveType;
-  targets: Array<{ skuId?: string; category?: string; count: number; cleared: number }>;
+  targets: Array<{ skuId?: string; category?: string; flag?: string; count: number; cleared: number; label?: string }>;
+  targetCombo: number;
+  timeLimitSec?: number;
   clearedProducts: number;
   totalProducts: number;
   comboTargetMet: boolean;
@@ -147,6 +194,11 @@ export interface BoardState {
   boostersUsed: BoosterId[];
   hiddenReveals: number;
   levelEnd: LevelEnd;
+  failReason: FailReason;
+  starThresholds: {
+    threeStarsRemainingSec: number;
+    twoStarsRemainingSec: number;
+  };
 }
 
 export interface MoveAction {
@@ -172,11 +224,13 @@ export interface RevealedLayer {
 export interface ResolutionResult {
   movedProducts: ProductInstance[];
   clearedTriples: ClearedTriple[];
+  clearedProducts: ProductInstance[];
   revealedLayers: RevealedLayer[];
   objectiveUpdates: string[];
   comboChanged: boolean;
   scoreDelta: number;
   levelEnd: LevelEnd;
+  moveQuality?: MoveQuality;
 }
 
 export interface LegalMove {
@@ -212,6 +266,7 @@ export interface RemoteConfig {
     timerMultiplierHard: number;
     timerMultiplierSuperHard: number;
     comboWindowSec: number;
+    maxNonClearingMoves: number;
   };
   economy: {
     winCoinsMultiplier: number;
@@ -223,6 +278,7 @@ export interface RemoteConfig {
     collectionAlbumEnabled: boolean;
     battlePassEnabled: boolean;
     dailyOrdersEnabled: boolean;
+    renovationEnabled: boolean;
   };
 }
 
@@ -260,6 +316,11 @@ export interface PlayerSave {
   };
   events: Record<string, unknown>;
   collections: Record<string, string[]>;
+  renovation: {
+    marketStandLevel: number;
+    shelfLightingLevel: number;
+    signageLevel: number;
+  };
   ledger: Record<string, boolean>;
 }
 
@@ -267,4 +328,13 @@ export interface AnalyticsEvent {
   name: string;
   timestamp: string;
   payload: Record<string, unknown>;
+}
+
+export interface ReplayRecord {
+  schemaVersion: 1;
+  levelId: string;
+  seed: number;
+  moves: MoveAction[];
+  boosters: Array<{ boosterId: BoosterId; timestamp: number; selected?: { compartmentId: string; cellIndex: number } }>;
+  finalStateHash: string;
 }

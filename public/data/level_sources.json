@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "source": [
+    {
+      "levelId": "level_0001",
+      "intent": "Teach first triple",
+      "curriculum": "move_and_triple_clear",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Teach first triple"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0002",
+      "intent": "Repeat triple with cleaner reserve use",
+      "curriculum": "move_and_triple_clear",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Repeat triple with cleaner reserve use"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0003",
+      "intent": "Third confidence level",
+      "curriculum": "move_and_triple_clear",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Third confidence level"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0004",
+      "intent": "Reserve shelf taught",
+      "curriculum": "reserve_shelves",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Reserve shelf taught"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0005",
+      "intent": "Reserve with two rows",
+      "curriculum": "reserve_shelves",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Reserve with two rows"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0006",
+      "intent": "Reserve pressure without timer punishment",
+      "curriculum": "reserve_shelves",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Reserve pressure without timer punishment"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0007",
+      "intent": "Exact hidden preview",
+      "curriculum": "hidden_previews",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Exact hidden preview"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0008",
+      "intent": "Mixed hidden queue",
+      "curriculum": "hidden_previews",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Mixed hidden queue"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0009",
+      "intent": "Two hidden decisions",
+      "curriculum": "hidden_previews",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Two hidden decisions"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0010",
+      "intent": "Hidden preview review",
+      "curriculum": "hidden_previews",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Hidden preview review"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0011",
+      "intent": "Planning ahead mild timer",
+      "curriculum": "planning_ahead",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Planning ahead mild timer"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0012",
+      "intent": "Silhouette starts",
+      "curriculum": "planning_ahead",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Silhouette starts"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0013",
+      "intent": "Category mix planning",
+      "curriculum": "planning_ahead",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Category mix planning"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0014",
+      "intent": "Reveal and combo setup",
+      "curriculum": "planning_ahead",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Reveal and combo setup"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0015",
+      "intent": "First hard label",
+      "curriculum": "planning_ahead",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "B",
+        "notes": "First hard label"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0016",
+      "intent": "Crate reserve pressure",
+      "curriculum": "blockers",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Crate reserve pressure"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0017",
+      "intent": "Tape lesson without deadlock",
+      "curriculum": "blockers",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Tape lesson without deadlock"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0018",
+      "intent": "Frost lesson without deadlock",
+      "curriculum": "blockers",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Frost lesson without deadlock"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0019",
+      "intent": "Blocked reserve plus hidden",
+      "curriculum": "blockers",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Blocked reserve plus hidden"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0020",
+      "intent": "Blocker review",
+      "curriculum": "blockers",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "B",
+        "notes": "Blocker review"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0021",
+      "intent": "Collect snack order",
+      "curriculum": "orders",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Collect snack order"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0022",
+      "intent": "Collect drink order",
+      "curriculum": "orders",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Collect drink order"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0023",
+      "intent": "Specific SKU order",
+      "curriculum": "orders",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Specific SKU order"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0024",
+      "intent": "Special products",
+      "curriculum": "orders",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "A",
+        "notes": "Special products"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0025",
+      "intent": "Time challenge",
+      "curriculum": "orders",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "B",
+        "notes": "Time challenge"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0026",
+      "intent": "Hard arc mixed hidden",
+      "curriculum": "hard_arc",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "B",
+        "notes": "Hard arc mixed hidden"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0027",
+      "intent": "Hard category order",
+      "curriculum": "hard_arc",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "B",
+        "notes": "Hard category order"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0028",
+      "intent": "Hard special order",
+      "curriculum": "hard_arc",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "B",
+        "notes": "Hard special order"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0029",
+      "intent": "Hard combo order",
+      "curriculum": "hard_arc",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "B",
+        "notes": "Hard combo order"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    },
+    {
+      "levelId": "level_0030",
+      "intent": "Vertical slice finale",
+      "curriculum": "hard_arc",
+      "humanReview": {
+        "reviewer": "studio_v2",
+        "grade": "B",
+        "notes": "Vertical slice finale"
+      },
+      "authoredAt": "2026-06-13T00:00:00Z"
+    }
+  ]
+}

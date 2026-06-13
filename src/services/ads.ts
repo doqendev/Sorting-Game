@@ -12,17 +12,38 @@ export class AdsService {
   ) {}
 
   isRewardedReady(_placementId: string): boolean {
-    return true;
+    return _placementId.length > 0;
   }
 
   async showRewarded(placementId: string, context: string, reward: Record<string, unknown>): Promise<boolean> {
-    this.analytics.track("ad_opportunity", { placement: placementId, context, reward });
-    await wait(650);
+    const ready = this.isRewardedReady(placementId);
+    this.analytics.track("rewarded_ad_offer", { placement: placementId, context, reward, ready });
+    if (!ready) {
+      this.analytics.track("rewarded_ad_complete", {
+        placement: placementId,
+        context,
+        rewardGranted: false,
+        failureReason: "no_fill"
+      });
+      return false;
+    }
+    this.analytics.track("rewarded_ad_start", { placement: placementId, context, reward });
+    const completed = await waitWithTimeout(650, 2500);
+    if (!completed) {
+      this.analytics.track("rewarded_ad_complete", {
+        placement: placementId,
+        context,
+        rewardGranted: false,
+        failureReason: "timeout"
+      });
+      return false;
+    }
     this.lastRewardedAt = Date.now();
-    this.analytics.track("ad_impression", {
+    this.analytics.track("rewarded_ad_complete", {
       network: "sandbox",
       placement: placementId,
-      format: "rewarded",
+      context,
+      rewardGranted: true,
       revenue: 0.01
     });
     return true;
@@ -40,13 +61,12 @@ export class AdsService {
 
   async showInterstitial(placementId: string, context: string): Promise<boolean> {
     if (!this.isInterstitialReady(placementId, this.saveProvider().progress.highestLevelCompleted)) return false;
-    this.analytics.track("ad_opportunity", { placement: placementId, context, reward: null });
     await wait(450);
     this.lastInterstitialAt = Date.now();
-    this.analytics.track("ad_impression", {
+    this.analytics.track("interstitial_impression", {
       network: "sandbox",
       placement: placementId,
-      format: "interstitial",
+      context,
       revenue: 0.005
     });
     return true;
@@ -59,4 +79,9 @@ export class AdsService {
 
 function wait(ms: number): Promise<void> {
   return new Promise((resolve) => window.setTimeout(resolve, ms));
+}
+
+async function waitWithTimeout(delayMs: number, timeoutMs: number): Promise<boolean> {
+  const result = await Promise.race([wait(delayMs).then(() => true), wait(timeoutMs).then(() => false)]);
+  return result;
 }

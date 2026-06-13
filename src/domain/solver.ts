@@ -18,27 +18,60 @@ export interface SolverResult {
 }
 
 export interface LevelValidationResult extends SolverResult {
+  secondarySolverStatus: "solved" | "unsolved" | "timeout_unknown";
   productCountValid: boolean;
   schemaValid: boolean;
   riskFlags: string[];
   difficultyScore: number;
+  averageBotMoves: number;
   botWinRate: number;
+  deadEndProbability: number;
+  averageReservePressure: number;
+  revealCount: number;
+  hiddenInformationRatio: number;
+  timePressureRatio: number;
+  boosterFreeWinProbability: number;
+  autoClearRisk: number;
+  readabilityRisk: number;
 }
 
 export function validateLevel(level: LevelConfig, nodeLimit = 12000): LevelValidationResult {
   const schemaValid = validateLevelSchema(level).length === 0;
   const productCountValid = validateProductCounts(level);
-  const solver = solveLevel(level, nodeLimit);
+  const primary = collectionSolve(createBoardState(level), nodeLimit);
+  const secondary = collectionSolve(createBoardState(level), nodeLimit, true);
+  const solver = primary.status === "solved" ? primary : secondary;
   const difficultyScore = estimateDifficulty(level, solver);
-  const riskFlags = buildRiskFlags(level, solver, productCountValid);
-  const botWinRate = estimateBotWinRate(level, solver, difficultyScore);
+  const bot = simulateBots(level, solver);
+  const autoClearRisk = calculateAutoClearRisk(level);
+  const averageReservePressure = calculateReservePressure(level);
+  const hiddenInformationRatio = calculateHiddenInformationRatio(level);
+  const readabilityRisk = calculateReadabilityRisk(level);
+  const timePressureRatio = level.timerSec / Math.max(1, solver.minSolutionMoves || level.validation.minSolutionMoves || 1);
+  const riskFlags = buildRiskFlags(level, solver, productCountValid, {
+    autoClearRisk,
+    averageReservePressure,
+    hiddenInformationRatio,
+    readabilityRisk,
+    botWinRate: bot.botWinRate
+  });
   return {
     ...solver,
+    secondarySolverStatus: secondary.status,
     schemaValid,
     productCountValid,
     riskFlags,
     difficultyScore,
-    botWinRate
+    averageBotMoves: bot.averageBotMoves,
+    botWinRate: bot.botWinRate,
+    deadEndProbability: bot.deadEndProbability,
+    averageReservePressure,
+    revealCount: countHiddenLayers(level),
+    hiddenInformationRatio,
+    timePressureRatio,
+    boosterFreeWinProbability: bot.botWinRate,
+    autoClearRisk,
+    readabilityRisk
   };
 }
 
@@ -51,7 +84,7 @@ export function solveLevel(level: LevelConfig, nodeLimit = 12000): SolverResult 
   return beamSolve(start, nodeLimit);
 }
 
-function collectionSolve(start: BoardState, nodeLimit: number): SolverResult {
+function collectionSolve(start: BoardState, nodeLimit: number, reverseCandidates = false): SolverResult {
   const state = cloneBoard(start);
   const path: LegalMove[] = [];
   let nodes = 0;
@@ -60,7 +93,7 @@ function collectionSolve(start: BoardState, nodeLimit: number): SolverResult {
     const visibleCounts = visibleProductCounts(state);
     const candidates = [...visibleCounts.entries()]
       .filter(([, count]) => count >= 3)
-      .sort((a, b) => b[1] - a[1]);
+      .sort((a, b) => (reverseCandidates ? a[0].localeCompare(b[0]) : b[1] - a[1] || b[0].localeCompare(a[0])));
     let progressed = false;
 
     for (const [skuId] of candidates) {
@@ -104,6 +137,7 @@ function findCleanTargetForSku(state: BoardState, skuId: string) {
     (compartment) =>
       compartment.isInteractable &&
       compartment.front.some((cell) => !cell.product && !cell.blocker) &&
+      compartment.front.filter((cell) => !cell.blocker).length >= 3 &&
       compartment.front.every((cell) => !cell.product || cell.product.skuId === skuId)
   );
   return (
@@ -229,6 +263,15 @@ export function validateLevelSchema(level: LevelConfig): string[] {
     }
   }
   if (!level.availableBoosters?.length) errors.push("availableBoosters required");
+  if (!level.tuning) errors.push("tuning required");
+  if (
+    level.objective.type !== "clear_all" &&
+    level.objective.type !== "time_challenge" &&
+    level.objective.targets.length === 0 &&
+    level.objective.type !== "combo_target"
+  ) {
+    errors.push("objective targets required");
+  }
   return errors;
 }
 
@@ -255,13 +298,31 @@ function estimateDifficulty(level: LevelConfig, solver: SolverResult): number {
   return Math.round(tier + hiddenLayers * 3 + blockers * 6 + solver.minSolutionMoves * 0.8 + cells * 0.2);
 }
 
-function buildRiskFlags(level: LevelConfig, solver: SolverResult, productCountValid: boolean): string[] {
+function buildRiskFlags(
+  level: LevelConfig,
+  solver: SolverResult,
+  productCountValid: boolean,
+  metrics: {
+    autoClearRisk: number;
+    averageReservePressure: number;
+    hiddenInformationRatio: number;
+    readabilityRisk: number;
+    botWinRate: number;
+  }
+): string[] {
   const flags: string[] = [];
   const emptyCells = level.board.compartments.flatMap((compartment) => compartment.front).filter((cell) => !cell.skuId).length;
   if (!productCountValid) flags.push("invalid_product_counts");
   if (solver.status !== "solved") flags.push(`solver_${solver.status}`);
+  if (metrics.botWinRate <= 0) flags.push("secondary_solver_failed");
   if (emptyCells < 3) flags.push("low_reserve_space");
   if (level.timerSec / Math.max(1, solver.minSolutionMoves) < 2.2) flags.push("tight_timer");
+  if (metrics.autoClearRisk > 0.1) flags.push("auto_clear_risk");
+  if (metrics.readabilityRisk > 0.2) flags.push("readability_risk");
+  if (metrics.averageReservePressure > 0.72 && level.difficultyTier !== "hard" && level.difficultyTier !== "super_hard") {
+    flags.push("reserve_pressure_high");
+  }
+  if (metrics.hiddenInformationRatio > 0.55 && level.difficultyTier === "normal") flags.push("hidden_info_high");
   return flags;
 }
 
@@ -270,4 +331,70 @@ function estimateBotWinRate(level: LevelConfig, solver: SolverResult, difficulty
   const tierBase = level.difficultyTier === "super_hard" ? 0.34 : level.difficultyTier === "hard" ? 0.52 : 0.74;
   const adjustment = Math.max(-0.2, Math.min(0.12, (70 - difficultyScore) / 220));
   return Number(Math.max(0.18, Math.min(0.88, tierBase + adjustment)).toFixed(2));
+}
+
+function simulateBots(level: LevelConfig, solver: SolverResult): {
+  botWinRate: number;
+  averageBotMoves: number;
+  deadEndProbability: number;
+} {
+  if (solver.status !== "solved") return { botWinRate: 0, averageBotMoves: 0, deadEndProbability: 1 };
+  const botScores = [
+    collectionSolve(createBoardState(level), Math.max(1000, solver.nodes + 300)),
+    collectionSolve(createBoardState(level), Math.max(1000, solver.nodes + 300), true),
+    greedySolve(createBoardState(level), Math.max(1000, solver.nodes + 600))
+  ];
+  const wins = botScores.filter((result) => result.status === "solved");
+  const averageBotMoves = wins.length
+    ? wins.reduce((sum, result) => sum + result.minSolutionMoves, 0) / wins.length
+    : solver.minSolutionMoves;
+  return {
+    botWinRate: Number((wins.length / botScores.length).toFixed(2)),
+    averageBotMoves: Number(averageBotMoves.toFixed(1)),
+    deadEndProbability: Number(((botScores.length - wins.length) / botScores.length).toFixed(2))
+  };
+}
+
+function calculateAutoClearRisk(level: LevelConfig): number {
+  const hiddenLayers = level.board.compartments.flatMap((compartment) => compartment.hiddenLayers);
+  if (hiddenLayers.length === 0) return 0;
+  const tripleLayers = hiddenLayers.filter((layer) => {
+    const skus = layer.map((cell) => cell.skuId).filter(Boolean);
+    return skus.length === 3 && new Set(skus).size === 1;
+  }).length;
+  return Number((tripleLayers / hiddenLayers.length).toFixed(2));
+}
+
+function calculateReservePressure(level: LevelConfig): number {
+  const emptyFront = level.board.compartments.flatMap((compartment) => compartment.front).filter((cell) => !cell.skuId && !cell.blocker).length;
+  const totalFront = level.board.compartments.length * 3;
+  return Number((1 - emptyFront / Math.max(1, totalFront)).toFixed(2));
+}
+
+function calculateHiddenInformationRatio(level: LevelConfig): number {
+  const hiddenLayers = level.board.compartments.flatMap((compartment) => compartment.hiddenLayers);
+  if (hiddenLayers.length === 0) return 0;
+  const unclear = level.board.compartments
+    .filter((compartment) => compartment.hiddenLayers.length > 0)
+    .filter((compartment) => compartment.previewMode === "silhouette" || compartment.previewMode === "mystery").length;
+  return Number((unclear / hiddenLayers.length).toFixed(2));
+}
+
+function calculateReadabilityRisk(level: LevelConfig): number {
+  const skuColors = new Map<string, Set<string>>();
+  for (const compartment of level.board.compartments) {
+    for (const cell of [...compartment.front, ...compartment.hiddenLayers.flat()]) {
+      if (!cell.skuId) continue;
+      const color = cell.skuId.split("_").at(-2) ?? "unknown";
+      const bucket = skuColors.get(color) ?? new Set<string>();
+      bucket.add(cell.skuId);
+      skuColors.set(color, bucket);
+    }
+  }
+  const riskyBuckets = [...skuColors.values()].filter((set) => set.size > 4).length;
+  return Number((riskyBuckets / Math.max(1, skuColors.size)).toFixed(2));
+}
+
+function countHiddenLayers(level: LevelConfig): number {
+  return level.board.compartments.reduce((sum, compartment) => sum + compartment.hiddenLayers.length, 0);
 }

@@ -5,22 +5,15 @@
       "id": "daily_order",
       "name": "Daily Order",
       "durationHours": 24,
-      "mechanic": "Collect target categories in normal levels.",
-      "reward": "Coins, boosters, album cards"
-    },
-    {
-      "id": "weekend_rush",
-      "name": "Weekend Rush",
-      "durationHours": 72,
-      "mechanic": "Timed score race with fair cohorts.",
-      "reward": "Badge, shelf skin, pass XP"
+      "mechanic": "Collect target categories from normal levels.",
+      "reward": "Coins, hint, album card"
     },
     {
       "id": "treasure_shelves",
       "name": "Treasure Shelves",
-      "durationHours": 120,
-      "mechanic": "Win streak opens chests on a path.",
-      "reward": "Boosters, coins, seasonal products"
+      "durationHours": 96,
+      "mechanic": "Win streak opens three chest nodes.",
+      "reward": "Boosters, coins, shelf accent"
     }
   ]
 }

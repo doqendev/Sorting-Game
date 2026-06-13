@@ -14,32 +14,37 @@
   },
   "boosterCosts": {
     "hint": {
-      "coins": 100
+      "coins": 90
     },
     "shuffle": {
-      "coins": 250
+      "coins": 220
     },
     "hammer": {
-      "coins": 200
+      "coins": 180
     },
     "freeze_time": {
-      "coins": 300
+      "coins": 260
     },
     "extra_slot": {
-      "coins": 400
+      "coins": 340
     }
   },
   "reviveOffers": [
     {
-      "id": "rv_plus_60_sec",
+      "id": "rv_timeout_plus_45_sec",
       "type": "rewarded_ad",
-      "addSeconds": 60
+      "addSeconds": 45
     },
     {
-      "id": "coins_plus_45_sec",
+      "id": "rv_no_moves_extra_shelf",
+      "type": "rewarded_ad",
+      "addSeconds": 0
+    },
+    {
+      "id": "coins_plus_35_sec",
       "type": "coins",
-      "cost": 300,
-      "addSeconds": 45
+      "cost": 250,
+      "addSeconds": 35
     }
   ],
   "iapProducts": [
@@ -49,8 +54,7 @@
       "price": "$1.99",
       "contents": {
         "coins": 750,
-        "hint": 1,
-        "shuffle": 1,
+        "hint": 2,
         "hammer": 1,
         "freeze_time": 1
       }
@@ -74,11 +78,11 @@
       }
     },
     {
-      "id": "value_bundle",
+      "id": "value_booster_pack",
       "kind": "bundle",
-      "price": "$8.99",
+      "price": "$7.99",
       "contents": {
-        "coins": 2500,
+        "coins": 2200,
         "hint": 5,
         "shuffle": 3,
         "hammer": 3,
@@ -86,35 +90,11 @@
       }
     },
     {
-      "id": "deluxe_bundle",
-      "kind": "bundle",
-      "price": "$14.99",
-      "contents": {
-        "coins": 6000,
-        "gems": 80,
-        "hint": 8,
-        "shuffle": 6,
-        "hammer": 6,
-        "freeze_time": 5,
-        "extra_slot": 4
-      }
-    },
-    {
       "id": "piggy_bank",
       "kind": "bank",
       "price": "$3.99",
       "contents": {
-        "coins": 3200
-      }
-    },
-    {
-      "id": "match_pass",
-      "kind": "pass",
-      "price": "$7.99",
-      "contents": {
-        "activePassId": "season_launch",
-        "coins": 1000,
-        "passXp": 500
+        "coins": 3000
       }
     }
   ]

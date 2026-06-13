@@ -4,50 +4,42 @@
     {
       "id": "snack_aisle",
       "name": "Snack Aisle",
-      "shelfColor": "#a97745",
-      "wallColor": "#dbece6",
-      "accentColor": "#ffcf5a",
+      "shelfColor": "#a4673f",
+      "wallColor": "#e8f2ec",
+      "accentColor": "#f3bd42",
       "unlockLevel": 1
     },
     {
-      "id": "fridge_lane",
-      "name": "Fridge Lane",
-      "shelfColor": "#7ca7b7",
-      "wallColor": "#e6f3f7",
-      "accentColor": "#3d8bfd",
-      "unlockLevel": 35
+      "id": "cooler_wall",
+      "name": "Cooler Wall",
+      "shelfColor": "#669fb1",
+      "wallColor": "#edf8fa",
+      "accentColor": "#2f73d9",
+      "unlockLevel": 8
     },
     {
-      "id": "toy_corner",
-      "name": "Toy Corner",
-      "shelfColor": "#df8fb2",
-      "wallColor": "#f7eaf1",
-      "accentColor": "#f6b93b",
-      "unlockLevel": 80
+      "id": "fruit_market",
+      "name": "Fruit Market",
+      "shelfColor": "#6aa650",
+      "wallColor": "#eff6df",
+      "accentColor": "#ef8d55",
+      "unlockLevel": 14
     },
     {
-      "id": "sports_wall",
-      "name": "Sports Wall",
-      "shelfColor": "#6c8a5f",
-      "wallColor": "#e8f1e3",
-      "accentColor": "#ef7b45",
-      "unlockLevel": 125
+      "id": "home_corner",
+      "name": "Home Corner",
+      "shelfColor": "#896149",
+      "wallColor": "#f1eadf",
+      "accentColor": "#26a6a0",
+      "unlockLevel": 20
     },
     {
-      "id": "bakery_case",
-      "name": "Bakery Case",
-      "shelfColor": "#c88c5a",
-      "wallColor": "#f4e6d7",
-      "accentColor": "#8a5a44",
-      "unlockLevel": 175
-    },
-    {
-      "id": "holiday_shelf",
-      "name": "Holiday Shelf",
-      "shelfColor": "#6a72b8",
-      "wallColor": "#edf0ff",
-      "accentColor": "#2fbf71",
-      "unlockLevel": 250
+      "id": "rush_shelves",
+      "name": "Rush Shelves",
+      "shelfColor": "#6d7197",
+      "wallColor": "#eef0fa",
+      "accentColor": "#d84a4a",
+      "unlockLevel": 26
     }
   ]
 }

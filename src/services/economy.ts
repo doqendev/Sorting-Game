@@ -29,12 +29,12 @@ export class EconomyService {
       } else if (item === "activePassId" && typeof amount === "string") {
         save.purchases.activePassId = amount;
       }
-      this.analytics.track("economy_transaction", {
+      this.analytics.track("economy_grant", {
         item,
         amount,
         source,
-        sink: "grant",
-        balance: snapshotBalance(save, item)
+        balance: snapshotBalance(save, item),
+        transactionIdHash: transactionId.slice(-8)
       });
     }
     this.persist(save);
@@ -45,9 +45,9 @@ export class EconomyService {
     const save = this.saveProvider();
     if (save.boosters[boosterId] > 0) {
       save.boosters[boosterId] -= 1;
-      this.analytics.track("economy_transaction", {
+      this.analytics.track("economy_spend", {
         item: boosterId,
-        amount: -1,
+        amount: 1,
         source,
         sink: "booster_use",
         balance: save.boosters[boosterId]
@@ -56,19 +56,22 @@ export class EconomyService {
       return true;
     }
     const cost = this.config.boosterCosts[boosterId].coins;
-    if (save.wallet.coins >= cost) {
-      save.wallet.coins -= cost;
-      this.analytics.track("economy_transaction", {
-        item: "coins",
-        amount: -cost,
-        source,
-        sink: `buy_${boosterId}`,
-        balance: save.wallet.coins
-      });
-      this.persist(save);
-      return true;
-    }
-    return false;
+    return this.spendCoins(cost, `buy_${boosterId}`, source);
+  }
+
+  spendCoins(amount: number, sink: string, source: string): boolean {
+    const save = this.saveProvider();
+    if (save.wallet.coins < amount) return false;
+    save.wallet.coins -= amount;
+    this.analytics.track("economy_spend", {
+      item: "coins",
+      amount,
+      source,
+      sink,
+      balance: save.wallet.coins
+    });
+    this.persist(save);
+    return true;
   }
 
   buyMockProduct(productId: string): boolean {

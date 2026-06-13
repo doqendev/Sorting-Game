@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="basket_brown">
+  <rect width="128" height="128" rx="24" fill="#f7fbf8"/>
+  <path d="M28 54h72l-10 48H38z M44 54c0-24 40-24 40 0" fill="#95613e" stroke="#15231f" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="92" cy="34" r="14" fill="#f1c48f" stroke="#15231f" stroke-width="4"/>
+  <rect x="34" y="76" width="60" height="26" rx="8" fill="#f1c48f" stroke="#15231f" stroke-width="4"/>
+  <text x="64" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#15231f">BA</text>
+</svg>

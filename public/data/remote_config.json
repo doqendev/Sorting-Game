@@ -2,26 +2,28 @@
   "schemaVersion": 1,
   "ads": {
     "interstitialEnabled": true,
-    "firstInterstitialAfterLevel": 8,
-    "interstitialCooldownSec": 120,
+    "firstInterstitialAfterLevel": 10,
+    "interstitialCooldownSec": 150,
     "suppressInterstitialAfterRewardedSec": 180,
     "bannerInGameplayEnabled": false
   },
   "difficulty": {
     "timerMultiplierNormal": 1,
-    "timerMultiplierHard": 0.88,
-    "timerMultiplierSuperHard": 0.78,
-    "comboWindowSec": 2.5
+    "timerMultiplierHard": 0.92,
+    "timerMultiplierSuperHard": 0.84,
+    "comboWindowSec": 2.75,
+    "maxNonClearingMoves": 1
   },
   "economy": {
     "winCoinsMultiplier": 1,
     "rewardedDoubleEnabled": true,
-    "starterPackVariant": "A"
+    "starterPackVariant": "v2_value"
   },
   "features": {
     "relaxModeEnabled": true,
     "collectionAlbumEnabled": true,
-    "battlePassEnabled": true,
-    "dailyOrdersEnabled": true
+    "battlePassEnabled": false,
+    "dailyOrdersEnabled": true,
+    "renovationEnabled": true
   }
 }

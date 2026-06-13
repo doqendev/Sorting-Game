@@ -26,6 +26,9 @@ export class AnalyticsService {
 
   track(name: string, payload: Record<string, unknown> = {}): void {
     const save = this.saveProvider();
+    if (!save?.settings.consentGranted && name !== "consent_update" && name !== "crash") {
+      return;
+    }
     const event: AnalyticsEvent = {
       name,
       timestamp: new Date().toISOString(),
@@ -47,7 +50,7 @@ export class AnalyticsService {
 
   levelDashboard(): Array<Record<string, unknown>> {
     const starts = this.events.filter((event) => event.name === "level_start");
-    const ends = this.events.filter((event) => event.name === "level_end");
+    const ends = this.events.filter((event) => event.name === "level_complete" || event.name === "level_fail");
     const byLevel = new Map<string, Record<string, number>>();
     for (const event of starts) {
       const id = String(event.payload.levelId);
@@ -58,7 +61,7 @@ export class AnalyticsService {
     for (const event of ends) {
       const id = String(event.payload.levelId);
       const row = byLevel.get(id) ?? { starts: 0, wins: 0, losses: 0, moves: 0, boosterUses: 0 };
-      if (event.payload.result === "win") row.wins += 1;
+      if (event.name === "level_complete") row.wins += 1;
       else row.losses += 1;
       row.moves += Number(event.payload.moves ?? 0);
       row.boosterUses += Number(event.payload.boostersUsed ?? 0);
