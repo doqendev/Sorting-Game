@@ -4,6 +4,7 @@ import type {
   BoardState,
   BoosterId,
   FailReason,
+  InputMode,
   LevelConfig,
   LegalMove,
   PlayerSave,
@@ -16,14 +17,24 @@ import { AnalyticsService, installCrashReporting } from "../services/analytics";
 import { SaveService } from "../services/save";
 import { EconomyService } from "../services/economy";
 import { AdsService } from "../services/ads";
+import { AudioService, type SoundCue } from "../services/audio";
+import { HapticsService } from "../services/haptics";
 import { ThreeBoardView } from "../presentation/ThreeBoardView";
+import { rewriteAppUrls } from "../services/paths";
 
 declare global {
   interface Window {
     __SHELF_SORT_TEST__?: {
-      move: (move: LegalMove) => void;
+      move: (move: LegalMove) => Promise<void>;
       state: () => BoardState;
       analytics: () => ReturnType<AnalyticsService["all"]>;
+      isAnimating: () => boolean;
+      setReduceMotion: (enabled: boolean) => void;
+      forceLoss: (reason?: FailReason) => void;
+      select: (selection: { compartmentId: string; cellIndex: number } | null) => void;
+      setInputMode: (inputMode: InputMode) => void;
+      cellPoint: (compartmentId: string, cellIndex: number) => { x: number; y: number } | null;
+      setConsent: (enabled: boolean) => void;
     };
   }
 }
@@ -36,6 +47,8 @@ export class GameApp {
   private analytics: AnalyticsService;
   private economy: EconomyService;
   private ads: AdsService;
+  private audio: AudioService;
+  private haptics: HapticsService;
   private save: PlayerSave;
   private state!: BoardState;
   private currentLevel!: LevelConfig;
@@ -44,6 +57,14 @@ export class GameApp {
   private timerHandle = 0;
   private lastTick = performance.now();
   private timerWarningPlayed = false;
+  private isAnimating = false;
+  private levelStartedAtMs = performance.now();
+  private firstClearTracked = false;
+  private invalidMoveCount = 0;
+  private dragCancelCount = 0;
+  private drawerOpenedAtMs = 0;
+  private drawerReadyTimer = 0;
+  private rewardBeatTimers: number[] = [];
   private catalogBySku: Map<string, ProductSKU>;
 
   constructor(private content: ContentBundle, root: HTMLElement) {
@@ -60,6 +81,8 @@ export class GameApp {
       (save) => this.persistSave(save)
     );
     this.ads = new AdsService(content.remote, this.analytics, () => this.save);
+    this.audio = new AudioService(() => this.save.settings);
+    this.haptics = new HapticsService(() => this.save.settings);
   }
 
   start(): void {
@@ -70,8 +93,11 @@ export class GameApp {
       onInvalid: (reason) => this.invalidMove(reason),
       onSelect: (selection) => {
         this.selected = selection;
+        if (selection) this.feedback("select");
         this.updateHud();
-      }
+      },
+      onDragCancel: () => this.dragCancel(),
+      onFeedback: (cue) => this.feedback(cue)
     });
     this.boardView.setInputMode(this.save.settings.inputMode);
     this.boardView.setReduceMotion(this.save.settings.reduceMotion);
@@ -85,36 +111,47 @@ export class GameApp {
         moves: this.state?.moves,
         result: this.state?.levelEnd ?? "in_progress"
       });
+      if (this.isAnimating || this.boardView.isAnimating()) {
+        this.analytics.track("level_quit_during_animation", {
+          levelId: this.currentLevel?.levelId,
+          moves: this.state?.moves
+        });
+      }
     });
     this.installLocalTestHooks();
     localStorage.setItem("shelf-sort-sessions", String(Number(localStorage.getItem("shelf-sort-sessions") ?? 0) + 1));
   }
 
   private renderShell(): void {
-    this.root.innerHTML = `
+    this.root.innerHTML = rewriteAppUrls(`
       <main class="game" aria-label="Shelf Sort 3D">
         <section class="top-hud" aria-label="Level status">
-          <button class="icon-button" data-action="map" title="Chapter map" aria-label="Chapter map">M</button>
+          <button class="icon-button game-icon-button" data-action="map" title="Chapter map" aria-label="Chapter map">
+            <img class="icon-img" src="/assets/ui/map.svg" alt="">
+          </button>
           <div class="level-pill"><span id="levelLabel">Level 1</span><small id="tierLabel">Normal</small></div>
           <div class="timer-wrap">
+            <span class="timer-icon" aria-hidden="true"><img class="icon-img" src="/assets/ui/timer.svg" alt=""></span>
             <div id="timer" class="timer">0:00</div>
             <div id="combo" class="combo hidden">x1 Combo</div>
           </div>
-          <div class="currency"><span id="coinLabel">0</span><small>coins</small></div>
-          <div class="currency"><span id="starLabel">0</span><small>stars</small></div>
-          <button class="icon-button" data-action="pause" title="Pause" aria-label="Pause">II</button>
+          <div class="currency"><img class="currency-icon" src="/assets/ui/coin.svg" alt=""><span id="coinLabel">0</span><small>coins</small></div>
+          <div class="currency"><img class="currency-icon" src="/assets/ui/star.svg" alt=""><span id="starLabel">0</span><small>stars</small></div>
+          <button class="icon-button game-icon-button" data-action="pause" title="Pause" aria-label="Pause">
+            <img class="icon-img" src="/assets/ui/pause.svg" alt="">
+          </button>
         </section>
 
         <section class="objective-row" id="objectiveRow"></section>
         <section id="board" class="board-stage" aria-label="Interactive shelf board"></section>
 
         <section class="bottom-hud" aria-label="Boosters">
-          <button class="booster" data-booster="hint" title="Hint"><span>?</span><small id="boost_hint">0</small></button>
-          <button class="booster" data-booster="shuffle" title="Shuffle"><span>S</span><small id="boost_shuffle">0</small></button>
-          <button class="booster" data-booster="hammer" title="Clear One"><span>H</span><small id="boost_hammer">0</small></button>
-          <button class="booster" data-booster="freeze_time" title="Freeze Time"><span>F</span><small id="boost_freeze_time">0</small></button>
-          <button class="booster" data-booster="extra_slot" title="Extra Shelf"><span>+</span><small id="boost_extra_slot">0</small></button>
-          <button class="text-button" data-action="shop">Shop</button>
+          <button class="booster" data-booster="hint" title="Hint" aria-label="Hint booster"><img class="icon-img" src="/assets/ui/hint.svg" alt=""><small id="boost_hint">0</small></button>
+          <button class="booster" data-booster="shuffle" title="Shuffle" aria-label="Shuffle booster"><img class="icon-img" src="/assets/ui/shuffle.svg" alt=""><small id="boost_shuffle">0</small></button>
+          <button class="booster" data-booster="hammer" title="Clear One" aria-label="Hammer booster"><img class="icon-img" src="/assets/ui/hammer.svg" alt=""><small id="boost_hammer">0</small></button>
+          <button class="booster" data-booster="freeze_time" title="Freeze Time" aria-label="Freeze Time booster"><img class="icon-img" src="/assets/ui/freeze.svg" alt=""><small id="boost_freeze_time">0</small></button>
+          <button class="booster" data-booster="extra_slot" title="Extra Shelf" aria-label="Extra Shelf booster"><img class="icon-img" src="/assets/ui/extra-shelf.svg" alt=""><small id="boost_extra_slot">0</small></button>
+          <button class="text-button shop-button" data-action="shop"><img class="icon-img" src="/assets/ui/shop.svg" alt=""><span>Shop</span></button>
         </section>
 
         <section id="banner" class="ad-banner hidden">Sandbox adaptive banner. Remove Ads disables forced banners.</section>
@@ -124,20 +161,26 @@ export class GameApp {
         <dialog id="modal" class="modal">
           <div id="modalContent"></div>
         </dialog>
+
+        <section id="rewardOverlay" class="reward-overlay hidden" aria-live="polite"></section>
       </main>
-    `;
+    `);
   }
 
   private bindUi(): void {
     this.root.addEventListener("click", (event) => {
+      this.audio.unlock();
       const target = event.target as HTMLElement;
       const boosterButton = target.closest<HTMLElement>("[data-booster]");
       if (boosterButton) {
-        this.useBooster(boosterButton.dataset.booster as BoosterId);
+        void this.useBooster(boosterButton.dataset.booster as BoosterId);
         return;
       }
       const action = target.closest<HTMLElement>("[data-action]")?.dataset.action;
       if (!action) return;
+      if (["pause", "shop", "map", "settings", "events", "collections", "privacy", "consent_panel"].includes(action)) {
+        this.closeRewardDrawer();
+      }
       if (action === "pause") this.openPanel("pause");
       if (action === "shop") this.openPanel("shop");
       if (action === "map") this.openPanel("map");
@@ -148,10 +191,27 @@ export class GameApp {
       if (action === "privacy") this.openPanel("privacy");
       if (action === "daily") this.claimDailyReward();
       if (action === "next") {
+        if (this.drawerOpenedAtMs) {
+          this.analytics.track("win_drawer_next_tap_delay_ms", {
+            levelId: this.currentLevel.levelId,
+            delayMs: Math.round(performance.now() - this.drawerOpenedAtMs)
+          });
+        }
+        this.closeRewardDrawer();
         this.closeModal();
         this.startLevel(Math.min(this.content.launchLevels.length, this.save.progress.highestLevelCompleted + 1));
       }
+      if (action === "drawer_skip") this.skipRewardDrawer(true);
+      if (action === "objective_info") {
+        this.analytics.track("objective_chip_clicks", {
+          levelId: this.currentLevel.levelId,
+          objectiveType: this.state.objective.type,
+          remaining: Math.max(0, this.state.objective.totalProducts - this.state.objective.clearedProducts)
+        });
+        this.toast(this.remainingObjectiveLabel());
+      }
       if (action === "retry") {
+        this.closeRewardDrawer();
         this.closeModal();
         this.startLevel(Number(this.currentLevel.levelId.split("_")[1]));
       }
@@ -162,6 +222,9 @@ export class GameApp {
       if (action === "relax") this.toggleRelax();
       if (action === "input") this.toggleInputMode();
       if (action === "motion") this.toggleReduceMotion();
+      if (action === "sfx") this.toggleSfx();
+      if (action === "haptics") this.toggleHaptics();
+      if (action === "music") this.toggleMusic();
       if (action === "consent_panel") this.openPanel("consent");
       if (action.startsWith("buy:")) this.buyProduct(action.slice(4));
       if (action.startsWith("jump:")) {
@@ -184,6 +247,12 @@ export class GameApp {
     this.activeHint = null;
     this.selected = null;
     this.timerWarningPlayed = false;
+    this.firstClearTracked = false;
+    this.invalidMoveCount = 0;
+    this.dragCancelCount = 0;
+    this.levelStartedAtMs = performance.now();
+    this.closeRewardDrawer();
+    this.applyTheme();
     this.boardView.setSelected(null);
     this.boardView.setHint(null);
     this.boardView.renderBoard(this.state);
@@ -216,13 +285,16 @@ export class GameApp {
     this.boardView.setHint(this.activeHint);
   }
 
-  private handleMove(move: LegalMove): void {
+  private async handleMove(move: LegalMove): Promise<void> {
+    if (this.isAnimating || this.boardView.isAnimating()) return;
     const sourceCell = this.state.compartments
       .find((compartment) => compartment.id === move.sourceCompartmentId)
       ?.front.find((cell) => cell.cellIndex === move.sourceCellIndex);
+    const before = cloneBoardState(this.state);
     const pairCreated = createsPair(this.state, move);
     const result = applyMoveAndResolve(this.state, { ...move, timestamp: Date.now() });
-    this.feedback(result.clearedTriples.length > 0 ? "clear" : "move");
+    this.isAnimating = true;
+    this.feedback("move");
     this.analytics.track("level_move", {
       levelId: this.state.levelId,
       moveIndex: this.state.moves,
@@ -234,10 +306,37 @@ export class GameApp {
       createsTriple: result.clearedTriples.length > 0,
       moveQuality: result.moveQuality ?? "neutral"
     });
-    this.afterResolution(result);
+    const animationDurationMs = await this.boardView.playResolution(before, this.state, result, move);
+    if (result.clearedTriples.length > 0) {
+      const fpsBucket = animationDurationMs > 900 ? "slow" : "smooth";
+      this.analytics.track("clear_animation_seen", {
+        levelId: this.state.levelId,
+        durationMs: Math.round(animationDurationMs),
+        fpsBucket
+      });
+      this.analytics.track("clear_animation_fps_bucket", {
+        levelId: this.state.levelId,
+        fpsBucket,
+        durationMs: Math.round(animationDurationMs)
+      });
+      if (!this.firstClearTracked) {
+        this.firstClearTracked = true;
+        const elapsedMs = Math.round(performance.now() - this.levelStartedAtMs);
+        this.analytics.track("first_clear_time_ms", {
+          levelId: this.state.levelId,
+          elapsedMs
+        });
+        this.analytics.track("first_clear_seconds", {
+          levelId: this.state.levelId,
+          seconds: Number((elapsedMs / 1000).toFixed(2))
+        });
+      }
+    }
+    this.isAnimating = false;
+    this.afterResolution(result, false);
   }
 
-  private afterResolution(result: ResolutionResult): void {
+  private afterResolution(result: ResolutionResult, renderBoard = true): void {
     this.activeHint = null;
     this.boardView.setHint(null);
     for (const clear of result.clearedTriples) {
@@ -251,7 +350,6 @@ export class GameApp {
       if ([3, 5, 8, 10].includes(clear.combo)) {
         this.economy.grant(`combo_${this.state.levelId}_${this.state.moves}_${clear.combo}`, { coins: clear.combo * 2 }, "combo");
       }
-      if (clear.combo > 1) this.feedback("combo");
       this.addCollectionCard(clear.skuId);
     }
     for (const reveal of result.revealedLayers) {
@@ -262,7 +360,7 @@ export class GameApp {
         hiddenDepthAfter: reveal.hiddenDepthAfter
       });
     }
-    this.boardView.renderBoard(this.state);
+    if (renderBoard) this.boardView.renderBoard(this.state);
     this.updateHud();
     if (this.state.levelEnd === "win") this.completeLevel();
     if (this.state.levelEnd === "loss_timeout" || this.state.levelEnd === "loss_stalemate") this.loseLevel(this.state.levelEnd);
@@ -312,9 +410,31 @@ export class GameApp {
       moves: this.state.moves,
       remainingTime: this.state.timer.remainingSec,
       boostersUsed: this.state.boostersUsed.length,
-      hiddenRevealCount: this.state.hiddenReveals
+      hiddenRevealCount: this.state.hiddenReveals,
+      moveToClearRatio: resultRatio(this.state.moves, this.state.objective.clearedProducts / 3),
+      move_to_clear_ratio: resultRatio(this.state.moves, this.state.objective.clearedProducts / 3),
+      invalidMoveRate: resultRatio(this.invalidMoveCount, Math.max(1, this.state.moves + this.invalidMoveCount)),
+      invalid_move_rate: resultRatio(this.invalidMoveCount, Math.max(1, this.state.moves + this.invalidMoveCount)),
+      firstSessionLevelReached: levelNumber
     });
-    this.openWinPanel(coins, stars);
+    this.analytics.track("move_to_clear_ratio", {
+      levelId: this.currentLevel.levelId,
+      ratio: resultRatio(this.state.moves, this.state.objective.clearedProducts / 3)
+    });
+    this.analytics.track("invalid_move_rate", {
+      levelId: this.currentLevel.levelId,
+      rate: resultRatio(this.invalidMoveCount, Math.max(1, this.state.moves + this.invalidMoveCount))
+    });
+    this.analytics.track("first_session_level_reached", {
+      levelNumber
+    });
+    if (levelNumber <= 5) {
+      this.analytics.track("level_1_to_5_completion_rate", {
+        levelNumber,
+        completed: true
+      });
+    }
+    this.openRewardDrawer(coins, stars);
   }
 
   private loseLevel(reason: string): void {
@@ -333,10 +453,15 @@ export class GameApp {
       boostersUsed: this.state.boostersUsed.length,
       hiddenRevealCount: this.state.hiddenReveals
     });
+    this.analytics.track("loss_reason_distribution", {
+      levelId: this.currentLevel.levelId,
+      failReason
+    });
     this.openLosePanel(failReason);
   }
 
-  private useBooster(boosterId: BoosterId): void {
+  private async useBooster(boosterId: BoosterId): Promise<void> {
+    if (this.isAnimating || this.boardView.isAnimating()) return;
     const command = createBooster(boosterId);
     const context = {
       nowMs: Date.now(),
@@ -351,6 +476,14 @@ export class GameApp {
       inventory: this.save.boosters[boosterId],
       coinFallbackCost: this.content.economy.boosterCosts[boosterId].coins
     });
+    const promptedByFailReason = this.state.levelEnd ? this.state.failReason ?? normalizeFailReason(this.state.levelEnd) : null;
+    if (boosterId === "hint" && this.invalidMoveCount > 0) {
+      this.analytics.track("hint_after_invalid_rate", {
+        levelId: this.currentLevel.levelId,
+        invalidMoveCount: this.invalidMoveCount,
+        moves: this.state.moves
+      });
+    }
     if (!executable) {
       this.toast(boosterId === "hammer" ? "Select a visible product first." : "That booster is not available now.");
       return;
@@ -360,6 +493,15 @@ export class GameApp {
       this.openPanel("shop");
       return;
     }
+    if (promptedByFailReason) {
+      this.analytics.track("booster_prompt_accept_rate", {
+        boosterId,
+        levelId: this.currentLevel.levelId,
+        failReason: promptedByFailReason,
+        accepted: true
+      });
+    }
+    this.isAnimating = true;
     if (this.state.levelEnd && boosterId !== "hint") {
       this.state.levelEnd = null;
       this.state.failReason = null;
@@ -367,7 +509,7 @@ export class GameApp {
       this.state.timer.running = true;
     }
     const result = command.execute(this.state, context);
-    this.feedback("booster");
+    await this.boardView.playBoosterEffect(boosterId);
     this.analytics.track("booster_use", {
       boosterId,
       source: "inventory_or_coins",
@@ -393,17 +535,48 @@ export class GameApp {
         }
       );
     }
+    this.isAnimating = false;
     if (!this.state.levelEnd) this.closeModal();
   }
 
   private invalidMove(reason: string): void {
+    this.invalidMoveCount += 1;
     this.feedback("invalid");
+    void this.boardView.playInvalid(reason);
     this.analytics.track("invalid_move", {
       reason,
       levelId: this.currentLevel.levelId,
       selected: this.selected
     });
-    this.toast("That shelf spot is not valid.");
+    this.analytics.track("tap_miss_rate", {
+      levelId: this.currentLevel.levelId,
+      rate: resultRatio(this.invalidMoveCount, Math.max(1, this.state.moves + this.invalidMoveCount)),
+      reason
+    });
+    this.analytics.track("invalid_reason_shown", {
+      levelId: this.currentLevel.levelId,
+      reason,
+      invalidMoveCount: this.invalidMoveCount
+    });
+    this.toast(invalidMoveCopy(reason));
+  }
+
+  private dragCancel(): void {
+    this.dragCancelCount += 1;
+    this.analytics.track("drag_cancel_rate", {
+      levelId: this.currentLevel.levelId,
+      rate: resultRatio(this.dragCancelCount, Math.max(1, this.state.moves + this.invalidMoveCount + this.dragCancelCount))
+    });
+  }
+
+  private applyTheme(): void {
+    const theme = this.content.themes.find((candidate) => candidate.id === this.currentLevel.chapterId) ?? this.content.themes[0];
+    const game = this.root.querySelector<HTMLElement>(".game");
+    if (!game || !theme) return;
+    game.style.setProperty("--theme-wall", theme.wallColor);
+    game.style.setProperty("--theme-accent", theme.accentColor);
+    game.style.setProperty("--theme-shelf", theme.shelfColor);
+    game.dataset.theme = theme.id;
   }
 
   private updateHud(): void {
@@ -416,68 +589,144 @@ export class GameApp {
     combo.textContent = `x${Math.max(1, this.state.combo.value)} Combo`;
     combo.classList.toggle("hidden", this.state.combo.value <= 1);
     for (const booster of Object.keys(this.save.boosters) as BoosterId[]) {
-      this.root.querySelector(`#boost_${booster}`)!.textContent = String(this.save.boosters[booster]);
+      const count = this.save.boosters[booster];
+      const button = this.root.querySelector<HTMLButtonElement>(`[data-booster="${booster}"]`);
+      const cost = this.content.economy.boosterCosts[booster].coins;
+      const soldOut = count <= 0 && this.save.wallet.coins < cost;
+      this.root.querySelector(`#boost_${booster}`)!.textContent = String(count);
+      button?.classList.toggle("sold-out", soldOut);
+      button?.classList.toggle("recommended", (booster === "hint" && this.invalidMoveCount > 0) || (booster === "shuffle" && this.invalidMoveCount >= 3));
+      button?.setAttribute("aria-label", `${title(booster)} booster, ${count} available`);
     }
-    this.root.querySelector("#objectiveRow")!.innerHTML = this.renderObjective();
+    this.root.querySelector("#objectiveRow")!.innerHTML = rewriteAppUrls(this.renderObjective());
     this.root.querySelector("#banner")!.classList.toggle("hidden", !this.ads.shouldShowBanner());
   }
 
   private renderObjective(): string {
+    const dailyOrder = this.renderDailyOrderCard();
     if (this.state.objective.type === "clear_all" || this.state.objective.type === "time_challenge") {
       const remaining = this.state.objective.totalProducts - this.state.objective.clearedProducts;
       const timeChip =
         this.state.objective.type === "time_challenge"
-          ? `<span class="objective-chip">Beat ${formatTime(this.state.objective.timeLimitSec ?? this.state.timer.totalSec)}</span>`
+          ? `<button class="objective-chip objective-button" data-action="objective_info">Beat ${formatTime(this.state.objective.timeLimitSec ?? this.state.timer.totalSec)}</button>`
           : "";
-      return `<span class="objective-chip">Clear all goods</span><span class="objective-chip">${Math.max(0, remaining)} left</span>${timeChip}`;
+      return `${dailyOrder}<button class="objective-chip objective-button" data-action="objective_info">Clear all goods · ${Math.max(0, remaining)} left</button>${timeChip}`;
     }
     if (this.state.objective.type === "combo_target") {
-      return `<span class="objective-chip">Combo ${this.state.combo.max}/${this.state.objective.targetCombo}</span><span class="objective-chip">Clear all goods</span>`;
+      return `${dailyOrder}<button class="objective-chip objective-button" data-action="objective_info">Combo ${this.state.combo.max}/${this.state.objective.targetCombo} · Clear all goods</button>`;
     }
-    return this.state.objective.targets
+    return `${dailyOrder}${this.state.objective.targets
       .map((target) => {
         const label = target.label ?? target.skuId ?? target.category ?? target.flag ?? "Target";
-        return `<span class="objective-chip">${title(label)}: ${target.cleared}/${target.count}</span>`;
+        return `<button class="objective-chip objective-button" data-action="objective_info">${title(label)}: ${target.cleared}/${target.count}</button>`;
       })
-      .join("");
+      .join("")}`;
   }
 
-  private openWinPanel(coins: number, stars: number): void {
+  private renderDailyOrderCard(): string {
+    const clearedTriples = Math.min(3, Math.floor(this.state.objective.clearedProducts / 3));
+    return `<button class="objective-chip objective-button daily-order-card" data-action="daily">
+      <span>Daily order</span>
+      <strong>${clearedTriples}/3 parcel</strong>
+      <i style="width:${Math.round((clearedTriples / 3) * 100)}%"></i>
+    </button>`;
+  }
+
+  private openRewardDrawer(coins: number, stars: number): void {
     const completed = this.save.progress.highestLevelCompleted;
     const next = Math.min(this.content.launchLevels.length, completed + 1);
     const adReady = this.content.remote.economy.rewardedDoubleEnabled;
     const collectionProgress = this.collectionProgressLabel();
     const eventProgress = `${Math.min(5, this.save.progress.winStreak)}/5`;
+    const streakChestReady = this.save.progress.winStreak > 0 && this.save.progress.winStreak % 3 === 0;
     const consentCta = this.save.settings.consentGranted
       ? ""
-      : `<button data-action="consent_panel">Allow tuning telemetry</button>`;
-    this.openModal(`
-      <div class="panel">
-        <h2>Level Complete</h2>
-        <div class="reward-grid">
-          <div><strong>${coins}</strong><small>coins</small></div>
-          <div><strong>${stars}</strong><small>stars</small></div>
-          <div><strong>${this.save.progress.winStreak}</strong><small>streak</small></div>
+      : `<button class="drawer-secondary" data-action="consent_panel">Allow tuning telemetry</button>`;
+    const overlay = this.root.querySelector<HTMLElement>("#rewardOverlay")!;
+    const albumReveal = this.lastCollectedCardLabel();
+    this.drawerOpenedAtMs = performance.now();
+    this.analytics.track("win_drawer_opened", {
+      levelId: this.currentLevel.levelId,
+      stars,
+      coins,
+      streak: this.save.progress.winStreak
+    });
+    if (adReady) {
+      this.analytics.track("rewarded_double_impression_after_drawer", {
+        levelId: this.currentLevel.levelId,
+        coins
+      });
+    }
+    if (streakChestReady) {
+      this.analytics.track("streak_chest_ceremony", {
+        levelId: this.currentLevel.levelId,
+        streak: this.save.progress.winStreak
+      });
+    }
+    window.clearTimeout(this.drawerReadyTimer);
+    overlay.innerHTML = rewriteAppUrls(`
+      <div class="reward-scrim" data-action="drawer_skip"></div>
+      <div class="reward-drawer" role="dialog" aria-modal="true" aria-label="Puzzle complete rewards" data-action="drawer_skip">
+        <div class="drawer-handle" aria-hidden="true"></div>
+        <div class="drawer-title-row">
+          <span class="drawer-stamp">Sorted</span>
+          <h2>Puzzle Complete!</h2>
         </div>
-        <div class="reward-grid">
-          <div><strong>${collectionProgress}</strong><small>album</small></div>
-          <div><strong>${eventProgress}</strong><small>daily order</small></div>
-          <div><strong>${this.save.progress.passXp}</strong><small>pass XP</small></div>
+        <div class="drawer-stars" aria-label="${stars} stars earned">
+          ${[1, 2, 3].map((slot) => `<span class="drawer-star ${slot <= stars ? "earned" : ""}" style="--i:${slot}"><img src="/assets/ui/star.svg" alt=""></span>`).join("")}
         </div>
-        <div class="pass-track"><span style="width:${Math.min(100, this.save.progress.passXp % 100)}%"></span></div>
-        <div class="button-row">
-          ${adReady ? `<button class="primary" data-action="double_reward">Double coins</button>` : ""}
-          <button class="primary" data-action="next">Next ${next}</button>
+        <div class="drawer-reward-bin">
+          <div class="drawer-reward coin-count"><img src="/assets/ui/coin.svg" alt=""><strong>${coins}</strong><small>coins</small></div>
+          <div class="drawer-reward"><img src="/assets/ui/streak.svg" alt=""><strong>${this.save.progress.winStreak}</strong><small>streak</small></div>
+          <div class="drawer-reward"><img src="/assets/ui/album.svg" alt=""><strong>${collectionProgress}</strong><small>album</small></div>
         </div>
-        <div class="button-row subtle-row">
-          <button data-action="collections">Album</button>
-          <button data-action="events">Events</button>
-          <button data-action="map">Map</button>
+        <div class="drawer-progress-grid">
+          <div class="drawer-progress"><span>Daily order</span><strong>${eventProgress}</strong><i style="width:${Math.min(100, this.save.progress.winStreak * 20)}%"></i></div>
+          <div class="drawer-progress"><span>Pass XP</span><strong>${this.save.progress.passXp}</strong><i style="width:${Math.min(100, this.save.progress.passXp % 100)}%"></i></div>
+          <div class="drawer-progress"><span>${albumReveal}</span><strong>New</strong><i style="width:100%"></i></div>
+        </div>
+        <div class="drawer-chest ${streakChestReady ? "unlocked" : ""}">
+          <img src="/assets/ui/shop.svg" alt="">
+          <span>Streak chest ready</span>
+        </div>
+        <div class="drawer-actions">
+          ${adReady ? `<button class="drawer-bonus" data-action="double_reward"><img src="/assets/ui/coin.svg" alt="">Double coins</button>` : ""}
+          <button class="drawer-next" data-action="next" disabled>Next Level ${next}</button>
+        </div>
+        <div class="drawer-secondary-row">
+          <button class="drawer-secondary" data-action="collections"><img src="/assets/ui/album.svg" alt="">Album</button>
+          <button class="drawer-secondary" data-action="events"><img src="/assets/ui/event.svg" alt="">Events</button>
+          <button class="drawer-secondary" data-action="map"><img src="/assets/ui/map.svg" alt="">Map</button>
           ${consentCta}
         </div>
       </div>
     `);
-    void this.ads.showInterstitial("post_win", "level_win");
+    overlay.classList.remove("hidden", "drawer-ready");
+    overlay.classList.add("drawer-opening");
+    this.feedback("drawer");
+    this.rewardBeatTimers.forEach((timer) => window.clearTimeout(timer));
+    this.rewardBeatTimers = [];
+    const timingScale = this.save.settings.reduceMotion ? 0.2 : 1;
+    for (let slot = 1; slot <= stars; slot += 1) {
+      this.rewardBeatTimers.push(
+        window.setTimeout(() => {
+          if (!overlay.classList.contains("hidden")) this.feedback("star");
+        }, (1050 + slot * 220) * timingScale)
+      );
+    }
+    this.rewardBeatTimers.push(
+      window.setTimeout(() => {
+        if (!overlay.classList.contains("hidden")) this.feedback("coin");
+      }, 1900 * timingScale)
+    );
+    if (streakChestReady) {
+      this.rewardBeatTimers.push(
+        window.setTimeout(() => {
+          if (!overlay.classList.contains("hidden")) this.feedback("win");
+        }, 2250 * timingScale)
+      );
+    }
+    this.drawerReadyTimer = window.setTimeout(() => this.skipRewardDrawer(false), this.save.settings.reduceMotion ? 420 : 2100);
   }
 
   private openLosePanel(reason: FailReason): void {
@@ -487,10 +736,19 @@ export class GameApp {
       failReason: reason,
       offers: rescue.offerIds
     });
+    this.analytics.track("booster_prompt_from_fail_reason", {
+      levelId: this.currentLevel.levelId,
+      failReason: reason,
+      offers: rescue.offerIds
+    });
     this.openModal(`
       <div class="panel">
         <h2>${rescue.title}</h2>
-        <p class="panel-copy">${rescue.copy}</p>
+        <div class="rescue-card rescue-${reason ?? "unknown"}">
+          <span class="rescue-icon">${rescue.icon}</span>
+          <p class="panel-copy">${rescue.copy}</p>
+          <strong>${this.remainingObjectiveLabel()}</strong>
+        </div>
         <div class="button-row">${rescue.buttons}</div>
         <div class="button-row subtle-row">
           <button data-action="retry">Retry</button>
@@ -537,8 +795,14 @@ export class GameApp {
   private async doubleReward(): Promise<void> {
     const ok = await this.ads.showRewarded("double_win_reward", "win_panel", { multiplier: 2 });
     if (!ok) return;
+    this.analytics.track("rewarded_double_accept_after_drawer", {
+      levelId: this.currentLevel.levelId
+    });
     this.economy.grant(`double_${this.currentLevel.levelId}_${Date.now()}`, { coins: this.currentLevel.rewards.baseCoins }, "rewarded_ad");
     this.updateHud();
+    const coinCount = this.root.querySelector<HTMLElement>(".coin-count strong");
+    if (coinCount) coinCount.textContent = String(Number(coinCount.textContent ?? 0) + this.currentLevel.rewards.baseCoins);
+    this.feedback("coin");
     this.toast("Coins doubled.");
   }
 
@@ -574,6 +838,8 @@ export class GameApp {
       .map(
         (product) => `
           <button class="shop-item" data-action="buy:${product.id}">
+            <span class="value-ribbon">${product.kind}</span>
+            <img class="shop-pack-icon" src="/assets/ui/shop.svg" alt="">
             <strong>${title(product.id)}</strong>
             <span>${product.price}</span>
           </button>
@@ -591,19 +857,26 @@ export class GameApp {
 
   private openMap(): void {
     const levels = [1, 5, 10, 15, 20, 25, 30]
-      .map((level) => `<button data-action="jump:${level}" ${level > this.save.progress.highestLevelCompleted + 1 ? "disabled" : ""}>${level}</button>`)
+      .map((level, index) => {
+        const locked = level > this.save.progress.highestLevelCompleted + 1;
+        const hard = this.content.launchLevels[level - 1]?.difficultyTier === "hard";
+        return `<button class="map-node ${hard ? "hard-node" : ""}" data-action="jump:${level}" style="--i:${index}" ${locked ? "disabled" : ""}>
+          <span>${level}</span>
+          ${hard ? `<small>Hard</small>` : ""}
+        </button>`;
+      })
       .join("");
     this.openModal(`
       <div class="panel wide">
         <h2>Chapter Map</h2>
         <p class="panel-copy">${this.content.launchLevels.length} handcrafted vertical-slice levels, ${this.content.backlogLevels.length} backlog levels, ${this.content.themes.length} shelf themes.</p>
-        <div class="button-row wrap">${levels}</div>
+        <div class="map-path">${levels}</div>
         <div class="button-row subtle-row">
-          <button data-action="daily">Daily reward</button>
-          <button data-action="events">Events</button>
-          <button data-action="collections">Album</button>
-          <button data-action="shop">Shop</button>
-          <button data-action="settings">Settings</button>
+          <button data-action="daily"><img class="icon-img" src="/assets/ui/coin.svg" alt="">Daily reward</button>
+          <button data-action="events"><img class="icon-img" src="/assets/ui/event.svg" alt="">Events</button>
+          <button data-action="collections"><img class="icon-img" src="/assets/ui/album.svg" alt="">Album</button>
+          <button data-action="shop"><img class="icon-img" src="/assets/ui/shop.svg" alt="">Shop</button>
+          <button data-action="settings"><img class="icon-img" src="/assets/ui/timer.svg" alt="">Settings</button>
         </div>
         <button data-action="close">Close</button>
       </div>
@@ -617,6 +890,9 @@ export class GameApp {
         <div class="setting-line"><span>Input</span><button data-action="input">${this.save.settings.inputMode}</button></div>
         <div class="setting-line"><span>Relax timer</span><button data-action="relax">${this.save.settings.relaxModePreferred ? "On" : "Off"}</button></div>
         <div class="setting-line"><span>Reduce motion</span><button data-action="motion">${this.save.settings.reduceMotion ? "On" : "Off"}</button></div>
+        <div class="setting-line"><span>SFX</span><button data-action="sfx">${this.save.settings.sfx ? "On" : "Off"}</button></div>
+        <div class="setting-line"><span>Haptics</span><button data-action="haptics">${this.save.settings.haptics ? "On" : "Off"}</button></div>
+        <div class="setting-line"><span>Music</span><button data-action="music">${this.save.settings.music ? "On" : "Off"}</button></div>
         <div class="setting-line"><span>Telemetry</span><button data-action="consent_panel">${this.save.settings.consentGranted ? "On" : "Off"}</button></div>
         <button class="primary" data-action="close">Done</button>
       </div>
@@ -625,7 +901,13 @@ export class GameApp {
 
   private openEvents(): void {
     const eventRows = this.content.events
-      .map((event) => `<div class="event-row"><strong>${event.name}</strong><span>${event.durationHours}h</span><small>${event.mechanic}</small></div>`)
+      .map((event) => `<div class="event-row">
+        <img class="event-icon" src="/assets/ui/event.svg" alt="">
+        <strong>${event.name}</strong>
+        <span>${event.durationHours}h</span>
+        <small>${event.mechanic}</small>
+        <em>${event.reward}</em>
+      </div>`)
       .join("");
     this.openModal(`
       <div class="panel wide">
@@ -642,7 +924,13 @@ export class GameApp {
       .map((category) => {
         const collected = this.save.collections[category]?.length ?? 0;
         const total = this.content.catalog.products.filter((product) => product.category === category).length;
-        return `<div class="album-page"><strong>${title(category)}</strong><span>${collected}/${total}</span></div>`;
+        const progress = Math.round((collected / Math.max(1, total)) * 100);
+        return `<div class="album-page">
+          <img class="album-icon" src="/assets/ui/album.svg" alt="">
+          <strong>${title(category)}</strong>
+          <span>${collected}/${total}</span>
+          <i style="width:${progress}%"></i>
+        </div>`;
       })
       .join("");
     this.openModal(`
@@ -726,6 +1014,32 @@ export class GameApp {
     this.persistSave(this.save);
     this.boardView.setReduceMotion(this.save.settings.reduceMotion);
     this.analytics.track("settings_change", { setting: "reduceMotion", value: this.save.settings.reduceMotion });
+    if (this.save.settings.reduceMotion) {
+      this.analytics.track("settings_reduce_motion_enabled", {
+        levelId: this.currentLevel.levelId
+      });
+    }
+    this.openSettings();
+  }
+
+  private toggleSfx(): void {
+    this.save.settings.sfx = !this.save.settings.sfx;
+    this.persistSave(this.save);
+    this.analytics.track("settings_change", { setting: "sfx", value: this.save.settings.sfx });
+    this.openSettings();
+  }
+
+  private toggleHaptics(): void {
+    this.save.settings.haptics = !this.save.settings.haptics;
+    this.persistSave(this.save);
+    this.analytics.track("settings_change", { setting: "haptics", value: this.save.settings.haptics });
+    this.openSettings();
+  }
+
+  private toggleMusic(): void {
+    this.save.settings.music = !this.save.settings.music;
+    this.persistSave(this.save);
+    this.analytics.track("settings_change", { setting: "music", value: this.save.settings.music });
     this.openSettings();
   }
 
@@ -749,10 +1063,53 @@ export class GameApp {
     }
   }
 
+  private skipRewardDrawer(userInitiated: boolean): void {
+    const overlay = this.root.querySelector<HTMLElement>("#rewardOverlay");
+    if (!overlay || overlay.classList.contains("hidden") || overlay.classList.contains("drawer-ready")) return;
+    overlay.classList.add("drawer-ready");
+    overlay.classList.remove("drawer-opening");
+    overlay.querySelector<HTMLButtonElement>(".drawer-next")?.removeAttribute("disabled");
+    this.haptics.pulse("drawer_skip");
+    if (userInitiated) {
+      this.analytics.track("animation_skip_rate", {
+        levelId: this.currentLevel.levelId,
+        surface: "win_drawer",
+        elapsedMs: Math.round(performance.now() - this.drawerOpenedAtMs)
+      });
+    }
+  }
+
+  private closeRewardDrawer(): void {
+    window.clearTimeout(this.drawerReadyTimer);
+    this.rewardBeatTimers.forEach((timer) => window.clearTimeout(timer));
+    this.rewardBeatTimers = [];
+    const overlay = this.root.querySelector<HTMLElement>("#rewardOverlay");
+    if (!overlay) return;
+    if (!overlay.classList.contains("hidden") && this.drawerOpenedAtMs) {
+      this.analytics.track("drawer_dwell_seconds", {
+        levelId: this.currentLevel.levelId,
+        seconds: Number(((performance.now() - this.drawerOpenedAtMs) / 1000).toFixed(2)),
+        ready: overlay.classList.contains("drawer-ready")
+      });
+      this.drawerOpenedAtMs = 0;
+    }
+    overlay.classList.add("hidden");
+    overlay.classList.remove("drawer-ready", "drawer-opening");
+    overlay.innerHTML = "";
+  }
+
+  private lastCollectedCardLabel(): string {
+    const collected = Object.entries(this.save.collections)
+      .flatMap(([category, cards]) => cards.map((skuId) => ({ category, skuId })))
+      .at(-1);
+    if (!collected) return "Album card";
+    return `${title(collected.category)} card`;
+  }
+
   private openModal(html: string): void {
     window.clearInterval(this.timerHandle);
     const modal = this.root.querySelector<HTMLDialogElement>("#modal")!;
-    this.root.querySelector("#modalContent")!.innerHTML = html;
+    this.root.querySelector("#modalContent")!.innerHTML = rewriteAppUrls(html);
     if (!modal.open) modal.showModal();
   }
 
@@ -789,47 +1146,9 @@ export class GameApp {
       .join(", ");
   }
 
-  private feedback(kind: "move" | "clear" | "combo" | "booster" | "invalid" | "warning" | "win" | "loss"): void {
-    if (this.save.settings.haptics && "vibrate" in navigator) {
-      const patterns = {
-        move: 8,
-        clear: [12, 24, 12],
-        combo: [10, 18, 10, 18, 10],
-        booster: 18,
-        invalid: [24, 18, 24],
-        warning: [20, 30, 20],
-        win: [16, 24, 16, 24, 28],
-        loss: [40, 30, 40]
-      } satisfies Record<typeof kind, VibratePattern>;
-      navigator.vibrate(patterns[kind]);
-    }
-    if (!this.save.settings.sfx) return;
-    try {
-      const AudioContextClass =
-        window.AudioContext ?? (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-      if (!AudioContextClass) return;
-      const context = new AudioContextClass();
-      const oscillator = context.createOscillator();
-      const gain = context.createGain();
-      const frequencies = {
-        move: 380,
-        clear: 620,
-        combo: 760,
-        booster: 520,
-        invalid: 180,
-        warning: 260,
-        win: 880,
-        loss: 150
-      } satisfies Record<typeof kind, number>;
-      oscillator.frequency.value = frequencies[kind];
-      gain.gain.value = 0.025;
-      oscillator.connect(gain);
-      gain.connect(context.destination);
-      oscillator.start();
-      oscillator.stop(context.currentTime + 0.07);
-    } catch {
-      // Browser audio can be unavailable before user activation.
-    }
+  private feedback(kind: SoundCue): void {
+    this.audio.play(kind, kind === "combo" || kind === "win" ? 1.35 : 1);
+    this.haptics.pulse(kind);
   }
 
   private installLocalTestHooks(): void {
@@ -837,7 +1156,31 @@ export class GameApp {
     window.__SHELF_SORT_TEST__ = {
       move: (moveToApply) => this.handleMove(moveToApply),
       state: () => structuredClone(this.state) as BoardState,
-      analytics: () => this.analytics.all()
+      analytics: () => this.analytics.all(),
+      isAnimating: () => this.isAnimating || this.boardView.isAnimating(),
+      setReduceMotion: (enabled) => {
+        this.save.settings.reduceMotion = enabled;
+        this.boardView.setReduceMotion(enabled);
+        this.persistSave(this.save);
+      },
+      forceLoss: (reason = "timeout") => {
+        this.closeRewardDrawer();
+        this.state.levelEnd = reason === "board_jammed" ? "loss_stalemate" : "loss_timeout";
+        this.state.failReason = reason;
+        if (reason === "timeout") this.state.timer.remainingSec = 0;
+        this.loseLevel(this.state.levelEnd);
+      },
+      select: (selection) => this.boardView.setSelected(selection),
+      setInputMode: (inputMode) => {
+        this.save.settings.inputMode = inputMode;
+        this.boardView.setInputMode(inputMode);
+        this.persistSave(this.save);
+      },
+      cellPoint: (compartmentId, cellIndex) => this.boardView.debugCellPoint(compartmentId, cellIndex),
+      setConsent: (enabled) => {
+        this.save.settings.consentGranted = enabled;
+        this.persistSave(this.save);
+      }
     };
   }
 
@@ -854,13 +1197,31 @@ function normalizeFailReason(reason: string): FailReason {
   return "board_jammed";
 }
 
+function cloneBoardState(state: BoardState): BoardState {
+  return structuredClone(state) as BoardState;
+}
+
+function resultRatio(numerator: number, denominator: number): number {
+  return denominator <= 0 ? 0 : Number((numerator / denominator).toFixed(3));
+}
+
+function invalidMoveCopy(reason: string): string {
+  if (reason === "target_occupied") return "That spot is full.";
+  if (reason === "source_blocked") return "That product is blocked.";
+  if (reason === "target_blocked") return "That shelf slot is blocked.";
+  if (reason === "same_compartment") return "Pick a different shelf.";
+  if (reason === "locked_compartment") return "Unlock that shelf first.";
+  return "That shelf spot is not valid.";
+}
+
 function rescueForFailReason(
   reason: FailReason,
   remainingTargets: string
-): { title: string; copy: string; offerIds: string[]; buttons: string } {
+): { title: string; copy: string; icon: string; offerIds: string[]; buttons: string } {
   if (reason === "timeout" || reason === "objective_incomplete") {
     return {
       title: reason === "timeout" ? "Time Up" : "Order Still Open",
+      icon: `<img src="/assets/ui/timer.svg" alt="">`,
       copy:
         reason === "timeout"
           ? "Add 45 seconds and keep the same board state."
@@ -875,6 +1236,7 @@ function rescueForFailReason(
   if (reason === "reserve_mismanagement" || reason === "board_jammed") {
     return {
       title: "No Moves",
+      icon: `<img src="/assets/ui/shuffle.svg" alt="">`,
       copy: "Open one more reserve shelf or shuffle the visible goods to recover space.",
       offerIds: ["extra_slot", "shuffle"],
       buttons: `<button class="primary" data-booster="extra_slot">Extra shelf</button><button data-booster="shuffle">Shuffle</button>`
@@ -883,6 +1245,7 @@ function rescueForFailReason(
   if (reason === "blocker_remaining") {
     return {
       title: "Shelf Blocked",
+      icon: `<img src="/assets/ui/hammer.svg" alt="">`,
       copy: "Clear a nearby match or use the hammer to break the blocker path.",
       offerIds: ["hammer", "shuffle"],
       buttons: `<button class="primary" data-booster="hammer">Hammer</button><button data-booster="shuffle">Shuffle</button>`
@@ -890,6 +1253,7 @@ function rescueForFailReason(
   }
   return {
     title: "Target Remaining",
+    icon: `<img src="/assets/ui/hint.svg" alt="">`,
     copy: `Still needed: ${remainingTargets || "target goods"}. Use a hint or retry from the same fair starting board.`,
     offerIds: ["hint", "shuffle"],
     buttons: `<button class="primary" data-booster="hint">Use hint</button><button data-booster="shuffle">Shuffle</button>`

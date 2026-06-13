@@ -1,4 +1,5 @@
 import type { EconomyConfig, LevelConfig, ProductCatalog, RemoteConfig } from "../domain/types";
+import { appUrl } from "../services/paths";
 
 export interface ContentBundle {
   catalog: ProductCatalog;
@@ -29,13 +30,13 @@ export interface EventConfig {
 
 export async function loadContent(): Promise<ContentBundle> {
   const [catalog, launch, backlog, economy, remote, themes, events] = await Promise.all([
-    loadJson<ProductCatalog>("/data/product_catalog.json"),
-    loadJson<{ schemaVersion: 1; levels: LevelConfig[] }>("/data/levels_launch.json"),
-    loadJson<{ schemaVersion: 1; levels: LevelConfig[] }>("/data/levels_backlog.json"),
-    loadJson<EconomyConfig>("/data/economy_config.json"),
-    loadJson<RemoteConfig>("/data/remote_config.json"),
-    loadJson<{ schemaVersion: 1; themes: ThemeConfig[] }>("/data/themes.json"),
-    loadJson<{ schemaVersion: 1; events: EventConfig[] }>("/data/events.json")
+    loadJson<ProductCatalog>(appUrl("data/product_catalog.json")),
+    loadJson<{ schemaVersion: 1; levels: LevelConfig[] }>(appUrl("data/levels_launch.json")),
+    loadJson<{ schemaVersion: 1; levels: LevelConfig[] }>(appUrl("data/levels_backlog.json")),
+    loadJson<EconomyConfig>(appUrl("data/economy_config.json")),
+    loadJson<RemoteConfig>(appUrl("data/remote_config.json")),
+    loadJson<{ schemaVersion: 1; themes: ThemeConfig[] }>(appUrl("data/themes.json")),
+    loadJson<{ schemaVersion: 1; events: EventConfig[] }>(appUrl("data/events.json"))
   ]);
   return {
     catalog,

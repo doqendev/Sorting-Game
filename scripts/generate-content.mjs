@@ -177,16 +177,16 @@ const events = [
 ];
 
 const levelPlans = [
-  plan(1, "Teach first triple", ["chips_blue", "soda_blue", "apple_red"], [], "clear_all", {}, 0, "tutorial", "snack_aisle"),
+  plan(1, "Teach first triple", ["chips_blue", "soda_blue", "apple_red"], [], "clear_all", { firstMoveClear: true }, 0, "tutorial", "snack_aisle"),
   plan(2, "Repeat triple with cleaner reserve use", ["pretzel_red", "juice_orange", "pear_green"], [], "clear_all", {}, 0, "tutorial", "snack_aisle"),
   plan(3, "Third confidence level", ["cracker_green", "water_cyan", "berry_blue"], [], "clear_all", {}, 0, "tutorial", "snack_aisle"),
   plan(4, "Reserve shelf taught", ["popcorn_yellow", "tea_green", "melon_green"], [], "clear_all", {}, 0, "tutorial", "snack_aisle"),
   plan(5, "Reserve with two rows", ["cookie_pink", "milk_white", "banana_yellow"], [], "clear_all", { sourceRows: 2 }, 0, "normal", "snack_aisle"),
   plan(6, "Reserve pressure without timer punishment", ["wafer_teal", "smoothie_pink", "kiwi_brown"], [], "clear_all", { sourceRows: 2, crateCells: 1 }, 0, "normal", "snack_aisle"),
   plan(7, "Exact hidden preview", ["nacho_orange", "tonic_lime", "peach_orange"], [["soap_teal", "towel_blue", "brush_red"]], "clear_all", {}, 1, "normal", "cooler_wall"),
-  plan(8, "Mixed hidden queue", ["granola_purple", "cola_red", "plum_purple"], [["mug_green", "sponge_yellow", "candle_purple"]], "clear_all", {}, 1, "normal", "cooler_wall"),
-  plan(9, "Two hidden decisions", ["nuts_brown", "lemonade_yellow", "mango_gold"], [["basket_brown", "plant_green", "lamp_orange"]], "clear_all", { sourceRows: 2 }, 1, "normal", "cooler_wall"),
-  plan(10, "Hidden preview review", ["candy_cyan", "coffee_brown", "grape_violet"], [["clock_cyan", "chips_blue", "soda_blue"]], "clear_all", { sourceRows: 2 }, 1, "normal", "cooler_wall"),
+  plan(8, "First combo objective", ["granola_purple", "cola_red", "plum_purple"], [["mug_green", "sponge_yellow", "candle_purple"]], "combo_target", { targetCombo: 2 }, 1, "normal", "cooler_wall"),
+  plan(9, "First light blocker", ["nuts_brown", "lemonade_yellow", "mango_gold"], [["basket_brown", "plant_green", "lamp_orange"]], "clear_all", { sourceRows: 2, crateCells: 1 }, 1, "normal", "cooler_wall"),
+  plan(10, "First hard ceremony", ["candy_cyan", "coffee_brown", "grape_violet"], [["clock_cyan", "chips_blue", "soda_blue"]], "clear_all", { sourceRows: 2 }, 1, "hard", "cooler_wall"),
   plan(11, "Planning ahead mild timer", ["chips_blue", "juice_orange", "pear_green"], [["pretzel_red", "water_cyan", "apple_red"]], "clear_all", { preview: "dim_exact" }, 1, "normal", "fruit_market"),
   plan(12, "Silhouette starts", ["cracker_green", "tea_green", "berry_blue"], [["popcorn_yellow", "milk_white", "melon_green"]], "clear_all", { preview: "silhouette" }, 1, "normal", "fruit_market"),
   plan(13, "Category mix planning", ["cookie_pink", "smoothie_pink", "banana_yellow"], [["wafer_teal", "tonic_lime", "kiwi_brown"]], "clear_all", { preview: "silhouette", sourceRows: 2 }, 1, "normal", "fruit_market"),
@@ -215,6 +215,7 @@ const sourceLevels = launchLevels.map((level, index) => ({
   intent: levelPlans[index].intent,
   curriculum: levelPlans[index].curriculum,
   humanReview: level.humanReview,
+  emotionalBeat: emotionalBeatFor(levelPlans[index].level),
   authoredAt: "2026-06-13T00:00:00Z"
 }));
 
@@ -268,6 +269,7 @@ function createLevel(spec) {
       });
     }
   }
+  if (spec.options.firstMoveClear) applyFirstMoveClearSetup(compartments, spec);
   const timerSec = spec.options.timer ?? (spec.level <= 10 ? 420 : spec.difficultyTier === "hard" ? 150 : 220);
   return {
     schemaVersion: 1,
@@ -296,9 +298,18 @@ function createLevel(spec) {
     humanReview: {
       reviewer: "studio_v2",
       grade: spec.difficultyTier === "hard" ? "B" : "A",
-      notes: spec.intent
+      notes: `${spec.intent}. Emotional beat: ${emotionalBeatFor(spec.level)}.`
     }
   };
+}
+
+function applyFirstMoveClearSetup(compartments, spec) {
+  const [matchSku, secondSku, thirdSku] = spec.visible;
+  const find = (id) => compartments.find((compartment) => compartment.id === id);
+  find("c_0_0").front = [cell(matchSku, spec), cell(secondSku, spec), cell(thirdSku, spec)];
+  find("c_0_1").front = [cell(secondSku, spec), cell(secondSku, spec), { skuId: null }];
+  find("c_0_2").front = [cell(thirdSku, spec), cell(thirdSku, spec), { skuId: null }];
+  find("c_1_0").front = [cell(matchSku, spec), cell(matchSku, spec), { skuId: null }];
 }
 
 function cell(skuId, spec) {
@@ -368,6 +379,21 @@ function curriculumFor(level) {
   if (level <= 20) return "blockers";
   if (level <= 25) return "orders";
   return "hard_arc";
+}
+
+function emotionalBeatFor(level) {
+  if (level === 1) return "first-move triple payoff";
+  if (level === 2) return "empty-slot confidence";
+  if (level === 3) return "reserve shelf confidence";
+  if (level <= 5) return "pair creation and smart targeting";
+  if (level <= 7) return "hidden shelf reveal as discovery";
+  if (level === 8) return "first combo celebration";
+  if (level === 9) return "first recoverable blocker";
+  if (level === 10) return "first hard-level reward ceremony";
+  if (level <= 15) return "planning and reveal anticipation";
+  if (level <= 20) return "blocker release payoff";
+  if (level <= 25) return "objective progress payoff";
+  return "hard arc tension and finale";
 }
 
 function colorName(skuId) {

@@ -1,17 +1,24 @@
 import * as THREE from "three";
-import type { BoardState, InputMode, LegalMove, ProductSKU } from "../domain/types";
+import type { BoardState, BoosterId, CellState, InputMode, LegalMove, MoveQuality, ProductSKU, ResolutionResult } from "../domain/types";
 import { getCompartment, isLegalMove } from "../domain/board";
+import { animationMs, parallel, sequence, tweenElement, wait } from "./AnimationDirector";
+import { burst, rewardFlight } from "./ParticleSystem";
+import type { CellPoint } from "./VisualEvents";
 
 interface BoardViewCallbacks {
   onMove: (move: LegalMove) => void;
   onInvalid: (reason: string) => void;
   onSelect: (selection: { compartmentId: string; cellIndex: number } | null) => void;
+  onDragCancel?: () => void;
+  onFeedback?: (cue: "snap" | "pair" | "clear" | "combo" | "reveal" | "booster") => void;
 }
 
 interface ProductMeshUserData {
   kind: "product";
   compartmentId: string;
   cellIndex: number;
+  instanceId: string;
+  skuId: string;
   hidden: boolean;
 }
 
@@ -35,6 +42,9 @@ export class ThreeBoardView {
   private pointer = new THREE.Vector2();
   private products: THREE.Object3D[] = [];
   private targets: THREE.Object3D[] = [];
+  private productViewsByInstanceId = new Map<string, THREE.Object3D>();
+  private shelfViewsByCompartmentId = new Map<string, THREE.Object3D>();
+  private targetViewsByCell = new Map<string, THREE.Object3D>();
   private selected: { compartmentId: string; cellIndex: number } | null = null;
   private hint: LegalMove | null = null;
   private state: BoardState | null = null;
@@ -43,8 +53,11 @@ export class ThreeBoardView {
   private assetTextures = new Map<string, THREE.Texture>();
   private animationHandle = 0;
   private dragStart: { x: number; y: number } | null = null;
+  private dragGhost: HTMLElement | null = null;
+  private dragProduct: ProductMeshUserData | null = null;
   private inputMode: InputMode = "tap_and_drag";
   private reduceMotion = false;
+  private animationLocked = false;
 
   constructor(
     private host: HTMLElement,
@@ -58,6 +71,7 @@ export class ThreeBoardView {
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.domElement.className = "board-canvas";
     this.host.appendChild(this.renderer.domElement);
+    this.host.classList.add("board-host");
 
     this.camera.position.set(0, 0, 30);
     this.camera.lookAt(0, 0, 0);
@@ -96,6 +110,9 @@ export class ThreeBoardView {
     }
     this.products = [];
     this.targets = [];
+    this.productViewsByInstanceId.clear();
+    this.shelfViewsByCompartmentId.clear();
+    this.targetViewsByCell.clear();
     const rows = Math.max(...state.compartments.map((compartment) => compartment.row)) + 1;
     const columns = Math.max(...state.compartments.map((compartment) => compartment.column)) + 1;
     const originX = -((columns - 1) * COMPARTMENT_GAP_X) / 2;
@@ -117,6 +134,8 @@ export class ThreeBoardView {
           kind: "product",
           compartmentId: compartment.id,
           cellIndex,
+          instanceId: cell.product.instanceId,
+          skuId: cell.product.skuId,
           hidden: true
         } satisfies ProductMeshUserData & { dynamic: boolean };
         this.scene.add(mesh);
@@ -133,6 +152,7 @@ export class ThreeBoardView {
           cellIndex
         } satisfies TargetMeshUserData & { dynamic: boolean };
         this.targets.push(target);
+        this.targetViewsByCell.set(cellKey(compartment.id, cellIndex), target);
         this.scene.add(target);
 
         if (!cell.product) return;
@@ -144,10 +164,13 @@ export class ThreeBoardView {
           kind: "product",
           compartmentId: compartment.id,
           cellIndex,
+          instanceId: cell.product.instanceId,
+          skuId: cell.product.skuId,
           hidden: false
         } satisfies ProductMeshUserData & { dynamic: boolean };
         if (this.isSelected(compartment.id, cellIndex)) mesh.scale.multiplyScalar(1.16);
         this.products.push(mesh);
+        this.productViewsByInstanceId.set(cell.product.instanceId, mesh);
         this.scene.add(mesh);
       });
     }
@@ -155,6 +178,7 @@ export class ThreeBoardView {
   }
 
   setSelected(selection: { compartmentId: string; cellIndex: number } | null): void {
+    if (this.animationLocked) return;
     this.selected = selection;
     this.callbacks.onSelect(selection);
     if (this.state) this.renderBoard(this.state);
@@ -175,6 +199,80 @@ export class ThreeBoardView {
     if (reduceMotion) {
       for (const product of this.products) product.rotation.y = 0;
     }
+  }
+
+  isAnimating(): boolean {
+    return this.animationLocked;
+  }
+
+  debugCellPoint(compartmentId: string, cellIndex: number): CellPoint | null {
+    if (!this.state) return null;
+    return this.cellToHostPoint(this.state, compartmentId, cellIndex);
+  }
+
+  async playResolution(before: BoardState, after: BoardState, result: ResolutionResult, move: LegalMove): Promise<number> {
+    if (this.animationLocked) return 0;
+    const started = performance.now();
+    this.animationLocked = true;
+    this.host.dataset.animating = "true";
+    const movedCell = getCellState(before, move.sourceCompartmentId, move.sourceCellIndex);
+    const movedProduct = movedCell?.product ?? null;
+    const source = this.cellToHostPoint(before, move.sourceCompartmentId, move.sourceCellIndex);
+    const target = this.cellToHostPoint(before, move.targetCompartmentId, move.targetCellIndex);
+    this.renderBoard(before);
+
+    if (movedProduct && source && target) {
+      await this.playMoveOverlay(movedProduct.skuId, source, target, result.moveQuality ?? "neutral");
+    }
+
+    const preview = makeMovedPreview(before, move);
+    this.renderBoard(preview);
+    await this.playMoveQuality(target ?? source, result.moveQuality ?? "neutral");
+
+    await sequence([
+      () => this.playTripleEffects(preview, result),
+      () => this.playRevealEffects(after, result),
+      () => {
+        this.renderBoard(after);
+      }
+    ]);
+
+    this.animationLocked = false;
+    delete this.host.dataset.animating;
+    return performance.now() - started;
+  }
+
+  async playBoosterEffect(boosterId: BoosterId): Promise<void> {
+    if (this.animationLocked) return;
+    this.animationLocked = true;
+    this.host.dataset.animating = "true";
+    this.callbacks.onFeedback?.("booster");
+    const center = this.hostCenter();
+    const label = boosterLabel(boosterId);
+    const badge = this.effectBadge(center, label, `booster-${boosterId}`);
+    burst(this.host, center, "booster", this.reduceMotion);
+    await tweenElement(
+      badge,
+      [
+        { transform: "translate(-50%, -50%) scale(.72)", opacity: 0 },
+        { transform: "translate(-50%, -72%) scale(1.08)", opacity: 1, offset: 0.38 },
+        { transform: "translate(-50%, -104%) scale(.95)", opacity: 0 }
+      ],
+      { durationMs: 680, easing: "snap", reduceMotion: this.reduceMotion }
+    );
+    badge.remove();
+    this.animationLocked = false;
+    delete this.host.dataset.animating;
+  }
+
+  async playInvalid(reason: string): Promise<void> {
+    const point = this.selected ? this.cellToHostPoint(this.state!, this.selected.compartmentId, this.selected.cellIndex) : this.hostCenter();
+    const badge = this.effectBadge(point ?? this.hostCenter(), invalidLabel(reason), "invalid");
+    this.host.classList.add("board-shake");
+    burst(this.host, point ?? this.hostCenter(), "invalid", this.reduceMotion);
+    await wait(animationMs(380, this.reduceMotion));
+    this.host.classList.remove("board-shake");
+    badge.remove();
   }
 
   private addShelf(compartmentId: string, x: number, y: number, reserve: boolean): void {
@@ -202,6 +300,7 @@ export class ThreeBoardView {
     shelf.add(back, bottom, top, left, right);
     shelf.position.set(x, y, -0.08);
     shelf.name = compartmentId;
+    this.shelfViewsByCompartmentId.set(compartmentId, shelf);
     this.scene.add(shelf);
   }
 
@@ -330,18 +429,31 @@ export class ThreeBoardView {
   }
 
   private onPointerDown = (event: PointerEvent): void => {
+    if (this.animationLocked) return;
     this.dragStart = { x: event.clientX, y: event.clientY };
+    this.dragProduct = null;
+    this.removeDragGhost();
     const product = this.pick<ProductMeshUserData>(event, this.products, "product");
     if (!product || product.data.hidden) return;
     this.setSelected({ compartmentId: product.data.compartmentId, cellIndex: product.data.cellIndex });
+    this.dragProduct = product.data;
+    if (this.inputMode !== "tap") {
+      this.createDragGhost(product.data, event);
+      try {
+        this.renderer.domElement.setPointerCapture(event.pointerId);
+      } catch {
+        // Pointer capture is best-effort; the drag ghost still tracks ordinary pointermove events.
+      }
+    }
   };
 
-  private onPointerMove = (_event: PointerEvent): void => {
-    // Drag movement is intentionally interpreted on pointerup so tap and drag stay deterministic.
+  private onPointerMove = (event: PointerEvent): void => {
+    if (this.animationLocked || !this.dragGhost || this.inputMode === "tap") return;
+    this.updateDragGhost(event);
   };
 
   private onPointerUp = (event: PointerEvent): void => {
-    if (!this.state) return;
+    if (!this.state || this.animationLocked) return;
     const target = this.pick<TargetMeshUserData>(event, this.targets, "target");
     const product = this.pick<ProductMeshUserData>(event, this.products, "product");
     const draggedEnough = this.dragStart
@@ -363,11 +475,14 @@ export class ThreeBoardView {
         if (legal.ok) {
           this.selected = null;
           this.callbacks.onSelect(null);
+          this.finishDrag(event);
           this.callbacks.onMove(move);
         } else if (draggedEnough) {
+          this.finishDrag(event);
           this.callbacks.onInvalid(legal.reason ?? "invalid_move");
         }
       }
+      this.finishDrag(event);
       return;
     }
 
@@ -375,8 +490,51 @@ export class ThreeBoardView {
       this.setSelected({ compartmentId: product.data.compartmentId, cellIndex: product.data.cellIndex });
       return;
     }
-    if (!draggedEnough) this.setSelected(null);
+    if (draggedEnough) {
+      this.callbacks.onDragCancel?.();
+    } else {
+      this.setSelected(null);
+    }
+    this.finishDrag(event);
   };
+
+  private createDragGhost(data: ProductMeshUserData, event: PointerEvent): void {
+    const product = this.productMap.get(data.skuId);
+    const ghost = document.createElement("div");
+    ghost.className = "fx-drag-product";
+    ghost.style.background = product?.visual.color ?? "#56d6ff";
+    ghost.style.borderColor = product?.visual.accent ?? "#ffffff";
+    ghost.innerHTML = product ? `<img src="${product.assetAddress}" alt="">` : "";
+    this.host.appendChild(ghost);
+    this.dragGhost = ghost;
+    this.updateDragGhost(event);
+  }
+
+  private updateDragGhost(event: PointerEvent): void {
+    if (!this.dragGhost) return;
+    const rect = this.host.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    this.dragGhost.style.left = `${x}px`;
+    this.dragGhost.style.top = `${y}px`;
+    const distance = this.dragStart ? Math.hypot(event.clientX - this.dragStart.x, event.clientY - this.dragStart.y) : 0;
+    this.dragGhost.classList.toggle("dragging-active", distance > 8);
+  }
+
+  private finishDrag(event: PointerEvent): void {
+    this.removeDragGhost();
+    this.dragProduct = null;
+    try {
+      this.renderer.domElement.releasePointerCapture(event.pointerId);
+    } catch {
+      // Matching setPointerCapture is best-effort for browser compatibility.
+    }
+  }
+
+  private removeDragGhost(): void {
+    this.dragGhost?.remove();
+    this.dragGhost = null;
+  }
 
   private pick<T extends BoardUserData>(event: PointerEvent, objects: THREE.Object3D[], kind: T["kind"]): { data: T } | null {
     const rect = this.renderer.domElement.getBoundingClientRect();
@@ -407,6 +565,206 @@ export class ThreeBoardView {
     this.camera.updateProjectionMatrix();
   };
 
+  private async playMoveOverlay(skuId: string, source: CellPoint, target: CellPoint, quality: MoveQuality): Promise<void> {
+    const product = this.productMap.get(skuId);
+    const flyer = document.createElement("div");
+    flyer.className = `fx-product fx-quality-${quality}`;
+    flyer.style.left = `${source.x}px`;
+    flyer.style.top = `${source.y}px`;
+    flyer.style.background = product?.visual.color ?? "#56d6ff";
+    flyer.style.borderColor = product?.visual.accent ?? "#ffffff";
+    flyer.innerHTML = product ? `<img src="${product.assetAddress}" alt="">` : "";
+    this.host.appendChild(flyer);
+    const pulse = this.targetPulse(target, "snap");
+    await tweenElement(
+      flyer,
+      [
+        { transform: "translate(-50%, -50%) scale(1) rotate(0deg)", opacity: 1 },
+        {
+          transform: `translate(calc(-50% + ${(target.x - source.x) * 0.55}px), calc(-72% + ${(target.y - source.y) * 0.38}px)) scale(1.18) rotate(-5deg)`,
+          opacity: 1,
+          offset: 0.55
+        },
+        {
+          transform: `translate(calc(-50% + ${target.x - source.x}px), calc(-50% + ${target.y - source.y}px)) scale(.98) rotate(0deg)`,
+          opacity: 1
+        }
+      ],
+      { durationMs: 230, easing: "snap", reduceMotion: this.reduceMotion }
+    );
+    this.callbacks.onFeedback?.(quality === "match_ready" ? "pair" : "snap");
+    burst(this.host, target, quality === "match_ready" ? "pair" : "snap", this.reduceMotion);
+    await wait(animationMs(70, this.reduceMotion));
+    flyer.remove();
+    pulse.remove();
+  }
+
+  private async playMoveQuality(point: CellPoint | null | undefined, quality: MoveQuality): Promise<void> {
+    if (!point || quality === "neutral") return;
+    const badge = this.effectBadge(point, qualityLabel(quality), `quality-${quality}`);
+    await tweenElement(
+      badge,
+      [
+        { transform: "translate(-50%, -50%) scale(.7)", opacity: 0 },
+        { transform: "translate(-50%, -92%) scale(1)", opacity: 1, offset: 0.42 },
+        { transform: "translate(-50%, -132%) scale(.92)", opacity: 0 }
+      ],
+      { durationMs: 520, easing: "soft", reduceMotion: this.reduceMotion }
+    );
+    badge.remove();
+  }
+
+  private async playTripleEffects(preview: BoardState, result: ResolutionResult): Promise<void> {
+    if (result.clearedTriples.length === 0) {
+      await wait(animationMs(80, this.reduceMotion));
+      return;
+    }
+    await parallel(
+      result.clearedTriples.map((clear) => async () => {
+        const center = this.compartmentCenter(preview, clear.compartmentId);
+        if (!center) return;
+        const badge = this.effectBadge(center, clear.combo > 1 ? `Combo x${clear.combo}` : "Sorted!", clear.combo > 1 ? "combo" : "clear");
+        await this.playClearAnticipation(preview, clear.compartmentId, clear.skuId);
+        this.targetPulse(center, clear.combo > 1 ? "combo" : "clear");
+        this.callbacks.onFeedback?.(clear.combo > 1 ? "combo" : "clear");
+        burst(this.host, center, clear.combo > 1 ? "combo" : "clear", this.reduceMotion);
+        await rewardFlight(this.host, center, this.hudTargetPoint(), clear.combo > 1 ? `x${clear.combo}` : "+", this.reduceMotion);
+        badge.remove();
+      })
+    );
+  }
+
+  private async playClearAnticipation(state: BoardState, compartmentId: string, skuId: string): Promise<void> {
+    const sku = this.productMap.get(skuId);
+    const chips = [0, 1, 2]
+      .map((cellIndex) => {
+        const cell = getCellState(state, compartmentId, cellIndex);
+        const point = this.cellToHostPoint(state, compartmentId, cellIndex);
+        if (!cell?.product || cell.product.skuId !== skuId || !point) return null;
+        const chip = document.createElement("span");
+        chip.className = "fx-clear-chip";
+        chip.style.left = `${point.x}px`;
+        chip.style.top = `${point.y}px`;
+        chip.style.background = sku?.visual.color ?? "#ffcf5a";
+        chip.style.borderColor = sku?.visual.accent ?? "#ffffff";
+        chip.innerHTML = sku ? `<img src="${sku.assetAddress}" alt="">` : "";
+        this.host.appendChild(chip);
+        return chip;
+      })
+      .filter(Boolean) as HTMLElement[];
+    if (chips.length === 0) {
+      await wait(animationMs(120, this.reduceMotion));
+      return;
+    }
+    await parallel(
+      chips.map((chip, index) => async () => {
+        await tweenElement(
+          chip,
+          [
+            { transform: "translate(-50%, -50%) scale(0.88)", opacity: 0.72 },
+            { transform: `translate(calc(-50% + ${(index - 1) * -7}px), -58%) scale(1.16)`, opacity: 1, offset: 0.55 },
+            { transform: "translate(-50%, -50%) scale(0.34)", opacity: 0 }
+          ],
+          { durationMs: 340, easing: "snap", reduceMotion: this.reduceMotion }
+        );
+        chip.remove();
+      })
+    );
+  }
+
+  private async playRevealEffects(after: BoardState, result: ResolutionResult): Promise<void> {
+    if (result.revealedLayers.length === 0) return;
+    await parallel(
+      result.revealedLayers.map((reveal) => async () => {
+        const center = this.compartmentCenter(after, reveal.compartmentId);
+        if (!center) return;
+        const badge = this.effectBadge(center, "New row", "reveal");
+        const revealPanel = this.revealPanel(center);
+        this.callbacks.onFeedback?.("reveal");
+        burst(this.host, center, "reveal", this.reduceMotion);
+        await tweenElement(
+          badge,
+          [
+            { transform: "translate(-50%, 12%) scale(.86)", opacity: 0 },
+            { transform: "translate(-50%, -72%) scale(1)", opacity: 1, offset: 0.45 },
+            { transform: "translate(-50%, -108%) scale(.94)", opacity: 0 }
+          ],
+          { durationMs: 420, easing: "snap", reduceMotion: this.reduceMotion }
+        );
+        revealPanel.remove();
+        badge.remove();
+      })
+    );
+  }
+
+  private revealPanel(point: CellPoint): HTMLElement {
+    const panel = document.createElement("span");
+    panel.className = "fx-reveal-panel";
+    panel.style.left = `${point.x}px`;
+    panel.style.top = `${point.y}px`;
+    panel.style.animationDuration = `${animationMs(480, this.reduceMotion)}ms`;
+    this.host.appendChild(panel);
+    return panel;
+  }
+
+  private effectBadge(point: CellPoint, label: string, kind: string): HTMLElement {
+    const badge = document.createElement("span");
+    badge.className = `fx-badge fx-badge-${kind}`;
+    badge.textContent = label;
+    badge.style.left = `${point.x}px`;
+    badge.style.top = `${point.y}px`;
+    this.host.appendChild(badge);
+    return badge;
+  }
+
+  private targetPulse(point: CellPoint, kind: string): HTMLElement {
+    const pulse = document.createElement("span");
+    pulse.className = `fx-target-pulse fx-target-${kind}`;
+    pulse.style.left = `${point.x}px`;
+    pulse.style.top = `${point.y}px`;
+    pulse.style.animationDuration = `${animationMs(520, this.reduceMotion)}ms`;
+    this.host.appendChild(pulse);
+    window.setTimeout(() => pulse.remove(), animationMs(560, this.reduceMotion));
+    return pulse;
+  }
+
+  private cellToHostPoint(state: BoardState, compartmentId: string, cellIndex: number): CellPoint | null {
+    const compartment = getCompartment(state, compartmentId);
+    if (!compartment) return null;
+    const layout = boardLayout(state);
+    const world = new THREE.Vector3(
+      layout.originX + compartment.column * COMPARTMENT_GAP_X + (cellIndex - 1) * CELL_GAP,
+      layout.originY - compartment.row * COMPARTMENT_GAP_Y + 0.12,
+      0.4
+    );
+    return this.worldToHostPoint(world);
+  }
+
+  private compartmentCenter(state: BoardState, compartmentId: string): CellPoint | null {
+    const points = [0, 1, 2].map((cellIndex) => this.cellToHostPoint(state, compartmentId, cellIndex)).filter(Boolean) as CellPoint[];
+    if (points.length === 0) return null;
+    return {
+      x: points.reduce((sum, point) => sum + point.x, 0) / points.length,
+      y: points.reduce((sum, point) => sum + point.y, 0) / points.length
+    };
+  }
+
+  private worldToHostPoint(world: THREE.Vector3): CellPoint {
+    const projected = world.clone().project(this.camera);
+    return {
+      x: ((projected.x + 1) / 2) * this.host.clientWidth,
+      y: ((1 - projected.y) / 2) * this.host.clientHeight
+    };
+  }
+
+  private hostCenter(): CellPoint {
+    return { x: this.host.clientWidth / 2, y: this.host.clientHeight / 2 };
+  }
+
+  private hudTargetPoint(): CellPoint {
+    return { x: this.host.clientWidth - 92, y: 36 };
+  }
+
   private animate = (): void => {
     const elapsed = performance.now() / 1000;
     if (!this.reduceMotion) {
@@ -417,4 +775,54 @@ export class ThreeBoardView {
     this.renderer.render(this.scene, this.camera);
     this.animationHandle = requestAnimationFrame(this.animate);
   };
+}
+
+function cellKey(compartmentId: string, cellIndex: number): string {
+  return `${compartmentId}:${cellIndex}`;
+}
+
+function getCellState(state: BoardState, compartmentId: string, cellIndex: number): CellState | null {
+  return state.compartments.find((compartment) => compartment.id === compartmentId)?.front[cellIndex] ?? null;
+}
+
+function boardLayout(state: BoardState): { originX: number; originY: number } {
+  const rows = Math.max(...state.compartments.map((compartment) => compartment.row)) + 1;
+  const columns = Math.max(...state.compartments.map((compartment) => compartment.column)) + 1;
+  return {
+    originX: -((columns - 1) * COMPARTMENT_GAP_X) / 2,
+    originY: ((rows - 1) * COMPARTMENT_GAP_Y) / 2
+  };
+}
+
+function makeMovedPreview(state: BoardState, move: LegalMove): BoardState {
+  const preview = structuredClone(state) as BoardState;
+  const source = getCellState(preview, move.sourceCompartmentId, move.sourceCellIndex);
+  const target = getCellState(preview, move.targetCompartmentId, move.targetCellIndex);
+  if (!source?.product || !target || target.product) return preview;
+  target.product = source.product;
+  source.product = null;
+  return preview;
+}
+
+function qualityLabel(quality: MoveQuality): string {
+  if (quality === "match_ready") return "Match!";
+  if (quality === "reveal_enabling") return "Reveal!";
+  if (quality === "good") return "Nice";
+  if (quality === "risky") return "Careful";
+  return "";
+}
+
+function boosterLabel(boosterId: BoosterId): string {
+  if (boosterId === "hint") return "Spotlight";
+  if (boosterId === "shuffle") return "Swirl";
+  if (boosterId === "hammer") return "Smash";
+  if (boosterId === "freeze_time") return "Freeze";
+  return "Shelf In";
+}
+
+function invalidLabel(reason: string): string {
+  if (reason === "target_occupied") return "Full";
+  if (reason === "source_blocked" || reason === "target_blocked") return "Blocked";
+  if (reason === "same_compartment") return "Same shelf";
+  return "Nope";
 }

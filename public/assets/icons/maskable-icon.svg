@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Shelf Sort 3D">
+  <rect width="512" height="512" fill="#1b8f76"/>
+  <circle cx="96" cy="88" r="112" fill="#f5fbf7" opacity=".18"/>
+  <circle cx="430" cy="430" r="150" fill="#ffbe33" opacity=".16"/>
+  <path fill="#704526" d="M72 148h368v34H72zm0 111h368v34H72zm0 111h368v34H72z"/>
+  <path fill="#f7d7a7" d="M92 106h328c14 0 26 12 26 26v45H66v-45c0-14 12-26 26-26Zm0 112h328c14 0 26 12 26 26v45H66v-45c0-14 12-26 26-26Zm0 112h328c14 0 26 12 26 26v45H66v-45c0-14 12-26 26-26Z"/>
+  <rect x="111" y="87" width="69" height="88" rx="18" fill="#3f7fff"/>
+  <rect x="222" y="84" width="69" height="91" rx="18" fill="#ffbe33"/>
+  <rect x="333" y="87" width="69" height="88" rx="18" fill="#e64d63"/>
+  <rect x="111" y="199" width="69" height="88" rx="18" fill="#36bd85"/>
+  <rect x="222" y="196" width="69" height="91" rx="18" fill="#7e5cf0"/>
+  <rect x="333" y="199" width="69" height="88" rx="18" fill="#3f7fff"/>
+  <rect x="111" y="311" width="69" height="88" rx="18" fill="#e64d63"/>
+  <rect x="222" y="308" width="69" height="91" rx="18" fill="#36bd85"/>
+  <rect x="333" y="311" width="69" height="88" rx="18" fill="#ffbe33"/>
+  <path fill="#fff" opacity=".9" d="M128 113h35v15h-35zm111 0h35v15h-35zm111 0h35v15h-35zM128 225h35v15h-35zm111 0h35v15h-35zm111 0h35v15h-35zM128 337h35v15h-35zm111 0h35v15h-35zm111 0h35v15h-35z"/>
+</svg>

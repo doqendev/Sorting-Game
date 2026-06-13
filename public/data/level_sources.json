@@ -8,8 +8,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Teach first triple"
+        "notes": "Teach first triple. Emotional beat: first-move triple payoff."
       },
+      "emotionalBeat": "first-move triple payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -19,8 +20,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Repeat triple with cleaner reserve use"
+        "notes": "Repeat triple with cleaner reserve use. Emotional beat: empty-slot confidence."
       },
+      "emotionalBeat": "empty-slot confidence",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -30,8 +32,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Third confidence level"
+        "notes": "Third confidence level. Emotional beat: reserve shelf confidence."
       },
+      "emotionalBeat": "reserve shelf confidence",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -41,8 +44,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Reserve shelf taught"
+        "notes": "Reserve shelf taught. Emotional beat: pair creation and smart targeting."
       },
+      "emotionalBeat": "pair creation and smart targeting",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -52,8 +56,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Reserve with two rows"
+        "notes": "Reserve with two rows. Emotional beat: pair creation and smart targeting."
       },
+      "emotionalBeat": "pair creation and smart targeting",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -63,8 +68,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Reserve pressure without timer punishment"
+        "notes": "Reserve pressure without timer punishment. Emotional beat: hidden shelf reveal as discovery."
       },
+      "emotionalBeat": "hidden shelf reveal as discovery",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -74,41 +80,45 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Exact hidden preview"
+        "notes": "Exact hidden preview. Emotional beat: hidden shelf reveal as discovery."
       },
+      "emotionalBeat": "hidden shelf reveal as discovery",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
       "levelId": "level_0008",
-      "intent": "Mixed hidden queue",
+      "intent": "First combo objective",
       "curriculum": "hidden_previews",
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Mixed hidden queue"
+        "notes": "First combo objective. Emotional beat: first combo celebration."
       },
+      "emotionalBeat": "first combo celebration",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
       "levelId": "level_0009",
-      "intent": "Two hidden decisions",
+      "intent": "First light blocker",
       "curriculum": "hidden_previews",
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Two hidden decisions"
+        "notes": "First light blocker. Emotional beat: first recoverable blocker."
       },
+      "emotionalBeat": "first recoverable blocker",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
       "levelId": "level_0010",
-      "intent": "Hidden preview review",
+      "intent": "First hard ceremony",
       "curriculum": "hidden_previews",
       "humanReview": {
         "reviewer": "studio_v2",
-        "grade": "A",
-        "notes": "Hidden preview review"
+        "grade": "B",
+        "notes": "First hard ceremony. Emotional beat: first hard-level reward ceremony."
       },
+      "emotionalBeat": "first hard-level reward ceremony",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -118,8 +128,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Planning ahead mild timer"
+        "notes": "Planning ahead mild timer. Emotional beat: planning and reveal anticipation."
       },
+      "emotionalBeat": "planning and reveal anticipation",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -129,8 +140,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Silhouette starts"
+        "notes": "Silhouette starts. Emotional beat: planning and reveal anticipation."
       },
+      "emotionalBeat": "planning and reveal anticipation",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -140,8 +152,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Category mix planning"
+        "notes": "Category mix planning. Emotional beat: planning and reveal anticipation."
       },
+      "emotionalBeat": "planning and reveal anticipation",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -151,8 +164,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Reveal and combo setup"
+        "notes": "Reveal and combo setup. Emotional beat: planning and reveal anticipation."
       },
+      "emotionalBeat": "planning and reveal anticipation",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -162,8 +176,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "First hard label"
+        "notes": "First hard label. Emotional beat: planning and reveal anticipation."
       },
+      "emotionalBeat": "planning and reveal anticipation",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -173,8 +188,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Crate reserve pressure"
+        "notes": "Crate reserve pressure. Emotional beat: blocker release payoff."
       },
+      "emotionalBeat": "blocker release payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -184,8 +200,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Tape lesson without deadlock"
+        "notes": "Tape lesson without deadlock. Emotional beat: blocker release payoff."
       },
+      "emotionalBeat": "blocker release payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -195,8 +212,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Frost lesson without deadlock"
+        "notes": "Frost lesson without deadlock. Emotional beat: blocker release payoff."
       },
+      "emotionalBeat": "blocker release payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -206,8 +224,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Blocked reserve plus hidden"
+        "notes": "Blocked reserve plus hidden. Emotional beat: blocker release payoff."
       },
+      "emotionalBeat": "blocker release payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -217,8 +236,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Blocker review"
+        "notes": "Blocker review. Emotional beat: blocker release payoff."
       },
+      "emotionalBeat": "blocker release payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -228,8 +248,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Collect snack order"
+        "notes": "Collect snack order. Emotional beat: objective progress payoff."
       },
+      "emotionalBeat": "objective progress payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -239,8 +260,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Collect drink order"
+        "notes": "Collect drink order. Emotional beat: objective progress payoff."
       },
+      "emotionalBeat": "objective progress payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -250,8 +272,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Specific SKU order"
+        "notes": "Specific SKU order. Emotional beat: objective progress payoff."
       },
+      "emotionalBeat": "objective progress payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -261,8 +284,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Special products"
+        "notes": "Special products. Emotional beat: objective progress payoff."
       },
+      "emotionalBeat": "objective progress payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -272,8 +296,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Time challenge"
+        "notes": "Time challenge. Emotional beat: objective progress payoff."
       },
+      "emotionalBeat": "objective progress payoff",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -283,8 +308,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Hard arc mixed hidden"
+        "notes": "Hard arc mixed hidden. Emotional beat: hard arc tension and finale."
       },
+      "emotionalBeat": "hard arc tension and finale",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -294,8 +320,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Hard category order"
+        "notes": "Hard category order. Emotional beat: hard arc tension and finale."
       },
+      "emotionalBeat": "hard arc tension and finale",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -305,8 +332,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Hard special order"
+        "notes": "Hard special order. Emotional beat: hard arc tension and finale."
       },
+      "emotionalBeat": "hard arc tension and finale",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -316,8 +344,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Hard combo order"
+        "notes": "Hard combo order. Emotional beat: hard arc tension and finale."
       },
+      "emotionalBeat": "hard arc tension and finale",
       "authoredAt": "2026-06-13T00:00:00Z"
     },
     {
@@ -327,8 +356,9 @@
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Vertical slice finale"
+        "notes": "Vertical slice finale. Emotional beat: hard arc tension and finale."
       },
+      "emotionalBeat": "hard arc tension and finale",
       "authoredAt": "2026-06-13T00:00:00Z"
     }
   ]

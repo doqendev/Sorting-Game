@@ -248,6 +248,31 @@ describe("content validation", () => {
       expect(level.validation.autoClearRisk, level.levelId).toBeLessThanOrEqual(0.1);
     }
   });
+
+  it("locks the first-10 appeal pacing and emotional beats from the roadmap", () => {
+    const launch = loadJson<{ levels: LevelConfig[] }>("levels_launch.json");
+    const sources = loadJson<{ source: Array<{ levelId: string; emotionalBeat: string }> }>("level_sources.json");
+    const beats = new Map(sources.source.map((source) => [source.levelId, source.emotionalBeat]));
+    const firstTen = launch.levels.slice(0, 10);
+
+    expect(firstTen).toHaveLength(10);
+    for (const level of firstTen) {
+      expect(beats.get(level.levelId), level.levelId).toBeTruthy();
+      expect(level.humanReview.notes, level.levelId).toContain("Emotional beat:");
+    }
+
+    expect(beats.get("level_0001")).toContain("first-move triple payoff");
+    expect(firstTen[0].board.compartments.find((compartmentState) => compartmentState.id === "c_1_0")?.front.map((cellState) => cellState.skuId)).toEqual([
+      "chips_blue",
+      "chips_blue",
+      null
+    ]);
+    expect(firstTen[7].objective.type).toBe("combo_target");
+    expect(firstTen[7].objective.targetCombo).toBeGreaterThanOrEqual(2);
+    expect(firstTen[8].board.compartments.some((compartmentState) => compartmentState.front.some((cellState) => cellState.blocker === "crate"))).toBe(true);
+    expect(firstTen[9].difficultyTier).toBe("hard");
+    expect(firstTen[9].rewards.baseCoins).toBeGreaterThan(firstTen[0].rewards.baseCoins);
+  });
 });
 
 function compartment(

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T04:08:50.742Z",
+  "generatedAt": "2026-06-13T19:05:46.334Z",
   "warnings": [],
   "report": [
     {
@@ -7,20 +7,20 @@
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
       "solverNodes": 3,
-      "minSolutionMoves": 8,
-      "averageBotMoves": 8,
+      "minSolutionMoves": 3,
+      "averageBotMoves": 3,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.5,
       "revealCount": 0,
       "hiddenInformationRatio": 0,
-      "timePressureRatio": 52.5,
+      "timePressureRatio": 140,
       "boosterFreeWinProbability": 1,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:21:29.045Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.579Z"
     },
     {
       "levelId": "level_0002",
@@ -28,7 +28,7 @@
       "secondarySolverStatus": "solved",
       "solverNodes": 3,
       "minSolutionMoves": 8,
-      "averageBotMoves": 8,
+      "averageBotMoves": 8.3,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.5,
@@ -40,7 +40,7 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:21:29.191Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.586Z"
     },
     {
       "levelId": "level_0003",
@@ -48,7 +48,7 @@
       "secondarySolverStatus": "solved",
       "solverNodes": 3,
       "minSolutionMoves": 8,
-      "averageBotMoves": 8,
+      "averageBotMoves": 8.3,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.5,
@@ -60,7 +60,7 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:21:29.331Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.594Z"
     },
     {
       "levelId": "level_0004",
@@ -68,7 +68,7 @@
       "secondarySolverStatus": "solved",
       "solverNodes": 3,
       "minSolutionMoves": 8,
-      "averageBotMoves": 8,
+      "averageBotMoves": 8.3,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.5,
@@ -80,7 +80,7 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:21:29.480Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.599Z"
     },
     {
       "levelId": "level_0005",
@@ -88,7 +88,7 @@
       "secondarySolverStatus": "solved",
       "solverNodes": 6,
       "minSolutionMoves": 16,
-      "averageBotMoves": 15.7,
+      "averageBotMoves": 16.7,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.67,
@@ -100,15 +100,15 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:21:33.151Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.623Z"
     },
     {
       "levelId": "level_0006",
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
-      "solverNodes": 7,
+      "solverNodes": 6,
       "minSolutionMoves": 16,
-      "averageBotMoves": 14,
+      "averageBotMoves": 15,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.7,
@@ -120,7 +120,7 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:21:34.025Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.645Z"
     },
     {
       "levelId": "level_0007",
@@ -140,7 +140,7 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:21:36.644Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.660Z"
     },
     {
       "levelId": "level_0008",
@@ -160,47 +160,47 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:21:38.818Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.672Z"
     },
     {
       "levelId": "level_0009",
       "solverStatus": "solved",
-      "secondarySolverStatus": "timeout_unknown",
+      "secondarySolverStatus": "solved",
       "solverNodes": 12,
       "minSolutionMoves": 32,
-      "averageBotMoves": 37,
-      "botWinRate": 0.67,
-      "deadEndProbability": 0.33,
-      "averageReservePressure": 0.67,
+      "averageBotMoves": 34,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.7,
       "revealCount": 6,
       "hiddenInformationRatio": 0,
       "timePressureRatio": 13.125,
-      "boosterFreeWinProbability": 0.67,
+      "boosterFreeWinProbability": 1,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:26:15.757Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.715Z"
     },
     {
       "levelId": "level_0010",
       "solverStatus": "solved",
-      "secondarySolverStatus": "timeout_unknown",
+      "secondarySolverStatus": "solved",
       "solverNodes": 12,
       "minSolutionMoves": 32,
-      "averageBotMoves": 37,
-      "botWinRate": 0.67,
-      "deadEndProbability": 0.33,
+      "averageBotMoves": 35.3,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
       "averageReservePressure": 0.67,
       "revealCount": 6,
       "hiddenInformationRatio": 0,
       "timePressureRatio": 13.125,
-      "boosterFreeWinProbability": 0.67,
+      "boosterFreeWinProbability": 1,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
-      "humanReviewGrade": "A",
+      "humanReviewGrade": "B",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:31:53.760Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.766Z"
     },
     {
       "levelId": "level_0011",
@@ -220,7 +220,7 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:31:57.593Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.775Z"
     },
     {
       "levelId": "level_0012",
@@ -242,29 +242,29 @@
       "riskFlags": [
         "hidden_info_high"
       ],
-      "lastValidatedAt": "2026-06-13T03:32:01.861Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.783Z"
     },
     {
       "levelId": "level_0013",
       "solverStatus": "solved",
-      "secondarySolverStatus": "timeout_unknown",
+      "secondarySolverStatus": "solved",
       "solverNodes": 12,
       "minSolutionMoves": 32,
-      "averageBotMoves": 37,
-      "botWinRate": 0.67,
-      "deadEndProbability": 0.33,
+      "averageBotMoves": 35.3,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
       "averageReservePressure": 0.67,
       "revealCount": 6,
       "hiddenInformationRatio": 1,
       "timePressureRatio": 6.875,
-      "boosterFreeWinProbability": 0.67,
+      "boosterFreeWinProbability": 1,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [
         "hidden_info_high"
       ],
-      "lastValidatedAt": "2026-06-13T03:37:27.051Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.832Z"
     },
     {
       "levelId": "level_0014",
@@ -286,35 +286,35 @@
       "riskFlags": [
         "hidden_info_high"
       ],
-      "lastValidatedAt": "2026-06-13T03:37:30.451Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.840Z"
     },
     {
       "levelId": "level_0015",
       "solverStatus": "solved",
-      "secondarySolverStatus": "timeout_unknown",
+      "secondarySolverStatus": "solved",
       "solverNodes": 12,
       "minSolutionMoves": 32,
-      "averageBotMoves": 37,
-      "botWinRate": 0.67,
-      "deadEndProbability": 0.33,
+      "averageBotMoves": 35.3,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
       "averageReservePressure": 0.67,
       "revealCount": 6,
       "hiddenInformationRatio": 1,
       "timePressureRatio": 4.6875,
-      "boosterFreeWinProbability": 0.67,
+      "boosterFreeWinProbability": 1,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
       "humanReviewGrade": "B",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:42:58.132Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.889Z"
     },
     {
       "levelId": "level_0016",
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
-      "solverNodes": 4,
+      "solverNodes": 3,
       "minSolutionMoves": 8,
-      "averageBotMoves": 7.3,
+      "averageBotMoves": 7.7,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.56,
@@ -326,15 +326,15 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:42:58.255Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.891Z"
     },
     {
       "levelId": "level_0017",
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
-      "solverNodes": 4,
+      "solverNodes": 3,
       "minSolutionMoves": 8,
-      "averageBotMoves": 7.3,
+      "averageBotMoves": 7.7,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.56,
@@ -346,15 +346,15 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:42:58.376Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.895Z"
     },
     {
       "levelId": "level_0018",
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
-      "solverNodes": 5,
+      "solverNodes": 3,
       "minSolutionMoves": 8,
-      "averageBotMoves": 7.3,
+      "averageBotMoves": 7.7,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.61,
@@ -366,13 +366,13 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "A",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:42:58.472Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.897Z"
     },
     {
       "levelId": "level_0019",
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
-      "solverNodes": 7,
+      "solverNodes": 6,
       "minSolutionMoves": 16,
       "averageBotMoves": 16.3,
       "botWinRate": 1,
@@ -388,27 +388,27 @@
       "riskFlags": [
         "hidden_info_high"
       ],
-      "lastValidatedAt": "2026-06-13T03:43:00.461Z"
+      "lastValidatedAt": "2026-06-13T19:05:42.904Z"
     },
     {
       "levelId": "level_0020",
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
-      "solverNodes": 14,
+      "solverNodes": 12,
       "minSolutionMoves": 32,
       "averageBotMoves": 32,
-      "botWinRate": 0.33,
-      "deadEndProbability": 0.67,
+      "botWinRate": 0.67,
+      "deadEndProbability": 0.33,
       "averageReservePressure": 0.74,
       "revealCount": 6,
       "hiddenInformationRatio": 1,
       "timePressureRatio": 4.6875,
-      "boosterFreeWinProbability": 0.33,
+      "boosterFreeWinProbability": 0.67,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
       "humanReviewGrade": "B",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:43:44.245Z"
+      "lastValidatedAt": "2026-06-13T19:05:43.518Z"
     },
     {
       "levelId": "level_0021",
@@ -416,7 +416,7 @@
       "secondarySolverStatus": "solved",
       "solverNodes": 4,
       "minSolutionMoves": 11,
-      "averageBotMoves": 12.7,
+      "averageBotMoves": 14,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.5,
@@ -430,37 +430,15 @@
       "riskFlags": [
         "hidden_info_high"
       ],
-      "lastValidatedAt": "2026-06-13T03:43:46.714Z"
+      "lastValidatedAt": "2026-06-13T19:05:43.525Z"
     },
     {
       "levelId": "level_0022",
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
-      "solverNodes": 5,
-      "minSolutionMoves": 14,
-      "averageBotMoves": 15.7,
-      "botWinRate": 1,
-      "deadEndProbability": 0,
-      "averageReservePressure": 0.5,
-      "revealCount": 3,
-      "hiddenInformationRatio": 1,
-      "timePressureRatio": 15.714285714285714,
-      "boosterFreeWinProbability": 1,
-      "autoClearRisk": 0,
-      "readabilityRisk": 0,
-      "humanReviewGrade": "A",
-      "riskFlags": [
-        "hidden_info_high"
-      ],
-      "lastValidatedAt": "2026-06-13T03:43:50.108Z"
-    },
-    {
-      "levelId": "level_0023",
-      "solverStatus": "solved",
-      "secondarySolverStatus": "solved",
       "solverNodes": 4,
       "minSolutionMoves": 11,
-      "averageBotMoves": 12.3,
+      "averageBotMoves": 16,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.5,
@@ -474,21 +452,21 @@
       "riskFlags": [
         "hidden_info_high"
       ],
-      "lastValidatedAt": "2026-06-13T03:43:50.357Z"
+      "lastValidatedAt": "2026-06-13T19:05:43.533Z"
     },
     {
-      "levelId": "level_0024",
+      "levelId": "level_0023",
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
-      "solverNodes": 1,
-      "minSolutionMoves": 3,
-      "averageBotMoves": 3,
+      "solverNodes": 6,
+      "minSolutionMoves": 16,
+      "averageBotMoves": 14,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.5,
       "revealCount": 3,
       "hiddenInformationRatio": 1,
-      "timePressureRatio": 73.33333333333333,
+      "timePressureRatio": 13.75,
       "boosterFreeWinProbability": 1,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
@@ -496,7 +474,29 @@
       "riskFlags": [
         "hidden_info_high"
       ],
-      "lastValidatedAt": "2026-06-13T03:43:50.371Z"
+      "lastValidatedAt": "2026-06-13T19:05:43.539Z"
+    },
+    {
+      "levelId": "level_0024",
+      "solverStatus": "solved",
+      "secondarySolverStatus": "solved",
+      "solverNodes": 2,
+      "minSolutionMoves": 6,
+      "averageBotMoves": 5,
+      "botWinRate": 1,
+      "deadEndProbability": 0,
+      "averageReservePressure": 0.5,
+      "revealCount": 3,
+      "hiddenInformationRatio": 1,
+      "timePressureRatio": 36.666666666666664,
+      "boosterFreeWinProbability": 1,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "A",
+      "riskFlags": [
+        "hidden_info_high"
+      ],
+      "lastValidatedAt": "2026-06-13T19:05:43.540Z"
     },
     {
       "levelId": "level_0025",
@@ -516,110 +516,107 @@
       "readabilityRisk": 0,
       "humanReviewGrade": "B",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:43:53.749Z"
+      "lastValidatedAt": "2026-06-13T19:05:43.548Z"
     },
     {
       "levelId": "level_0026",
       "solverStatus": "solved",
-      "secondarySolverStatus": "timeout_unknown",
+      "secondarySolverStatus": "solved",
       "solverNodes": 18,
       "minSolutionMoves": 48,
       "averageBotMoves": 48,
-      "botWinRate": 0.33,
-      "deadEndProbability": 0.67,
+      "botWinRate": 0.67,
+      "deadEndProbability": 0.33,
       "averageReservePressure": 0.67,
       "revealCount": 12,
       "hiddenInformationRatio": 0.5,
       "timePressureRatio": 3.125,
-      "boosterFreeWinProbability": 0.33,
+      "boosterFreeWinProbability": 0.67,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
       "humanReviewGrade": "B",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:49:24.408Z"
+      "lastValidatedAt": "2026-06-13T19:05:44.468Z"
     },
     {
       "levelId": "level_0027",
       "solverStatus": "solved",
-      "secondarySolverStatus": "timeout_unknown",
-      "solverNodes": 7,
-      "minSolutionMoves": 19,
-      "averageBotMoves": 19,
-      "botWinRate": 0.33,
-      "deadEndProbability": 0.67,
+      "secondarySolverStatus": "solved",
+      "solverNodes": 9,
+      "minSolutionMoves": 24,
+      "averageBotMoves": 21.5,
+      "botWinRate": 0.67,
+      "deadEndProbability": 0.33,
       "averageReservePressure": 0.5,
       "revealCount": 6,
       "hiddenInformationRatio": 0.5,
-      "timePressureRatio": 7.894736842105263,
-      "boosterFreeWinProbability": 0.33,
+      "timePressureRatio": 6.25,
+      "boosterFreeWinProbability": 0.67,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
       "humanReviewGrade": "B",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:53:56.974Z"
+      "lastValidatedAt": "2026-06-13T19:05:44.817Z"
     },
     {
       "levelId": "level_0028",
       "solverStatus": "solved",
       "secondarySolverStatus": "solved",
-      "solverNodes": 4,
-      "minSolutionMoves": 11,
-      "averageBotMoves": 13.7,
+      "solverNodes": 5,
+      "minSolutionMoves": 14,
+      "averageBotMoves": 15.3,
       "botWinRate": 1,
       "deadEndProbability": 0,
       "averageReservePressure": 0.5,
       "revealCount": 6,
       "hiddenInformationRatio": 0.5,
-      "timePressureRatio": 13.636363636363637,
+      "timePressureRatio": 10.714285714285714,
       "boosterFreeWinProbability": 1,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
       "humanReviewGrade": "B",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T03:54:00.037Z"
+      "lastValidatedAt": "2026-06-13T19:05:44.823Z"
     },
     {
       "levelId": "level_0029",
-      "solverStatus": "timeout_unknown",
-      "secondarySolverStatus": "timeout_unknown",
-      "solverNodes": 16000,
-      "minSolutionMoves": 0,
-      "averageBotMoves": 0,
-      "botWinRate": 0,
-      "deadEndProbability": 1,
+      "solverStatus": "solved",
+      "secondarySolverStatus": "solved",
+      "solverNodes": 9,
+      "minSolutionMoves": 24,
+      "averageBotMoves": 24,
+      "botWinRate": 0.67,
+      "deadEndProbability": 0.33,
       "averageReservePressure": 0.5,
       "revealCount": 6,
       "hiddenInformationRatio": 0.5,
-      "timePressureRatio": 150,
-      "boosterFreeWinProbability": 0,
-      "autoClearRisk": 0,
-      "readabilityRisk": 0,
-      "humanReviewGrade": "B",
-      "riskFlags": [
-        "solver_timeout_unknown",
-        "secondary_solver_failed"
-      ],
-      "lastValidatedAt": "2026-06-13T04:03:09.228Z"
-    },
-    {
-      "levelId": "level_0030",
-      "solverStatus": "solved",
-      "secondarySolverStatus": "timeout_unknown",
-      "solverNodes": 19,
-      "minSolutionMoves": 48,
-      "averageBotMoves": 48,
-      "botWinRate": 0.33,
-      "deadEndProbability": 0.67,
-      "averageReservePressure": 0.7,
-      "revealCount": 12,
-      "hiddenInformationRatio": 0.5,
-      "timePressureRatio": 3.125,
-      "boosterFreeWinProbability": 0.33,
+      "timePressureRatio": 6.25,
+      "boosterFreeWinProbability": 0.67,
       "autoClearRisk": 0,
       "readabilityRisk": 0,
       "humanReviewGrade": "B",
       "riskFlags": [],
-      "lastValidatedAt": "2026-06-13T04:08:50.740Z"
+      "lastValidatedAt": "2026-06-13T19:05:45.163Z"
+    },
+    {
+      "levelId": "level_0030",
+      "solverStatus": "solved",
+      "secondarySolverStatus": "solved",
+      "solverNodes": 18,
+      "minSolutionMoves": 48,
+      "averageBotMoves": 48,
+      "botWinRate": 0.67,
+      "deadEndProbability": 0.33,
+      "averageReservePressure": 0.7,
+      "revealCount": 12,
+      "hiddenInformationRatio": 0.5,
+      "timePressureRatio": 3.125,
+      "boosterFreeWinProbability": 0.67,
+      "autoClearRisk": 0,
+      "readabilityRisk": 0,
+      "humanReviewGrade": "B",
+      "riskFlags": [],
+      "lastValidatedAt": "2026-06-13T19:05:46.333Z"
     }
   ]
 }

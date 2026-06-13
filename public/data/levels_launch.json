@@ -48,8 +48,8 @@
             "type": "normal",
             "front": [
               {
-                "skuId": "chips_blue",
-                "category": "snack",
+                "skuId": "soda_blue",
+                "category": "drink",
                 "flags": [],
                 "blocker": null
               },
@@ -60,10 +60,7 @@
                 "blocker": null
               },
               {
-                "skuId": "apple_red",
-                "category": "fruit",
-                "flags": [],
-                "blocker": null
+                "skuId": null
               }
             ],
             "hiddenLayers": [],
@@ -77,14 +74,8 @@
             "type": "normal",
             "front": [
               {
-                "skuId": "chips_blue",
-                "category": "snack",
-                "flags": [],
-                "blocker": null
-              },
-              {
-                "skuId": "soda_blue",
-                "category": "drink",
+                "skuId": "apple_red",
+                "category": "fruit",
                 "flags": [],
                 "blocker": null
               },
@@ -93,6 +84,9 @@
                 "category": "fruit",
                 "flags": [],
                 "blocker": null
+              },
+              {
+                "skuId": null
               }
             ],
             "hiddenLayers": [],
@@ -106,10 +100,16 @@
             "type": "reserve",
             "front": [
               {
-                "skuId": null
+                "skuId": "chips_blue",
+                "category": "snack",
+                "flags": [],
+                "blocker": null
               },
               {
-                "skuId": null
+                "skuId": "chips_blue",
+                "category": "snack",
+                "flags": [],
+                "blocker": null
               },
               {
                 "skuId": null
@@ -186,25 +186,25 @@
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
         "solverNodes": 3,
-        "minSolutionMoves": 8,
-        "averageBotMoves": 8,
+        "minSolutionMoves": 3,
+        "averageBotMoves": 3,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.5,
         "revealCount": 0,
         "hiddenInformationRatio": 0,
-        "timePressureRatio": 52.5,
+        "timePressureRatio": 140,
         "boosterFreeWinProbability": 1,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:21:29.045Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.579Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Teach first triple"
+        "notes": "Teach first triple. Emotional beat: first-move triple payoff."
       }
     },
     {
@@ -392,7 +392,7 @@
         "secondarySolverStatus": "solved",
         "solverNodes": 3,
         "minSolutionMoves": 8,
-        "averageBotMoves": 8,
+        "averageBotMoves": 8.3,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.5,
@@ -404,12 +404,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:21:29.191Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.586Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Repeat triple with cleaner reserve use"
+        "notes": "Repeat triple with cleaner reserve use. Emotional beat: empty-slot confidence."
       }
     },
     {
@@ -597,7 +597,7 @@
         "secondarySolverStatus": "solved",
         "solverNodes": 3,
         "minSolutionMoves": 8,
-        "averageBotMoves": 8,
+        "averageBotMoves": 8.3,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.5,
@@ -609,12 +609,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:21:29.331Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.594Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Third confidence level"
+        "notes": "Third confidence level. Emotional beat: reserve shelf confidence."
       }
     },
     {
@@ -802,7 +802,7 @@
         "secondarySolverStatus": "solved",
         "solverNodes": 3,
         "minSolutionMoves": 8,
-        "averageBotMoves": 8,
+        "averageBotMoves": 8.3,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.5,
@@ -814,12 +814,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:21:29.480Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.599Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Reserve shelf taught"
+        "notes": "Reserve shelf taught. Emotional beat: pair creation and smart targeting."
       }
     },
     {
@@ -1094,7 +1094,7 @@
         "secondarySolverStatus": "solved",
         "solverNodes": 6,
         "minSolutionMoves": 16,
-        "averageBotMoves": 15.7,
+        "averageBotMoves": 16.7,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.67,
@@ -1106,12 +1106,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:21:33.151Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.623Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Reserve with two rows"
+        "notes": "Reserve with two rows. Emotional beat: pair creation and smart targeting."
       }
     },
     {
@@ -1385,9 +1385,9 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 7,
+        "solverNodes": 6,
         "minSolutionMoves": 16,
-        "averageBotMoves": 14,
+        "averageBotMoves": 15,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.7,
@@ -1399,12 +1399,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:21:34.025Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.645Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Reserve pressure without timer punishment"
+        "notes": "Reserve pressure without timer punishment. Emotional beat: hidden shelf reveal as discovery."
       }
     },
     {
@@ -1667,12 +1667,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:21:36.644Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.660Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Exact hidden preview"
+        "notes": "Exact hidden preview. Emotional beat: hidden shelf reveal as discovery."
       }
     },
     {
@@ -1898,12 +1898,13 @@
         ]
       },
       "objective": {
-        "type": "clear_all",
-        "targets": []
+        "type": "combo_target",
+        "targets": [],
+        "targetCombo": 2
       },
       "tuning": {
         "comboWindowSec": 2.9,
-        "maxNonClearingMoves": 1
+        "maxNonClearingMoves": 3
       },
       "timerSec": 420,
       "starThresholds": {
@@ -1939,12 +1940,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:21:38.818Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.672Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Mixed hidden queue"
+        "notes": "First combo objective. Emotional beat: first combo celebration."
       }
     },
     {
@@ -2270,7 +2271,8 @@
                 "skuId": null
               },
               {
-                "skuId": null
+                "skuId": null,
+                "blocker": "crate"
               }
             ],
             "hiddenLayers": [],
@@ -2346,27 +2348,27 @@
       },
       "validation": {
         "solverStatus": "solved",
-        "secondarySolverStatus": "timeout_unknown",
+        "secondarySolverStatus": "solved",
         "solverNodes": 12,
         "minSolutionMoves": 32,
-        "averageBotMoves": 37,
-        "botWinRate": 0.67,
-        "deadEndProbability": 0.33,
-        "averageReservePressure": 0.67,
+        "averageBotMoves": 34,
+        "botWinRate": 1,
+        "deadEndProbability": 0,
+        "averageReservePressure": 0.7,
         "revealCount": 6,
         "hiddenInformationRatio": 0,
         "timePressureRatio": 13.125,
-        "boosterFreeWinProbability": 0.67,
+        "boosterFreeWinProbability": 1,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:26:15.757Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.715Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Two hidden decisions"
+        "notes": "First light blocker. Emotional beat: first recoverable blocker."
       }
     },
     {
@@ -2374,7 +2376,7 @@
       "levelId": "level_0010",
       "seed": 120970,
       "chapterId": "cooler_wall",
-      "difficultyTier": "normal",
+      "difficultyTier": "hard",
       "board": {
         "rows": 3,
         "columns": 3,
@@ -2746,7 +2748,7 @@
         "targets": []
       },
       "tuning": {
-        "comboWindowSec": 2.9,
+        "comboWindowSec": 2.5,
         "maxNonClearingMoves": 1
       },
       "timerSec": 420,
@@ -2762,33 +2764,33 @@
         "extra_slot"
       ],
       "rewards": {
-        "baseCoins": 32,
+        "baseCoins": 45,
         "firstTryBonusCoins": 8,
         "passXp": 0
       },
       "validation": {
         "solverStatus": "solved",
-        "secondarySolverStatus": "timeout_unknown",
+        "secondarySolverStatus": "solved",
         "solverNodes": 12,
         "minSolutionMoves": 32,
-        "averageBotMoves": 37,
-        "botWinRate": 0.67,
-        "deadEndProbability": 0.33,
+        "averageBotMoves": 35.3,
+        "botWinRate": 1,
+        "deadEndProbability": 0,
         "averageReservePressure": 0.67,
         "revealCount": 6,
         "hiddenInformationRatio": 0,
         "timePressureRatio": 13.125,
-        "boosterFreeWinProbability": 0.67,
+        "boosterFreeWinProbability": 1,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
-        "humanReviewGrade": "A",
+        "humanReviewGrade": "B",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:31:53.760Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.766Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
-        "grade": "A",
-        "notes": "Hidden preview review"
+        "grade": "B",
+        "notes": "First hard ceremony. Emotional beat: first hard-level reward ceremony."
       }
     },
     {
@@ -3055,12 +3057,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:31:57.593Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.775Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Planning ahead mild timer"
+        "notes": "Planning ahead mild timer. Emotional beat: planning and reveal anticipation."
       }
     },
     {
@@ -3329,12 +3331,12 @@
         "riskFlags": [
           "hidden_info_high"
         ],
-        "lastValidatedAt": "2026-06-13T03:32:01.861Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.783Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Silhouette starts"
+        "notes": "Silhouette starts. Emotional beat: planning and reveal anticipation."
       }
     },
     {
@@ -3736,29 +3738,29 @@
       },
       "validation": {
         "solverStatus": "solved",
-        "secondarySolverStatus": "timeout_unknown",
+        "secondarySolverStatus": "solved",
         "solverNodes": 12,
         "minSolutionMoves": 32,
-        "averageBotMoves": 37,
-        "botWinRate": 0.67,
-        "deadEndProbability": 0.33,
+        "averageBotMoves": 35.3,
+        "botWinRate": 1,
+        "deadEndProbability": 0,
         "averageReservePressure": 0.67,
         "revealCount": 6,
         "hiddenInformationRatio": 1,
         "timePressureRatio": 6.875,
-        "boosterFreeWinProbability": 0.67,
+        "boosterFreeWinProbability": 1,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [
           "hidden_info_high"
         ],
-        "lastValidatedAt": "2026-06-13T03:37:27.051Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.832Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Category mix planning"
+        "notes": "Category mix planning. Emotional beat: planning and reveal anticipation."
       }
     },
     {
@@ -3990,7 +3992,7 @@
       },
       "tuning": {
         "comboWindowSec": 2.9,
-        "maxNonClearingMoves": 1
+        "maxNonClearingMoves": 3
       },
       "timerSec": 220,
       "starThresholds": {
@@ -4028,12 +4030,12 @@
         "riskFlags": [
           "hidden_info_high"
         ],
-        "lastValidatedAt": "2026-06-13T03:37:30.451Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.840Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Reveal and combo setup"
+        "notes": "Reveal and combo setup. Emotional beat: planning and reveal anticipation."
       }
     },
     {
@@ -4435,27 +4437,27 @@
       },
       "validation": {
         "solverStatus": "solved",
-        "secondarySolverStatus": "timeout_unknown",
+        "secondarySolverStatus": "solved",
         "solverNodes": 12,
         "minSolutionMoves": 32,
-        "averageBotMoves": 37,
-        "botWinRate": 0.67,
-        "deadEndProbability": 0.33,
+        "averageBotMoves": 35.3,
+        "botWinRate": 1,
+        "deadEndProbability": 0,
         "averageReservePressure": 0.67,
         "revealCount": 6,
         "hiddenInformationRatio": 1,
         "timePressureRatio": 4.6875,
-        "boosterFreeWinProbability": 0.67,
+        "boosterFreeWinProbability": 1,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "B",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:42:58.132Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.889Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "First hard label"
+        "notes": "First hard label. Emotional beat: planning and reveal anticipation."
       }
     },
     {
@@ -4646,9 +4648,9 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 4,
+        "solverNodes": 3,
         "minSolutionMoves": 8,
-        "averageBotMoves": 7.3,
+        "averageBotMoves": 7.7,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.56,
@@ -4660,12 +4662,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:42:58.255Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.891Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Crate reserve pressure"
+        "notes": "Crate reserve pressure. Emotional beat: blocker release payoff."
       }
     },
     {
@@ -4856,9 +4858,9 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 4,
+        "solverNodes": 3,
         "minSolutionMoves": 8,
-        "averageBotMoves": 7.3,
+        "averageBotMoves": 7.7,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.56,
@@ -4870,12 +4872,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:42:58.376Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.895Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Tape lesson without deadlock"
+        "notes": "Tape lesson without deadlock. Emotional beat: blocker release payoff."
       }
     },
     {
@@ -5067,9 +5069,9 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 5,
+        "solverNodes": 3,
         "minSolutionMoves": 8,
-        "averageBotMoves": 7.3,
+        "averageBotMoves": 7.7,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.61,
@@ -5081,12 +5083,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "A",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:42:58.472Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.897Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Frost lesson without deadlock"
+        "notes": "Frost lesson without deadlock. Emotional beat: blocker release payoff."
       }
     },
     {
@@ -5340,7 +5342,7 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 7,
+        "solverNodes": 6,
         "minSolutionMoves": 16,
         "averageBotMoves": 16.3,
         "botWinRate": 1,
@@ -5356,12 +5358,12 @@
         "riskFlags": [
           "hidden_info_high"
         ],
-        "lastValidatedAt": "2026-06-13T03:43:00.461Z"
+        "lastValidatedAt": "2026-06-13T19:05:42.904Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Blocked reserve plus hidden"
+        "notes": "Blocked reserve plus hidden. Emotional beat: blocker release payoff."
       }
     },
     {
@@ -5766,26 +5768,26 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 14,
+        "solverNodes": 12,
         "minSolutionMoves": 32,
         "averageBotMoves": 32,
-        "botWinRate": 0.33,
-        "deadEndProbability": 0.67,
+        "botWinRate": 0.67,
+        "deadEndProbability": 0.33,
         "averageReservePressure": 0.74,
         "revealCount": 6,
         "hiddenInformationRatio": 1,
         "timePressureRatio": 4.6875,
-        "boosterFreeWinProbability": 0.33,
+        "boosterFreeWinProbability": 0.67,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "B",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:43:44.245Z"
+        "lastValidatedAt": "2026-06-13T19:05:43.518Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Blocker review"
+        "notes": "Blocker review. Emotional beat: blocker release payoff."
       }
     },
     {
@@ -6046,7 +6048,7 @@
         "secondarySolverStatus": "solved",
         "solverNodes": 4,
         "minSolutionMoves": 11,
-        "averageBotMoves": 12.7,
+        "averageBotMoves": 14,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.5,
@@ -6060,12 +6062,12 @@
         "riskFlags": [
           "hidden_info_high"
         ],
-        "lastValidatedAt": "2026-06-13T03:43:46.714Z"
+        "lastValidatedAt": "2026-06-13T19:05:43.525Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Collect snack order"
+        "notes": "Collect snack order. Emotional beat: objective progress payoff."
       }
     },
     {
@@ -6324,15 +6326,15 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 5,
-        "minSolutionMoves": 14,
-        "averageBotMoves": 15.7,
+        "solverNodes": 4,
+        "minSolutionMoves": 11,
+        "averageBotMoves": 16,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.5,
         "revealCount": 3,
         "hiddenInformationRatio": 1,
-        "timePressureRatio": 15.714285714285714,
+        "timePressureRatio": 20,
         "boosterFreeWinProbability": 1,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
@@ -6340,12 +6342,12 @@
         "riskFlags": [
           "hidden_info_high"
         ],
-        "lastValidatedAt": "2026-06-13T03:43:50.108Z"
+        "lastValidatedAt": "2026-06-13T19:05:43.533Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Collect drink order"
+        "notes": "Collect drink order. Emotional beat: objective progress payoff."
       }
     },
     {
@@ -6604,15 +6606,15 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 4,
-        "minSolutionMoves": 11,
-        "averageBotMoves": 12.3,
+        "solverNodes": 6,
+        "minSolutionMoves": 16,
+        "averageBotMoves": 14,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.5,
         "revealCount": 3,
         "hiddenInformationRatio": 1,
-        "timePressureRatio": 20,
+        "timePressureRatio": 13.75,
         "boosterFreeWinProbability": 1,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
@@ -6620,12 +6622,12 @@
         "riskFlags": [
           "hidden_info_high"
         ],
-        "lastValidatedAt": "2026-06-13T03:43:50.357Z"
+        "lastValidatedAt": "2026-06-13T19:05:43.539Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Specific SKU order"
+        "notes": "Specific SKU order. Emotional beat: objective progress payoff."
       }
     },
     {
@@ -6890,15 +6892,15 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 1,
-        "minSolutionMoves": 3,
-        "averageBotMoves": 3,
+        "solverNodes": 2,
+        "minSolutionMoves": 6,
+        "averageBotMoves": 5,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.5,
         "revealCount": 3,
         "hiddenInformationRatio": 1,
-        "timePressureRatio": 73.33333333333333,
+        "timePressureRatio": 36.666666666666664,
         "boosterFreeWinProbability": 1,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
@@ -6906,12 +6908,12 @@
         "riskFlags": [
           "hidden_info_high"
         ],
-        "lastValidatedAt": "2026-06-13T03:43:50.371Z"
+        "lastValidatedAt": "2026-06-13T19:05:43.540Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "A",
-        "notes": "Special products"
+        "notes": "Special products. Emotional beat: objective progress payoff."
       }
     },
     {
@@ -7179,12 +7181,12 @@
         "readabilityRisk": 0,
         "humanReviewGrade": "B",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:43:53.749Z"
+        "lastValidatedAt": "2026-06-13T19:05:43.548Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Time challenge"
+        "notes": "Time challenge. Emotional beat: objective progress payoff."
       }
     },
     {
@@ -7706,27 +7708,27 @@
       },
       "validation": {
         "solverStatus": "solved",
-        "secondarySolverStatus": "timeout_unknown",
+        "secondarySolverStatus": "solved",
         "solverNodes": 18,
         "minSolutionMoves": 48,
         "averageBotMoves": 48,
-        "botWinRate": 0.33,
-        "deadEndProbability": 0.67,
+        "botWinRate": 0.67,
+        "deadEndProbability": 0.33,
         "averageReservePressure": 0.67,
         "revealCount": 12,
         "hiddenInformationRatio": 0.5,
         "timePressureRatio": 3.125,
-        "boosterFreeWinProbability": 0.33,
+        "boosterFreeWinProbability": 0.67,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "B",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:49:24.408Z"
+        "lastValidatedAt": "2026-06-13T19:05:44.468Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Hard arc mixed hidden"
+        "notes": "Hard arc mixed hidden. Emotional beat: hard arc tension and finale."
       }
     },
     {
@@ -8044,27 +8046,27 @@
       },
       "validation": {
         "solverStatus": "solved",
-        "secondarySolverStatus": "timeout_unknown",
-        "solverNodes": 7,
-        "minSolutionMoves": 19,
-        "averageBotMoves": 19,
-        "botWinRate": 0.33,
-        "deadEndProbability": 0.67,
+        "secondarySolverStatus": "solved",
+        "solverNodes": 9,
+        "minSolutionMoves": 24,
+        "averageBotMoves": 21.5,
+        "botWinRate": 0.67,
+        "deadEndProbability": 0.33,
         "averageReservePressure": 0.5,
         "revealCount": 6,
         "hiddenInformationRatio": 0.5,
-        "timePressureRatio": 7.894736842105263,
-        "boosterFreeWinProbability": 0.33,
+        "timePressureRatio": 6.25,
+        "boosterFreeWinProbability": 0.67,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "B",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:53:56.974Z"
+        "lastValidatedAt": "2026-06-13T19:05:44.817Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Hard category order"
+        "notes": "Hard category order. Emotional beat: hard arc tension and finale."
       }
     },
     {
@@ -8395,26 +8397,26 @@
       "validation": {
         "solverStatus": "solved",
         "secondarySolverStatus": "solved",
-        "solverNodes": 4,
-        "minSolutionMoves": 11,
-        "averageBotMoves": 13.7,
+        "solverNodes": 5,
+        "minSolutionMoves": 14,
+        "averageBotMoves": 15.3,
         "botWinRate": 1,
         "deadEndProbability": 0,
         "averageReservePressure": 0.5,
         "revealCount": 6,
         "hiddenInformationRatio": 0.5,
-        "timePressureRatio": 13.636363636363637,
+        "timePressureRatio": 10.714285714285714,
         "boosterFreeWinProbability": 1,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "B",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T03:54:00.037Z"
+        "lastValidatedAt": "2026-06-13T19:05:44.823Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Hard special order"
+        "notes": "Hard special order. Emotional beat: hard arc tension and finale."
       }
     },
     {
@@ -8706,7 +8708,7 @@
       },
       "tuning": {
         "comboWindowSec": 2.5,
-        "maxNonClearingMoves": 1
+        "maxNonClearingMoves": 3
       },
       "timerSec": 150,
       "starThresholds": {
@@ -8726,31 +8728,28 @@
         "passXp": 0
       },
       "validation": {
-        "solverStatus": "timeout_unknown",
-        "secondarySolverStatus": "timeout_unknown",
-        "solverNodes": 16000,
-        "minSolutionMoves": 0,
-        "averageBotMoves": 0,
-        "botWinRate": 0,
-        "deadEndProbability": 1,
+        "solverStatus": "solved",
+        "secondarySolverStatus": "solved",
+        "solverNodes": 9,
+        "minSolutionMoves": 24,
+        "averageBotMoves": 24,
+        "botWinRate": 0.67,
+        "deadEndProbability": 0.33,
         "averageReservePressure": 0.5,
         "revealCount": 6,
         "hiddenInformationRatio": 0.5,
-        "timePressureRatio": 150,
-        "boosterFreeWinProbability": 0,
+        "timePressureRatio": 6.25,
+        "boosterFreeWinProbability": 0.67,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "B",
-        "riskFlags": [
-          "solver_timeout_unknown",
-          "secondary_solver_failed"
-        ],
-        "lastValidatedAt": "2026-06-13T04:03:09.228Z"
+        "riskFlags": [],
+        "lastValidatedAt": "2026-06-13T19:05:45.163Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Hard combo order"
+        "notes": "Hard combo order. Emotional beat: hard arc tension and finale."
       }
     },
     {
@@ -9274,27 +9273,27 @@
       },
       "validation": {
         "solverStatus": "solved",
-        "secondarySolverStatus": "timeout_unknown",
-        "solverNodes": 19,
+        "secondarySolverStatus": "solved",
+        "solverNodes": 18,
         "minSolutionMoves": 48,
         "averageBotMoves": 48,
-        "botWinRate": 0.33,
-        "deadEndProbability": 0.67,
+        "botWinRate": 0.67,
+        "deadEndProbability": 0.33,
         "averageReservePressure": 0.7,
         "revealCount": 12,
         "hiddenInformationRatio": 0.5,
         "timePressureRatio": 3.125,
-        "boosterFreeWinProbability": 0.33,
+        "boosterFreeWinProbability": 0.67,
         "autoClearRisk": 0,
         "readabilityRisk": 0,
         "humanReviewGrade": "B",
         "riskFlags": [],
-        "lastValidatedAt": "2026-06-13T04:08:50.740Z"
+        "lastValidatedAt": "2026-06-13T19:05:46.333Z"
       },
       "humanReview": {
         "reviewer": "studio_v2",
         "grade": "B",
-        "notes": "Vertical slice finale"
+        "notes": "Vertical slice finale. Emotional beat: hard arc tension and finale."
       }
     }
   ]
